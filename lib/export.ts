@@ -46,6 +46,50 @@ export function toCSV(result: AssessmentResult): string {
   lines.push(`Random,${result.validity.random ? 'FLAGGED' : 'OK'}`);
   lines.push(`Inattentive,${result.validity.inattentive ? 'FLAGGED' : 'OK'}`);
 
+  // Roster Classification (v1.0)
+  lines.push('');
+  lines.push('Roster Classification,Value');
+  lines.push(`Version,${result.roster.version}`);
+  lines.push(`Shape Class,${result.roster.shape_class}`);
+  lines.push(`Summary,${result.roster.summary_label}`);
+  lines.push(`Confidence,${result.roster.confidence.shape_conf}`);
+
+  // Derived Metrics
+  lines.push('');
+  lines.push('Derived Metric,Value');
+  lines.push(`S2 (Top 2 Sum),${(result.roster.metrics.S2 * 100).toFixed(1)}%`);
+  lines.push(`S3 (Top 3 Sum),${(result.roster.metrics.S3 * 100).toFixed(1)}%`);
+  lines.push(`r2 (Blend Ratio),${(result.roster.metrics.r2 * 100).toFixed(1)}%`);
+  lines.push(`g12 (Gap),${(result.roster.metrics.g12 * 100).toFixed(1)}%`);
+  lines.push(`Entropy (Normalized),${(result.roster.metrics.entropy_n * 100).toFixed(1)}%`);
+
+  // Shape-specific details
+  if (result.roster.dyad) {
+    lines.push('');
+    lines.push('Dyad Details,Value');
+    lines.push(`Blend Class,${result.roster.dyad.blend_class}`);
+    lines.push(`Anchor,${result.roster.dyad.anchor}`);
+    lines.push(`Lens,${result.roster.dyad.lens}`);
+    lines.push(`Label,${result.roster.dyad.label}`);
+  }
+
+  if (result.roster.triad) {
+    lines.push('');
+    lines.push('Triad Details,Value');
+    lines.push(`Triad Class,${result.roster.triad.triad_class}`);
+    lines.push(`Primary,${result.roster.triad.primary}`);
+    lines.push(`Secondary,${result.roster.triad.secondary}`);
+    lines.push(`Tertiary,${result.roster.triad.tertiary}`);
+    lines.push(`Label,${result.roster.triad.label}`);
+  }
+
+  if (result.roster.polyphonic) {
+    lines.push('');
+    lines.push('Polyphonic Details,Value');
+    lines.push(`Contributing,${result.roster.polyphonic.contributing.join('; ')}`);
+    lines.push(`Label,${result.roster.polyphonic.label}`);
+  }
+
   return lines.join('\n');
 }
 

@@ -83,6 +83,7 @@ export default function ResultsPage() {
             <ArchetypeCard
               archetypes={result.archetypes}
               blendProfile={result.blendProfile}
+              roster={result.roster}
             />
           </div>
 

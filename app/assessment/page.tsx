@@ -9,6 +9,7 @@ import ProgressBar from '@/components/assessment/ProgressBar';
 import { questions } from '@/lib/questions';
 import { computeFullProfile } from '@/lib/scoring';
 import { computeArchetypeProbabilities, computeBlendProfile } from '@/lib/archetypes';
+import { computeRoster } from '@/lib/roster';
 import { checkValidity } from '@/lib/validity';
 import { AssessmentResult } from '@/types/assessment';
 
@@ -31,6 +32,7 @@ function AssessmentContent() {
       const { hexaco, motives, affects } = computeFullProfile(state.responses);
       const { archetypes, uncertainty } = computeArchetypeProbabilities({ hexaco, motives, affects });
       const blendProfile = computeBlendProfile(archetypes, { hexaco, motives, affects });
+      const roster = computeRoster(archetypes);
       const validity = checkValidity(state.responses);
 
       const result: AssessmentResult = {
@@ -41,6 +43,7 @@ function AssessmentContent() {
         archetypes,
         archetypeUncertainty: uncertainty,
         blendProfile,
+        roster,
         validity,
         completedAt: new Date().toISOString(),
         durationMs: Date.now() - state.startTime,
