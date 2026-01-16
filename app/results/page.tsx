@@ -82,7 +82,7 @@ export default function ResultsPage() {
             <RadarChart data={result.hexaco} width={380} height={380} />
             <ArchetypeCard
               archetypes={result.archetypes}
-              uncertainty={result.archetypeUncertainty}
+              blendProfile={result.blendProfile}
             />
           </div>
 

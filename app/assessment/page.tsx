@@ -8,7 +8,7 @@ import QuestionCard from '@/components/assessment/QuestionCard';
 import ProgressBar from '@/components/assessment/ProgressBar';
 import { questions } from '@/lib/questions';
 import { computeFullProfile } from '@/lib/scoring';
-import { computeArchetypeProbabilities } from '@/lib/archetypes';
+import { computeArchetypeProbabilities, computeBlendProfile } from '@/lib/archetypes';
 import { checkValidity } from '@/lib/validity';
 import { AssessmentResult } from '@/types/assessment';
 
@@ -30,6 +30,7 @@ function AssessmentContent() {
       // Compute results
       const { hexaco, motives, affects } = computeFullProfile(state.responses);
       const { archetypes, uncertainty } = computeArchetypeProbabilities({ hexaco, motives, affects });
+      const blendProfile = computeBlendProfile(archetypes, { hexaco, motives, affects });
       const validity = checkValidity(state.responses);
 
       const result: AssessmentResult = {
@@ -39,6 +40,7 @@ function AssessmentContent() {
         affects,
         archetypes,
         archetypeUncertainty: uncertainty,
+        blendProfile,
         validity,
         completedAt: new Date().toISOString(),
         durationMs: Date.now() - state.startTime,

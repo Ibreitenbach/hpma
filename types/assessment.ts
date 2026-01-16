@@ -49,6 +49,25 @@ export interface ArchetypeProbabilities {
   philosopher: number;
 }
 
+// Blend Mode System (Anchor-Lens Model)
+export type BlendMode = 'fusion' | 'anchor-lens' | 'inverse-anchor-lens' | 'diffuse';
+
+export type SwitcherBehavior = 'flip' | 'integrate' | 'unknown';
+
+export interface BlendProfile {
+  mode: BlendMode;
+  isTrueDyad: boolean;           // S >= 0.70
+  pairStrength: number;          // S = P1 + P2
+  blendRatio: number;            // r = P1 / (P1 + P2)
+  anchor: keyof ArchetypeProbabilities;
+  lens: keyof ArchetypeProbabilities;
+  anchorProbability: number;
+  lensProbability: number;
+  label: string;                 // e.g., "Explorer–Philosopher Fusion"
+  description: string;
+  switcherBehavior: SwitcherBehavior;  // For Fusion profiles
+}
+
 export interface ValidityFlags {
   idealized: boolean;
   random: boolean;
@@ -62,6 +81,7 @@ export interface AssessmentResult {
   affects: AffectProfile;
   archetypes: ArchetypeProbabilities;
   archetypeUncertainty: number; // gap between top 2 probabilities
+  blendProfile: BlendProfile;   // Anchor-Lens blend mode analysis
   validity: ValidityFlags;
   completedAt: string;
   durationMs: number;
