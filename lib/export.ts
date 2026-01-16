@@ -46,12 +46,12 @@ export function toCSV(result: AssessmentResult): string {
   lines.push(`Random,${result.validity.random ? 'FLAGGED' : 'OK'}`);
   lines.push(`Inattentive,${result.validity.inattentive ? 'FLAGGED' : 'OK'}`);
 
-  // Roster Classification (v1.0)
+  // Roster Vocabulary (v1.0)
   lines.push('');
   lines.push('Roster Classification,Value');
   lines.push(`Version,${result.roster.version}`);
-  lines.push(`Shape Class,${result.roster.shape_class}`);
-  lines.push(`Summary,${result.roster.summary_label}`);
+  lines.push(`Structure,${result.roster.structure}`);
+  lines.push(`Summary Label,${result.roster.summary_label}`);
   lines.push(`Confidence,${result.roster.confidence.shape_conf}`);
 
   // Derived Metrics
@@ -63,31 +63,60 @@ export function toCSV(result: AssessmentResult): string {
   lines.push(`g12 (Gap),${(result.roster.metrics.g12 * 100).toFixed(1)}%`);
   lines.push(`Entropy (Normalized),${(result.roster.metrics.entropy_n * 100).toFixed(1)}%`);
 
-  // Shape-specific details
+  // Duet details (new vocabulary)
+  if (result.roster.duet) {
+    lines.push('');
+    lines.push('Duet Details,Value');
+    lines.push(`Mode,${result.roster.duet.mode}`);
+    lines.push(`Identity,${result.roster.duet.identity}`);
+    lines.push(`Anchor,${result.roster.duet.anchor}`);
+    lines.push(`Lens,${result.roster.duet.lens}`);
+    lines.push(`Label,${result.roster.duet.label}`);
+  }
+
+  // Trio details (new vocabulary)
+  if (result.roster.trio) {
+    lines.push('');
+    lines.push('Trio Details,Value');
+    lines.push(`Mode,${result.roster.trio.mode}`);
+    lines.push(`Keystone,${result.roster.trio.primary}`);
+    lines.push(`Lens,${result.roster.trio.secondary}`);
+    lines.push(`Shadow,${result.roster.trio.tertiary}`);
+    lines.push(`Label,${result.roster.trio.label}`);
+  }
+
+  // Choral details (new vocabulary)
+  if (result.roster.choral) {
+    lines.push('');
+    lines.push('Choral Details,Value');
+    lines.push(`Mode,${result.roster.choral.mode}`);
+    lines.push(`Anchor,${result.roster.choral.anchor || 'N/A'}`);
+    lines.push(`Active Voices,${result.roster.choral.contributing.join('; ')}`);
+    lines.push(`Label,${result.roster.choral.label}`);
+  }
+
+  // Legacy shape-specific details (for backward compatibility)
   if (result.roster.dyad) {
     lines.push('');
-    lines.push('Dyad Details,Value');
+    lines.push('Legacy Dyad Details,Value');
     lines.push(`Blend Class,${result.roster.dyad.blend_class}`);
     lines.push(`Anchor,${result.roster.dyad.anchor}`);
     lines.push(`Lens,${result.roster.dyad.lens}`);
-    lines.push(`Label,${result.roster.dyad.label}`);
   }
 
   if (result.roster.triad) {
     lines.push('');
-    lines.push('Triad Details,Value');
+    lines.push('Legacy Triad Details,Value');
     lines.push(`Triad Class,${result.roster.triad.triad_class}`);
     lines.push(`Primary,${result.roster.triad.primary}`);
     lines.push(`Secondary,${result.roster.triad.secondary}`);
     lines.push(`Tertiary,${result.roster.triad.tertiary}`);
-    lines.push(`Label,${result.roster.triad.label}`);
   }
 
   if (result.roster.polyphonic) {
     lines.push('');
-    lines.push('Polyphonic Details,Value');
+    lines.push('Legacy Polyphonic Details,Value');
     lines.push(`Contributing,${result.roster.polyphonic.contributing.join('; ')}`);
-    lines.push(`Label,${result.roster.polyphonic.label}`);
   }
 
   return lines.join('\n');

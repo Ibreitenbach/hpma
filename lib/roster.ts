@@ -1,39 +1,100 @@
 import {
   ArchetypeProbabilities,
   ArchetypeName,
+  Structure,
   ShapeClass,
+  DuetMode,
   DyadBlendClass,
+  TrioMode,
   TriadClass,
+  PolyphonicMode,
+  DyadName,
   SortedArchetype,
   DerivedMetrics,
+  DuetRoster,
   DyadRoster,
+  TrioRoster,
   TriadRoster,
+  ChoralRoster,
   PolyphonicRoster,
   ConfidenceMetrics,
   RosterOutput,
 } from '@/types/assessment';
 
 // ═══════════════════════════════════════════════════════════════
-// HPMA ROSTER CLASSIFICATION SPEC v1.0
+// HPMA ROSTER VOCABULARY v1.0
 // ═══════════════════════════════════════════════════════════════
 
-const DYAD_BLEND_THRESHOLDS = {
-  fusion: { min: 0.45, max: 0.55 },
-  tilted_fusion: { min: 0.55, max: 0.65 },
-  anchor_lens: { min: 0.65, max: 0.80 },
-  dominant_trace: { min: 0.80, max: 0.92 },
-  near_pure: { min: 0.92, max: 1.00 },
+// ─────────────────────────────────────────────────────────────────
+// CANONICAL DYAD NAMES (15 pairs)
+// ─────────────────────────────────────────────────────────────────
+
+type DyadPairKey = `${ArchetypeName}-${ArchetypeName}`;
+
+const DYAD_NAMES: Record<string, DyadName> = {
+  'explorer-philosopher': 'Seeker-Sage',
+  'philosopher-explorer': 'Seeker-Sage',
+  'explorer-organizer': 'Visionary Builder',
+  'organizer-explorer': 'Visionary Builder',
+  'explorer-connector': 'Wayfinder Diplomat',
+  'connector-explorer': 'Wayfinder Diplomat',
+  'explorer-protector': 'Sentinel Scout',
+  'protector-explorer': 'Sentinel Scout',
+  'explorer-performer': 'Spotlight Pioneer',
+  'performer-explorer': 'Spotlight Pioneer',
+  'philosopher-organizer': 'Systems Theorist',
+  'organizer-philosopher': 'Systems Theorist',
+  'philosopher-connector': 'Bridge Scholar',
+  'connector-philosopher': 'Bridge Scholar',
+  'philosopher-protector': 'Vigilant Stoic',
+  'protector-philosopher': 'Vigilant Stoic',
+  'philosopher-performer': 'Public Intellectual',
+  'performer-philosopher': 'Public Intellectual',
+  'organizer-connector': 'Community Operator',
+  'connector-organizer': 'Community Operator',
+  'organizer-protector': 'Risk Steward',
+  'protector-organizer': 'Risk Steward',
+  'organizer-performer': 'Showrunner Executive',
+  'performer-organizer': 'Showrunner Executive',
+  'connector-protector': 'Guardian Caretaker',
+  'protector-connector': 'Guardian Caretaker',
+  'connector-performer': 'Charismatic Host',
+  'performer-connector': 'Charismatic Host',
+  'protector-performer': 'Watchful Champion',
+  'performer-protector': 'Watchful Champion',
+};
+
+function getDyadName(a: ArchetypeName, b: ArchetypeName): DyadName | string {
+  const key = `${a}-${b}`;
+  return DYAD_NAMES[key] || `${capitalize(a)}–${capitalize(b)} Hybrid`;
+}
+
+// ─────────────────────────────────────────────────────────────────
+// THRESHOLDS
+// ─────────────────────────────────────────────────────────────────
+
+const DUET_MODE_THRESHOLDS = {
+  TWIN_HELIX: { min: 0.45, max: 0.55 },        // ~50/50
+  LEANING_HELIX: { min: 0.55, max: 0.65 },     // ~60/40
+  KEYSTONE_LENS: { min: 0.65, max: 0.80 },     // ~75/25
+  SIGNATURE_ACCENT: { min: 0.80, max: 0.92 },  // ~90/10
+  PURELINE: { min: 0.92, max: 1.00 },          // ~95/5+
 } as const;
 
-const SHAPE_THRESHOLDS = {
-  diffuse_p1: 0.35,
-  mono_p1: 0.70,
-  mono_p2_max: 0.20,
-  dyad_s2: 0.70,
-  dyad_p3_max: 0.20,
-  triad_s3: 0.80,
-  triad_p4_max: 0.15,
+const STRUCTURE_THRESHOLDS = {
+  mist_p1: 0.35,
+  solo_p1: 0.70,
+  solo_p2_max: 0.20,
+  duet_s2: 0.70,
+  duet_p3_max: 0.20,
+  trio_s3: 0.80,
+  trio_p4_max: 0.15,
+  chord_top4_threshold: 0.12,
 } as const;
+
+// ─────────────────────────────────────────────────────────────────
+// UTILITIES
+// ─────────────────────────────────────────────────────────────────
 
 function capitalize(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -76,159 +137,310 @@ function computeDerivedMetrics(sorted: SortedArchetype[]): DerivedMetrics {
   return { S2, S3, r2, g12, entropy_n };
 }
 
-function classifyShape(sorted: SortedArchetype[], metrics: DerivedMetrics): ShapeClass {
+// ─────────────────────────────────────────────────────────────────
+// STRUCTURE CLASSIFICATION
+// ─────────────────────────────────────────────────────────────────
+
+function classifyStructure(sorted: SortedArchetype[], metrics: DerivedMetrics): Structure {
   const p1 = sorted[0]?.probability ?? 0;
   const p2 = sorted[1]?.probability ?? 0;
   const p3 = sorted[2]?.probability ?? 0;
   const p4 = sorted[3]?.probability ?? 0;
 
-  // Rule 1: Diffuse if dominant is too weak
-  if (p1 < SHAPE_THRESHOLDS.diffuse_p1) {
-    return 'diffuse';
+  // Rule 1: Mist if dominant is too weak
+  if (p1 < STRUCTURE_THRESHOLDS.mist_p1) {
+    return 'MIST';
   }
 
-  // Rule 2: Monophonic if single dominant
-  if (p1 >= SHAPE_THRESHOLDS.mono_p1 && p2 <= SHAPE_THRESHOLDS.mono_p2_max) {
-    return 'monophonic';
+  // Rule 2: Solo if single dominant
+  if (p1 >= STRUCTURE_THRESHOLDS.solo_p1 && p2 <= STRUCTURE_THRESHOLDS.solo_p2_max) {
+    return 'SOLO';
   }
 
-  // Rule 3: Dyadic if top-2 dominate
-  if (metrics.S2 >= SHAPE_THRESHOLDS.dyad_s2 && p3 <= SHAPE_THRESHOLDS.dyad_p3_max) {
-    return 'dyadic';
+  // Rule 3: Duet if top-2 dominate
+  if (metrics.S2 >= STRUCTURE_THRESHOLDS.duet_s2 && p3 <= STRUCTURE_THRESHOLDS.duet_p3_max) {
+    return 'DUET';
   }
 
-  // Rule 4: Triadic if top-3 dominate
-  if (metrics.S3 >= SHAPE_THRESHOLDS.triad_s3 && p4 <= SHAPE_THRESHOLDS.triad_p4_max) {
-    return 'triadic';
+  // Rule 4: Trio if top-3 dominate
+  if (metrics.S3 >= STRUCTURE_THRESHOLDS.trio_s3 && p4 <= STRUCTURE_THRESHOLDS.trio_p4_max) {
+    return 'TRIO';
   }
 
-  // Rule 5: Polyphonic (fallback)
-  return 'polyphonic';
+  // Rule 5: Chord vs Chorus
+  const activeVoices = sorted.filter(s => s.probability >= STRUCTURE_THRESHOLDS.chord_top4_threshold);
+  if (activeVoices.length <= 4 && p1 >= 0.25) {
+    return 'CHORD';
+  }
+
+  return 'CHORUS';
 }
 
-function classifyDyadBlend(r2: number): DyadBlendClass {
-  if (r2 >= DYAD_BLEND_THRESHOLDS.fusion.min && r2 <= DYAD_BLEND_THRESHOLDS.fusion.max) {
-    return 'fusion';
+// Legacy shape class mapping
+function structureToShapeClass(structure: Structure): ShapeClass {
+  switch (structure) {
+    case 'SOLO': return 'monophonic';
+    case 'DUET': return 'dyadic';
+    case 'TRIO': return 'triadic';
+    case 'CHORD':
+    case 'CHORUS': return 'polyphonic';
+    case 'MIST':
+    case 'FAULTED': return 'diffuse';
   }
-  if (r2 > DYAD_BLEND_THRESHOLDS.tilted_fusion.min && r2 <= DYAD_BLEND_THRESHOLDS.tilted_fusion.max) {
-    return 'tilted_fusion';
-  }
-  if (r2 > DYAD_BLEND_THRESHOLDS.anchor_lens.min && r2 <= DYAD_BLEND_THRESHOLDS.anchor_lens.max) {
-    return 'anchor_lens';
-  }
-  if (r2 > DYAD_BLEND_THRESHOLDS.dominant_trace.min && r2 <= DYAD_BLEND_THRESHOLDS.dominant_trace.max) {
-    return 'dominant_trace';
-  }
-  return 'near_pure';
 }
 
-function getDyadBlendDescription(blend: DyadBlendClass, anchor: string, lens: string): string {
-  const descriptions: Record<DyadBlendClass, string> = {
-    fusion: `A balanced 50/50 blend where ${capitalize(anchor)} and ${capitalize(lens)} co-drive behavior equally. Context determines which takes the lead in any moment.`,
-    tilted_fusion: `${capitalize(anchor)} slightly leads (~60/40), but ${capitalize(lens)} remains a strong co-driver. Both archetypes actively shape your expression.`,
-    anchor_lens: `${capitalize(anchor)} is your engine (~75/25). ${capitalize(lens)} colors how that engine runs, acting as a consistent interpretive filter.`,
-    dominant_trace: `Strong ${capitalize(anchor)} dominance (~85/15). ${capitalize(lens)} appears as a subtle secondary influence rather than an active co-pilot.`,
-    near_pure: `Near-pure ${capitalize(anchor)} orientation (~95/5). ${capitalize(lens)} provides only a trace coloring to your dominant archetype.`,
+// ─────────────────────────────────────────────────────────────────
+// DUET MODE CLASSIFICATION
+// ─────────────────────────────────────────────────────────────────
+
+function classifyDuetMode(r2: number): DuetMode {
+  if (r2 >= DUET_MODE_THRESHOLDS.TWIN_HELIX.min && r2 <= DUET_MODE_THRESHOLDS.TWIN_HELIX.max) {
+    return 'TWIN_HELIX';
+  }
+  if (r2 > DUET_MODE_THRESHOLDS.LEANING_HELIX.min && r2 <= DUET_MODE_THRESHOLDS.LEANING_HELIX.max) {
+    return 'LEANING_HELIX';
+  }
+  if (r2 > DUET_MODE_THRESHOLDS.KEYSTONE_LENS.min && r2 <= DUET_MODE_THRESHOLDS.KEYSTONE_LENS.max) {
+    return 'KEYSTONE_LENS';
+  }
+  if (r2 > DUET_MODE_THRESHOLDS.SIGNATURE_ACCENT.min && r2 <= DUET_MODE_THRESHOLDS.SIGNATURE_ACCENT.max) {
+    return 'SIGNATURE_ACCENT';
+  }
+  return 'PURELINE';
+}
+
+// Legacy blend class mapping
+function duetModeToBlendClass(mode: DuetMode): DyadBlendClass {
+  switch (mode) {
+    case 'TWIN_HELIX': return 'fusion';
+    case 'LEANING_HELIX': return 'tilted_fusion';
+    case 'KEYSTONE_LENS': return 'anchor_lens';
+    case 'SIGNATURE_ACCENT': return 'dominant_trace';
+    case 'PURELINE': return 'near_pure';
+  }
+}
+
+function getDuetModeLabel(mode: DuetMode): string {
+  const labels: Record<DuetMode, string> = {
+    TWIN_HELIX: 'Twin-Helix',
+    LEANING_HELIX: 'Leaning Helix',
+    KEYSTONE_LENS: 'Keystone & Lens',
+    SIGNATURE_ACCENT: 'Signature & Accent',
+    PURELINE: 'Pureline',
   };
-  return descriptions[blend];
+  return labels[mode];
 }
 
-function getDyadLabel(blend: DyadBlendClass, anchor: string, lens: string): string {
-  const formatBlend = (b: DyadBlendClass): string => {
-    switch (b) {
-      case 'fusion': return 'Fusion';
-      case 'tilted_fusion': return 'Tilted Fusion';
-      case 'anchor_lens': return 'Anchor-Lens';
-      case 'dominant_trace': return 'Dominant-Trace';
-      case 'near_pure': return 'Near-Pure';
-    }
+function getDuetModeDescription(mode: DuetMode, identity: string, anchor: string, lens: string): string {
+  switch (mode) {
+    case 'TWIN_HELIX':
+      return `A balanced 50/50 ${identity}. Both ${capitalize(anchor)} and ${capitalize(lens)} co-drive behavior equally—context determines which takes the lead.`;
+    case 'LEANING_HELIX':
+      return `${capitalize(anchor)} slightly leads (~60/40) in your ${identity} blend, but ${capitalize(lens)} remains a strong co-driver.`;
+    case 'KEYSTONE_LENS':
+      return `${capitalize(anchor)} is your keystone (~75/25). ${capitalize(lens)} acts as a consistent lens, coloring how your anchor expresses.`;
+    case 'SIGNATURE_ACCENT':
+      return `Strong ${capitalize(anchor)} signature (~90/10). ${capitalize(lens)} appears as a subtle accent rather than an active co-pilot.`;
+    case 'PURELINE':
+      return `Near-pure ${capitalize(anchor)} orientation (~95/5). ${capitalize(lens)} provides only trace coloring to your dominant voice.`;
+  }
+}
+
+function buildDuetRoster(sorted: SortedArchetype[], metrics: DerivedMetrics): DuetRoster {
+  const anchor = sorted[0].name;
+  const lens = sorted[1].name;
+  const mode = classifyDuetMode(metrics.r2);
+  const identity = getDyadName(anchor, lens);
+
+  return {
+    mode,
+    identity,
+    anchor,
+    lens,
+    label: `Duet: ${identity} — ${getDuetModeLabel(mode)}`,
+    description: getDuetModeDescription(mode, identity, anchor, lens),
   };
-  return `${capitalize(anchor)}–${capitalize(lens)} ${formatBlend(blend)}`;
 }
 
+// Legacy dyad roster
 function buildDyadRoster(sorted: SortedArchetype[], metrics: DerivedMetrics): DyadRoster {
   const anchor = sorted[0].name;
   const lens = sorted[1].name;
-  const blend_class = classifyDyadBlend(metrics.r2);
+  const mode = classifyDuetMode(metrics.r2);
+  const blend_class = duetModeToBlendClass(mode);
+  const identity = getDyadName(anchor, lens);
 
   return {
     blend_class,
     anchor,
     lens,
-    label: getDyadLabel(blend_class, anchor, lens),
-    description: getDyadBlendDescription(blend_class, anchor, lens),
+    label: `${identity} — ${getDuetModeLabel(mode)}`,
+    description: getDuetModeDescription(mode, identity, anchor, lens),
   };
 }
 
-function classifyTriad(sorted: SortedArchetype[]): TriadClass {
+// ─────────────────────────────────────────────────────────────────
+// TRIO MODE CLASSIFICATION
+// ─────────────────────────────────────────────────────────────────
+
+function classifyTrioMode(sorted: SortedArchetype[]): TrioMode {
   const p1 = sorted[0].probability;
   const p2 = sorted[1].probability;
   const p3 = sorted[2].probability;
 
-  const TRIAD_FUSION_THRESHOLD = 0.08;
-  const DUAL_LENS_THRESHOLD = 0.05;
+  const TRI_HELIX_THRESHOLD = 0.08;
+  const PRISM_THRESHOLD = 0.05;
 
   const maxDiff = Math.max(Math.abs(p1 - p2), Math.abs(p2 - p3), Math.abs(p1 - p3));
 
-  // All 3 within ±8%: Triad Fusion
-  if (maxDiff <= TRIAD_FUSION_THRESHOLD) {
-    return 'triad_fusion';
+  // All 3 within ±8%: Tri-Helix
+  if (maxDiff <= TRI_HELIX_THRESHOLD) {
+    return 'TRI_HELIX';
   }
 
-  // Check for Anchor + Dual Lenses: p1 > p2 ≈ p3
+  // Check for Keystone Prism: p1 > p2 ≈ p3
   const gap12 = p1 - p2;
   const gap23 = p2 - p3;
 
-  if (gap12 > TRIAD_FUSION_THRESHOLD && gap23 <= DUAL_LENS_THRESHOLD) {
-    return 'anchor_dual_lenses';
+  if (gap12 > TRI_HELIX_THRESHOLD && gap23 <= PRISM_THRESHOLD) {
+    return 'KEYSTONE_PRISM';
   }
 
-  // Default: clear rank order
-  return 'anchor_lens_shadow';
-}
-
-function getTriadDescription(triadClass: TriadClass, primary: string, secondary: string, tertiary: string): string {
-  switch (triadClass) {
-    case 'triad_fusion':
-      return `A balanced triad where ${capitalize(primary)}, ${capitalize(secondary)}, and ${capitalize(tertiary)} all contribute roughly equally. You draw from all three depending on context.`;
-    case 'anchor_dual_lenses':
-      return `${capitalize(primary)} anchors your expression, while ${capitalize(secondary)} and ${capitalize(tertiary)} act as dual lenses, both coloring how your anchor manifests.`;
-    case 'anchor_lens_shadow':
-      return `${capitalize(primary)} leads as anchor, ${capitalize(secondary)} provides the primary lens, and ${capitalize(tertiary)} operates as a background shadow influence.`;
+  // Clear rank order: Keystone Orbit
+  if (gap12 > PRISM_THRESHOLD && gap23 > PRISM_THRESHOLD) {
+    return 'KEYSTONE_ORBIT';
   }
+
+  return 'TRIAD_STACK';
 }
 
-function getTriadLabel(triadClass: TriadClass, primary: string, secondary: string, tertiary: string): string {
-  switch (triadClass) {
-    case 'triad_fusion':
-      return `${capitalize(primary)}–${capitalize(secondary)}–${capitalize(tertiary)} Triad`;
-    case 'anchor_dual_lenses':
-      return `${capitalize(primary)} Anchor, ${capitalize(secondary)}+${capitalize(tertiary)} Dual Lenses`;
-    case 'anchor_lens_shadow':
-      return `${capitalize(primary)} Anchor, ${capitalize(secondary)} Lens, ${capitalize(tertiary)} Shadow`;
+// Legacy triad class mapping
+function trioModeToTriadClass(mode: TrioMode): TriadClass {
+  switch (mode) {
+    case 'TRI_HELIX': return 'triad_fusion';
+    case 'KEYSTONE_PRISM': return 'anchor_dual_lenses';
+    case 'KEYSTONE_ORBIT':
+    case 'TRIAD_STACK': return 'anchor_lens_shadow';
   }
 }
 
+function getTrioModeLabel(mode: TrioMode): string {
+  const labels: Record<TrioMode, string> = {
+    TRI_HELIX: 'Tri-Helix',
+    KEYSTONE_PRISM: 'Keystone Prism',
+    KEYSTONE_ORBIT: 'Keystone Orbit',
+    TRIAD_STACK: 'Triad Stack',
+  };
+  return labels[mode];
+}
+
+function buildTrioRoster(sorted: SortedArchetype[]): TrioRoster {
+  const primary = sorted[0].name;
+  const secondary = sorted[1].name;
+  const tertiary = sorted[2].name;
+  const mode = classifyTrioMode(sorted);
+
+  let label: string;
+  let description: string;
+
+  switch (mode) {
+    case 'TRI_HELIX':
+      label = `Trio: ${capitalize(primary)}–${capitalize(secondary)}–${capitalize(tertiary)} Tri-Helix`;
+      description = `A balanced triad where ${capitalize(primary)}, ${capitalize(secondary)}, and ${capitalize(tertiary)} all contribute roughly equally. You draw from all three depending on context.`;
+      break;
+    case 'KEYSTONE_PRISM':
+      label = `Trio: ${capitalize(primary)} Keystone Prism (Lenses: ${capitalize(secondary)}, ${capitalize(tertiary)})`;
+      description = `${capitalize(primary)} anchors your expression, while ${capitalize(secondary)} and ${capitalize(tertiary)} act as dual lenses, both coloring how your keystone manifests.`;
+      break;
+    case 'KEYSTONE_ORBIT':
+      label = `Trio: ${capitalize(primary)} Keystone Orbit (Lens: ${capitalize(secondary)}; Shadow: ${capitalize(tertiary)})`;
+      description = `${capitalize(primary)} leads as keystone, ${capitalize(secondary)} provides the primary lens, and ${capitalize(tertiary)} operates as a background shadow influence.`;
+      break;
+    case 'TRIAD_STACK':
+      label = `Trio: ${capitalize(primary)}–${capitalize(secondary)}–${capitalize(tertiary)} Stack`;
+      description = `A three-voice structure led by ${capitalize(primary)}, with ${capitalize(secondary)} and ${capitalize(tertiary)} contributing in descending order.`;
+      break;
+  }
+
+  return { mode, primary, secondary, tertiary, label, description };
+}
+
+// Legacy triad roster
 function buildTriadRoster(sorted: SortedArchetype[]): TriadRoster {
   const primary = sorted[0].name;
   const secondary = sorted[1].name;
   const tertiary = sorted[2].name;
-  const triad_class = classifyTriad(sorted);
+  const mode = classifyTrioMode(sorted);
+  const triad_class = trioModeToTriadClass(mode);
+
+  const trio = buildTrioRoster(sorted);
 
   return {
     triad_class,
     primary,
     secondary,
     tertiary,
-    label: getTriadLabel(triad_class, primary, secondary, tertiary),
-    description: getTriadDescription(triad_class, primary, secondary, tertiary),
+    label: trio.label.replace('Trio: ', ''),
+    description: trio.description,
   };
 }
 
-function buildPolyphonicRoster(sorted: SortedArchetype[]): PolyphonicRoster {
-  const CONTRIBUTION_THRESHOLD = 0.12;
+// ─────────────────────────────────────────────────────────────────
+// POLYPHONIC MODE CLASSIFICATION (CHORD / CHORUS)
+// ─────────────────────────────────────────────────────────────────
+
+function classifyPolyphonicMode(sorted: SortedArchetype[], structure: Structure): PolyphonicMode {
+  const activeVoices = sorted.filter(s => s.probability >= STRUCTURE_THRESHOLDS.chord_top4_threshold);
+  const p1 = sorted[0]?.probability ?? 0;
+  const p4 = sorted[3]?.probability ?? 0;
+
+  if (structure === 'CHORD') {
+    if (activeVoices.length === 4) {
+      return 'CHORD_TOP4';
+    }
+    return 'CHORD_TOP_HEAVY';
+  }
+
+  // CHORUS
+  return 'CHORUS_DISTRIBUTED';
+}
+
+function buildChoralRoster(sorted: SortedArchetype[], structure: Structure): ChoralRoster {
+  const mode = classifyPolyphonicMode(sorted, structure);
   const contributing = sorted
-    .filter(s => s.probability >= CONTRIBUTION_THRESHOLD)
+    .filter(s => s.probability >= STRUCTURE_THRESHOLDS.chord_top4_threshold)
+    .map(s => s.name);
+  const anchor = sorted[0].name;
+
+  let label: string;
+  let description: string;
+
+  switch (mode) {
+    case 'CHORD_TOP4':
+      label = `Chord: ${capitalize(anchor)} Chord (Top voices: ${contributing.map(c => capitalize(c)).join(', ')})`;
+      description = `A structured four-voice chord led by ${capitalize(anchor)}. All four voices contribute meaningfully to your expression.`;
+      break;
+    case 'CHORD_TOP_HEAVY':
+      label = `Chord: ${capitalize(anchor)} Top-Heavy (Voices: ${contributing.map(c => capitalize(c)).join(', ')})`;
+      description = `${capitalize(anchor)} leads a top-heavy polyphonic structure where the leading voices are strong but a fourth voice is still present.`;
+      break;
+    case 'CHORUS_DISTRIBUTED':
+      label = `Chorus: Distributed (Top voices: ${contributing.map(c => capitalize(c)).join(', ')})`;
+      description = `Multiple voices contribute with similar weights. No single pair or triad dominates—you draw flexibly from several sources.`;
+      break;
+    case 'CHORUS_CONTEXT_SPLIT':
+      label = `Chorus: Context-Split (Anchors vary by context)`;
+      description = `Your anchor shifts based on context. Different situations activate different primary voices.`;
+      break;
+  }
+
+  return { mode, anchor, contributing, label, description };
+}
+
+// Legacy polyphonic roster
+function buildPolyphonicRoster(sorted: SortedArchetype[]): PolyphonicRoster {
+  const contributing = sorted
+    .filter(s => s.probability >= STRUCTURE_THRESHOLDS.chord_top4_threshold)
     .map(s => s.name);
 
   const names = contributing.map(n => capitalize(n)).join(', ');
@@ -240,8 +452,12 @@ function buildPolyphonicRoster(sorted: SortedArchetype[]): PolyphonicRoster {
   };
 }
 
+// ─────────────────────────────────────────────────────────────────
+// CONFIDENCE CALCULATION
+// ─────────────────────────────────────────────────────────────────
+
 function computeConfidence(
-  shape: ShapeClass,
+  structure: Structure,
   sorted: SortedArchetype[],
   metrics: DerivedMetrics
 ): ConfidenceMetrics {
@@ -254,26 +470,24 @@ function computeConfidence(
   const p3 = sorted[2]?.probability ?? 0;
   const p4 = sorted[3]?.probability ?? 0;
 
-  // Compute distance from nearest threshold
-  switch (shape) {
-    case 'monophonic': {
-      const distFromP1 = p1 - SHAPE_THRESHOLDS.mono_p1;
-      const distFromP2 = SHAPE_THRESHOLDS.mono_p2_max - p2;
+  switch (structure) {
+    case 'SOLO': {
+      const distFromP1 = p1 - STRUCTURE_THRESHOLDS.solo_p1;
+      const distFromP2 = STRUCTURE_THRESHOLDS.solo_p2_max - p2;
       blend_gap = Math.min(distFromP1, distFromP2);
       if (blend_gap < 0.05) {
         shape_conf = 'LOW';
-        notes.push('Near threshold for monophonic classification');
+        notes.push('Near threshold for Solo classification');
       } else if (blend_gap < 0.10) {
         shape_conf = 'MEDIUM';
       }
       break;
     }
-    case 'dyadic': {
-      const distFromS2 = metrics.S2 - SHAPE_THRESHOLDS.dyad_s2;
-      const distFromP3 = SHAPE_THRESHOLDS.dyad_p3_max - p3;
+    case 'DUET': {
+      const distFromS2 = metrics.S2 - STRUCTURE_THRESHOLDS.duet_s2;
+      const distFromP3 = STRUCTURE_THRESHOLDS.duet_p3_max - p3;
       blend_gap = Math.min(distFromS2, distFromP3);
 
-      // Also check proximity to blend class boundaries
       const r2 = metrics.r2;
       const blendDistances = [
         Math.abs(r2 - 0.45),
@@ -285,46 +499,52 @@ function computeConfidence(
       const minBlendDist = Math.min(...blendDistances);
 
       if (minBlendDist < 0.02) {
-        notes.push('Near blend class boundary');
+        notes.push('Near mode boundary');
         if (shape_conf === 'HIGH') shape_conf = 'MEDIUM';
       }
 
       if (blend_gap < 0.05) {
         shape_conf = 'LOW';
-        notes.push('Near threshold for dyadic classification');
+        notes.push('Near threshold for Duet classification');
       } else if (blend_gap < 0.10 && shape_conf === 'HIGH') {
         shape_conf = 'MEDIUM';
       }
       break;
     }
-    case 'triadic': {
-      const distFromS3 = metrics.S3 - SHAPE_THRESHOLDS.triad_s3;
-      const distFromP4 = SHAPE_THRESHOLDS.triad_p4_max - p4;
+    case 'TRIO': {
+      const distFromS3 = metrics.S3 - STRUCTURE_THRESHOLDS.trio_s3;
+      const distFromP4 = STRUCTURE_THRESHOLDS.trio_p4_max - p4;
       blend_gap = Math.min(distFromS3, distFromP4);
 
       if (blend_gap < 0.05) {
         shape_conf = 'LOW';
-        notes.push('Near threshold for triadic classification');
+        notes.push('Near threshold for Trio classification');
       } else if (blend_gap < 0.10) {
         shape_conf = 'MEDIUM';
       }
       break;
     }
-    case 'polyphonic': {
-      blend_gap = p1 - SHAPE_THRESHOLDS.diffuse_p1;
+    case 'CHORD':
+    case 'CHORUS': {
+      blend_gap = p1 - STRUCTURE_THRESHOLDS.mist_p1;
       shape_conf = 'MEDIUM';
       notes.push('Polyphonic profiles have inherently lower classification confidence');
       break;
     }
-    case 'diffuse': {
-      blend_gap = SHAPE_THRESHOLDS.diffuse_p1 - p1;
+    case 'MIST': {
+      blend_gap = STRUCTURE_THRESHOLDS.mist_p1 - p1;
       shape_conf = 'LOW';
-      notes.push('Diffuse profile: no clear archetype dominance');
+      notes.push('Mist profile: no clear voice dominance');
+      break;
+    }
+    case 'FAULTED': {
+      blend_gap = 0;
+      shape_conf = 'LOW';
+      notes.push('Faulted: response quality issues detected');
       break;
     }
   }
 
-  // Check for high entropy
   if (metrics.entropy_n > 0.90) {
     notes.push('Very high entropy suggests dispersed profile');
   }
@@ -332,52 +552,74 @@ function computeConfidence(
   return { shape_conf, blend_gap, notes };
 }
 
-function buildSummaryLabel(shape: ShapeClass, roster: RosterOutput): string {
-  switch (shape) {
-    case 'monophonic':
-      return `${capitalize(roster.sorted_probs[0].name)} Dominant`;
-    case 'dyadic':
-      return roster.dyad!.label;
-    case 'triadic':
-      return roster.triad!.label;
-    case 'polyphonic':
-      return roster.polyphonic!.label;
-    case 'diffuse':
-      return 'Diffuse Profile';
-  }
-}
+// ─────────────────────────────────────────────────────────────────
+// MAIN ROSTER COMPUTATION
+// ─────────────────────────────────────────────────────────────────
 
 export function computeRoster(archetypes: ArchetypeProbabilities): RosterOutput {
   const sorted_probs = sortArchetypes(archetypes);
   const metrics = computeDerivedMetrics(sorted_probs);
-  const shape_class = classifyShape(sorted_probs, metrics);
-  const confidence = computeConfidence(shape_class, sorted_probs, metrics);
+  const structure = classifyStructure(sorted_probs, metrics);
+  const shape_class = structureToShapeClass(structure);
+  const confidence = computeConfidence(structure, sorted_probs, metrics);
 
   const roster: RosterOutput = {
-    version: 'HPMA-RosterSpec-1.0',
+    version: 'HPMA-Vocabulary-1.0',
     sorted_probs,
     metrics,
+    structure,
     shape_class,
     confidence,
-    summary_label: '', // Will be set after building shape-specific rosters
+    summary_label: '',
   };
 
-  // Build shape-specific rosters
-  switch (shape_class) {
-    case 'dyadic':
+  // Build structure-specific rosters
+  switch (structure) {
+    case 'DUET':
+      roster.duet = buildDuetRoster(sorted_probs, metrics);
       roster.dyad = buildDyadRoster(sorted_probs, metrics);
+      roster.summary_label = roster.duet.label;
       break;
-    case 'triadic':
+    case 'TRIO':
+      roster.trio = buildTrioRoster(sorted_probs);
       roster.triad = buildTriadRoster(sorted_probs);
+      roster.summary_label = roster.trio.label;
       break;
-    case 'polyphonic':
+    case 'CHORD':
+    case 'CHORUS':
+      roster.choral = buildChoralRoster(sorted_probs, structure);
       roster.polyphonic = buildPolyphonicRoster(sorted_probs);
+      roster.summary_label = roster.choral.label;
+      break;
+    case 'SOLO':
+      roster.summary_label = `Solo: ${capitalize(sorted_probs[0].name)} Dominant`;
+      break;
+    case 'MIST':
+      roster.summary_label = 'Mist: Unresolved Profile';
+      break;
+    case 'FAULTED':
+      roster.summary_label = 'Faulted: Invalid Response';
       break;
   }
 
-  roster.summary_label = buildSummaryLabel(shape_class, roster);
-
   return roster;
+}
+
+// ─────────────────────────────────────────────────────────────────
+// PUBLIC HELPERS
+// ─────────────────────────────────────────────────────────────────
+
+export function getStructureDescription(structure: Structure): string {
+  const descriptions: Record<Structure, string> = {
+    SOLO: 'A single voice strongly dominates your profile, with minimal influence from others.',
+    DUET: 'Two voices form a clear pair that together define your expression.',
+    TRIO: 'Three voices form a stable triad, each contributing meaningfully.',
+    CHORD: 'Multiple voices contribute in a structured, top-heavy arrangement.',
+    CHORUS: 'Many voices are active without a clear dominant structure.',
+    MIST: 'No single voice stands out strongly—your profile is distributed broadly.',
+    FAULTED: 'Response quality issues prevent reliable classification.',
+  };
+  return descriptions[structure];
 }
 
 export function getShapeClassDescription(shape: ShapeClass): string {
@@ -391,22 +633,32 @@ export function getShapeClassDescription(shape: ShapeClass): string {
   return descriptions[shape];
 }
 
+export function getDuetModeLabelPublic(mode: DuetMode): string {
+  return getDuetModeLabel(mode);
+}
+
 export function getBlendClassLabel(blend: DyadBlendClass): string {
   const labels: Record<DyadBlendClass, string> = {
-    fusion: '50/50 Fusion',
-    tilted_fusion: '60/40 Tilted Fusion',
-    anchor_lens: '75/25 Anchor-Lens',
-    dominant_trace: '85/15 Dominant-Trace',
-    near_pure: '95/5 Near-Pure',
+    fusion: 'Twin-Helix (50/50)',
+    tilted_fusion: 'Leaning Helix (60/40)',
+    anchor_lens: 'Keystone & Lens (75/25)',
+    dominant_trace: 'Signature & Accent (90/10)',
+    near_pure: 'Pureline (95/5)',
   };
   return labels[blend];
 }
 
+export function getTrioModeLabelPublic(mode: TrioMode): string {
+  return getTrioModeLabel(mode);
+}
+
 export function getTriadClassLabel(triad: TriadClass): string {
   const labels: Record<TriadClass, string> = {
-    triad_fusion: 'Balanced Triad',
-    anchor_dual_lenses: 'Anchor + Dual Lenses',
-    anchor_lens_shadow: 'Anchor-Lens-Shadow',
+    triad_fusion: 'Tri-Helix',
+    anchor_dual_lenses: 'Keystone Prism',
+    anchor_lens_shadow: 'Keystone Orbit',
   };
   return labels[triad];
 }
+
+export { getDyadName };

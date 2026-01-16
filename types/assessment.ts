@@ -69,11 +69,33 @@ export interface BlendProfile {
 }
 
 // ═══════════════════════════════════════════════════════════════
-// HPMA ROSTER CLASSIFICATION SPEC v1.0
+// HPMA ROSTER VOCABULARY v1.0
 // ═══════════════════════════════════════════════════════════════
 
+export type ArchetypeName = keyof ArchetypeProbabilities;
+
+// Structure = "how many voices matter?"
+export type Structure =
+  | 'SOLO'     // Monophonic - single dominant voice
+  | 'DUET'     // Dyadic - two voices form a pair
+  | 'TRIO'     // Triadic - three voices form a triad
+  | 'CHORD'    // Polyphonic top-heavy (structured multi-voice)
+  | 'CHORUS'   // Polyphonic distributed (many active voices)
+  | 'MIST'     // Diffuse - no clear voice dominance
+  | 'FAULTED'; // Invalid/low-quality response
+
+// Legacy shape class (for compatibility)
 export type ShapeClass = 'monophonic' | 'dyadic' | 'triadic' | 'polyphonic' | 'diffuse';
 
+// Duet Mode = ratio pattern for two-voice structures
+export type DuetMode =
+  | 'TWIN_HELIX'        // ~50/50 (Fusion)
+  | 'LEANING_HELIX'     // ~60/40 (Tilted Fusion)
+  | 'KEYSTONE_LENS'     // ~75/25 (Anchor-Lens)
+  | 'SIGNATURE_ACCENT'  // ~90/10 (Dominant-Trace)
+  | 'PURELINE';         // ~95/5+ (Near-Pure)
+
+// Legacy blend class (for compatibility)
 export type DyadBlendClass =
   | 'fusion'           // r2 ∈ [0.45, 0.55] - 50/50
   | 'tilted_fusion'    // r2 ∈ (0.55, 0.65] - 60/40
@@ -81,12 +103,43 @@ export type DyadBlendClass =
   | 'dominant_trace'   // r2 ∈ (0.80, 0.92] - 85/15
   | 'near_pure';       // r2 ∈ (0.92, 1.00] - 95/5
 
+// Trio Mode = ratio pattern for three-voice structures
+export type TrioMode =
+  | 'TRI_HELIX'        // ~33/33/33 (Balanced Triad)
+  | 'KEYSTONE_PRISM'   // ~50/25/25 (Anchor + Dual Lenses)
+  | 'KEYSTONE_ORBIT'   // ~60/25/15 (Anchor-Lens-Shadow)
+  | 'TRIAD_STACK';     // Other triads that don't fit cleanly
+
+// Legacy triad class (for compatibility)
 export type TriadClass =
   | 'triad_fusion'           // All 3 within ±8% → "A–B–C Triad"
-  | 'anchor_dual_lenses'     // One anchor > lens1 ≈ lens2 → "A Anchor, B+C Dual Lenses"
-  | 'anchor_lens_shadow';    // Clear rank → "A Anchor, B Lens, C Shadow"
+  | 'anchor_dual_lenses'     // One anchor > lens1 ≈ lens2
+  | 'anchor_lens_shadow';    // Clear rank
 
-export type ArchetypeName = keyof ArchetypeProbabilities;
+// Polyphonic Mode = pattern for multi-voice structures
+export type PolyphonicMode =
+  | 'CHORD_TOP4'       // Top 4 voices meaningful, still structured
+  | 'CHORD_TOP_HEAVY'  // Top 3 strong but p4 too big for Trio
+  | 'CHORUS_DISTRIBUTED'   // 4-6 voices with similar weights
+  | 'CHORUS_CONTEXT_SPLIT'; // Anchor changes by context (future)
+
+// Canonical Dyad Names (15 pairs)
+export type DyadName =
+  | 'Seeker-Sage'           // Explorer + Philosopher
+  | 'Visionary Builder'     // Explorer + Organizer
+  | 'Wayfinder Diplomat'    // Explorer + Connector
+  | 'Sentinel Scout'        // Explorer + Protector
+  | 'Spotlight Pioneer'     // Explorer + Performer
+  | 'Systems Theorist'      // Philosopher + Organizer
+  | 'Bridge Scholar'        // Philosopher + Connector
+  | 'Vigilant Stoic'        // Philosopher + Protector
+  | 'Public Intellectual'   // Philosopher + Performer
+  | 'Community Operator'    // Organizer + Connector
+  | 'Risk Steward'          // Organizer + Protector
+  | 'Showrunner Executive'  // Organizer + Performer
+  | 'Guardian Caretaker'    // Connector + Protector
+  | 'Charismatic Host'      // Connector + Performer
+  | 'Watchful Champion';    // Protector + Performer
 
 export interface SortedArchetype {
   name: ArchetypeName;
@@ -101,25 +154,57 @@ export interface DerivedMetrics {
   entropy_n: number;   // normalized Shannon entropy
 }
 
+// Vocabulary-based roster for Duets
+export interface DuetRoster {
+  mode: DuetMode;
+  identity: DyadName | string;  // Canonical name or fallback "A–B Hybrid"
+  anchor: ArchetypeName;        // The leading voice
+  lens: ArchetypeName;          // The shaping voice (or accent for Signature mode)
+  label: string;                // e.g., "Duet: Seeker-Sage — Twin-Helix"
+  description: string;
+}
+
+// Legacy DyadRoster (for compatibility)
 export interface DyadRoster {
   blend_class: DyadBlendClass;
   anchor: ArchetypeName;
   lens: ArchetypeName;
-  label: string;       // e.g., "Explorer–Connector Anchor-Lens"
+  label: string;
   description: string;
 }
 
+// Vocabulary-based roster for Trios
+export interface TrioRoster {
+  mode: TrioMode;
+  primary: ArchetypeName;       // Keystone/Anchor
+  secondary: ArchetypeName;     // Lens
+  tertiary: ArchetypeName;      // Shadow or third lens
+  label: string;                // e.g., "Trio: Explorer Keystone Orbit (Lens: Philosopher; Shadow: Connector)"
+  description: string;
+}
+
+// Legacy TriadRoster (for compatibility)
 export interface TriadRoster {
   triad_class: TriadClass;
   primary: ArchetypeName;
   secondary: ArchetypeName;
   tertiary: ArchetypeName;
-  label: string;       // e.g., "Explorer–Philosopher–Connector Triad"
+  label: string;
   description: string;
 }
 
+// Vocabulary-based roster for Polyphonic
+export interface ChoralRoster {
+  mode: PolyphonicMode;
+  anchor?: ArchetypeName;       // May exist for Chord
+  contributing: ArchetypeName[]; // All active voices
+  label: string;
+  description: string;
+}
+
+// Legacy PolyphonicRoster (for compatibility)
 export interface PolyphonicRoster {
-  contributing: ArchetypeName[];  // All with p >= 0.12
+  contributing: ArchetypeName[];
   label: string;
   description: string;
 }
@@ -131,15 +216,24 @@ export interface ConfidenceMetrics {
 }
 
 export interface RosterOutput {
-  version: 'HPMA-RosterSpec-1.0';
+  version: 'HPMA-Vocabulary-1.0';
   sorted_probs: SortedArchetype[];
   metrics: DerivedMetrics;
+
+  // New vocabulary-based classification
+  structure: Structure;
+  duet?: DuetRoster;
+  trio?: TrioRoster;
+  choral?: ChoralRoster;
+
+  // Legacy classification (for compatibility)
   shape_class: ShapeClass;
   dyad?: DyadRoster;
   triad?: TriadRoster;
   polyphonic?: PolyphonicRoster;
+
   confidence: ConfidenceMetrics;
-  summary_label: string;  // One-line human-readable summary
+  summary_label: string;  // e.g., "Duet: Seeker-Sage — Twin-Helix"
 }
 
 export interface ValidityFlags {
