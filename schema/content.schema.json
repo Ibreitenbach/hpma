@@ -1,0 +1,354 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hpma.local/schema/content.schema.json",
+  "title": "HPMA Content Schema (v1.x)",
+  "type": "object",
+  "oneOf": [
+    { "$ref": "#/$defs/VocabDoc" },
+    { "$ref": "#/$defs/IdentitiesDoc" },
+    { "$ref": "#/$defs/ModesDoc" },
+    { "$ref": "#/$defs/RulesDoc" },
+    { "$ref": "#/$defs/DomainsDoc" },
+    { "$ref": "#/$defs/EvalsPrimariesDoc" },
+    { "$ref": "#/$defs/EvalsDyadsDoc" }
+  ],
+  "$defs": {
+    "VersionString": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "UpperSnake": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_]*$"
+    },
+
+    "NonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "StringList": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/NonEmptyString" },
+      "minItems": 1
+    },
+
+    "OptionalStringList": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/NonEmptyString" }
+    },
+
+    "BulletBlock": {
+      "type": "object",
+      "properties": {
+        "bullets": { "$ref": "#/$defs/OptionalStringList" },
+        "telltales": { "$ref": "#/$defs/OptionalStringList" },
+        "evidence_hints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "when": { "$ref": "#/$defs/NonEmptyString" },
+              "because": { "$ref": "#/$defs/NonEmptyString" }
+            },
+            "required": ["when", "because"],
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+
+    "CareerBlock": {
+      "type": "object",
+      "properties": {
+        "best_environments": { "$ref": "#/$defs/OptionalStringList" },
+        "role_patterns": { "$ref": "#/$defs/OptionalStringList" },
+        "anti_patterns": { "$ref": "#/$defs/OptionalStringList" },
+        "collaboration": { "$ref": "#/$defs/OptionalStringList" },
+        "notes": { "$ref": "#/$defs/OptionalStringList" }
+      },
+      "additionalProperties": true
+    },
+
+    "MoneyBlock": {
+      "type": "object",
+      "properties": {
+        "style": { "$ref": "#/$defs/OptionalStringList" },
+        "risks": { "$ref": "#/$defs/OptionalStringList" },
+        "guardrails": { "$ref": "#/$defs/OptionalStringList" },
+        "notes": { "$ref": "#/$defs/OptionalStringList" }
+      },
+      "additionalProperties": true
+    },
+
+    "RelationshipsBlock": {
+      "type": "object",
+      "properties": {
+        "offers": { "$ref": "#/$defs/OptionalStringList" },
+        "needs": { "$ref": "#/$defs/OptionalStringList" },
+        "triggers": { "$ref": "#/$defs/OptionalStringList" },
+        "repair": { "$ref": "#/$defs/OptionalStringList" },
+        "friends": { "$ref": "#/$defs/OptionalStringList" }
+      },
+      "additionalProperties": true
+    },
+
+    "ParentingBlock": {
+      "type": "object",
+      "properties": {
+        "strengths": { "$ref": "#/$defs/OptionalStringList" },
+        "traps": { "$ref": "#/$defs/OptionalStringList" },
+        "do_more": { "$ref": "#/$defs/OptionalStringList" },
+        "do_less": { "$ref": "#/$defs/OptionalStringList" }
+      },
+      "additionalProperties": true
+    },
+
+    "HobbiesBlock": {
+      "type": "object",
+      "properties": {
+        "recharge": { "$ref": "#/$defs/OptionalStringList" },
+        "play": { "$ref": "#/$defs/OptionalStringList" },
+        "community": { "$ref": "#/$defs/OptionalStringList" }
+      },
+      "additionalProperties": true
+    },
+
+    "SelfImproveBlock": {
+      "type": "object",
+      "properties": {
+        "leverage": { "$ref": "#/$defs/OptionalStringList" },
+        "keystone_constraints": { "$ref": "#/$defs/OptionalStringList" },
+        "if_then_rules": { "$ref": "#/$defs/OptionalStringList" }
+      },
+      "additionalProperties": true
+    },
+
+    "CompatibilityOverlay": {
+      "type": "object",
+      "properties": {
+        "complimentary": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "match": { "$ref": "#/$defs/NonEmptyString" },
+              "why": { "$ref": "#/$defs/NonEmptyString" }
+            },
+            "required": ["match", "why"],
+            "additionalProperties": true
+          }
+        },
+        "friction": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "match": { "$ref": "#/$defs/NonEmptyString" },
+              "why": { "$ref": "#/$defs/NonEmptyString" }
+            },
+            "required": ["match", "why"],
+            "additionalProperties": true
+          }
+        },
+        "conflict": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "match": { "$ref": "#/$defs/NonEmptyString" },
+              "why": { "$ref": "#/$defs/NonEmptyString" }
+            },
+            "required": ["match", "why"],
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+
+    "DomainsBlock": {
+      "type": "object",
+      "properties": {
+        "strengths": { "$ref": "#/$defs/BulletBlock" },
+        "watchouts": { "$ref": "#/$defs/BulletBlock" },
+        "career": { "$ref": "#/$defs/CareerBlock" },
+        "money": { "$ref": "#/$defs/MoneyBlock" },
+        "relationships": { "$ref": "#/$defs/RelationshipsBlock" },
+        "parenting": { "$ref": "#/$defs/ParentingBlock" },
+        "hobbies": { "$ref": "#/$defs/HobbiesBlock" },
+        "self_improvement": { "$ref": "#/$defs/SelfImproveBlock" },
+        "compatibility": { "$ref": "#/$defs/CompatibilityOverlay" }
+      },
+      "additionalProperties": true
+    },
+
+    "VocabDoc": {
+      "type": "object",
+      "properties": {
+        "version": { "$ref": "#/$defs/VersionString" },
+        "enums": {
+          "type": "object",
+          "properties": {
+            "structure": { "type": "array", "items": { "$ref": "#/$defs/UpperSnake" }, "minItems": 1 },
+            "mode": { "type": "object", "additionalProperties": true }
+          },
+          "required": ["structure"],
+          "additionalProperties": true
+        },
+        "roles": { "type": "object", "additionalProperties": { "$ref": "#/$defs/NonEmptyString" } },
+        "print_rules": { "type": "object", "additionalProperties": true }
+      },
+      "required": ["version", "enums"],
+      "additionalProperties": true
+    },
+
+    "IdentitiesDoc": {
+      "type": "object",
+      "properties": {
+        "version": { "$ref": "#/$defs/VersionString" },
+        "primaries": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": { "name": { "$ref": "#/$defs/NonEmptyString" } },
+            "required": ["name"],
+            "additionalProperties": true
+          }
+        },
+        "dyads": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "pair": { "type": "array", "items": { "$ref": "#/$defs/UpperSnake" }, "minItems": 2, "maxItems": 2 },
+              "name": { "$ref": "#/$defs/NonEmptyString" }
+            },
+            "required": ["pair", "name"],
+            "additionalProperties": true
+          }
+        }
+      },
+      "required": ["version", "primaries"],
+      "additionalProperties": true
+    },
+
+    "ModesDoc": {
+      "type": "object",
+      "properties": {
+        "version": { "$ref": "#/$defs/VersionString" },
+        "duet_modes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "name": { "$ref": "#/$defs/NonEmptyString" },
+              "adds": { "type": "object", "additionalProperties": { "$ref": "#/$defs/OptionalStringList" } }
+            },
+            "required": ["name"],
+            "additionalProperties": true
+          }
+        },
+        "trio_modes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "name": { "$ref": "#/$defs/NonEmptyString" },
+              "adds": { "type": "object", "additionalProperties": { "$ref": "#/$defs/OptionalStringList" } }
+            },
+            "required": ["name"],
+            "additionalProperties": true
+          }
+        }
+      },
+      "required": ["version"],
+      "additionalProperties": true
+    },
+
+    "RulesDoc": {
+      "type": "object",
+      "properties": {
+        "version": { "$ref": "#/$defs/VersionString" },
+        "thresholds": { "type": "object", "additionalProperties": { "type": "number" } },
+        "rules": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "$ref": "#/$defs/NonEmptyString" },
+              "when": { "$ref": "#/$defs/NonEmptyString" },
+              "add_flags": { "type": "array", "items": { "$ref": "#/$defs/UpperSnake" } },
+              "add_snippets": { "type": "object", "additionalProperties": true },
+              "apply_mode_adds": { "type": "boolean" }
+            },
+            "required": ["id", "when"],
+            "additionalProperties": true
+          }
+        }
+      },
+      "required": ["version", "rules"],
+      "additionalProperties": true
+    },
+
+    "DomainsDoc": {
+      "type": "object",
+      "properties": {
+        "version": { "$ref": "#/$defs/VersionString" },
+        "compatibility": {
+          "type": "object",
+          "properties": {
+            "general_rules": { "type": "object", "additionalProperties": { "$ref": "#/$defs/OptionalStringList" } },
+            "identity_overlays": {
+              "type": "object",
+              "additionalProperties": { "$ref": "#/$defs/CompatibilityOverlay" }
+            }
+          },
+          "required": ["general_rules"],
+          "additionalProperties": true
+        }
+      },
+      "required": ["version"],
+      "additionalProperties": true
+    },
+
+    "EvalsPrimariesDoc": {
+      "type": "object",
+      "properties": {
+        "version": { "$ref": "#/$defs/VersionString" }
+      },
+      "required": ["version"],
+      "additionalProperties": {
+        "anyOf": [
+          { "$ref": "#/$defs/EvalIdentityBlock" }
+        ]
+      }
+    },
+
+    "EvalsDyadsDoc": {
+      "type": "object",
+      "properties": {
+        "version": { "$ref": "#/$defs/VersionString" }
+      },
+      "required": ["version"],
+      "additionalProperties": {
+        "anyOf": [
+          { "$ref": "#/$defs/EvalIdentityBlock" }
+        ]
+      }
+    },
+
+    "EvalIdentityBlock": {
+      "type": "object",
+      "properties": {
+        "tagline": { "$ref": "#/$defs/NonEmptyString" },
+        "domains": { "$ref": "#/$defs/DomainsBlock" }
+      },
+      "required": ["domains"],
+      "additionalProperties": true
+    }
+  }
+}

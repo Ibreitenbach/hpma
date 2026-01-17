@@ -1,0 +1,423 @@
+version: HPMA-Rules-1.0
+
+# Global thresholds for score interpretation
+thresholds:
+  very_high: 7.0
+  high: 6.0
+  moderate_high: 5.5
+  moderate: 4.5
+  moderate_low: 3.5
+  low: 3.0
+  very_low: 2.0
+
+# Rules are evaluated in order; all matching rules apply
+rules:
+  # ─────────────────────────────────────────────────────────────────
+  # TRAIT-BASED FLAGS
+  # ─────────────────────────────────────────────────────────────────
+
+  - id: "high_openness"
+    when: "scores.hexaco.O >= thresholds.high"
+    add_flags: ["HIGH_OPENNESS"]
+    add_snippets:
+      strengths.notes:
+        - "Your high Openness amplifies exploration and creative synthesis."
+      career.notes:
+        - "Seek roles where novelty and learning are core to the work."
+
+  - id: "low_openness"
+    when: "scores.hexaco.O <= thresholds.low"
+    add_flags: ["LOW_OPENNESS"]
+    add_snippets:
+      strengths.notes:
+        - "You prefer proven approaches over constant experimentation."
+      career.notes:
+        - "Environments with clear procedures may feel more comfortable."
+
+  - id: "high_conscientiousness"
+    when: "scores.hexaco.C >= thresholds.high"
+    add_flags: ["HIGH_C"]
+    add_snippets:
+      strengths.notes:
+        - "Strong conscientiousness provides natural execution discipline."
+      self_improvement.notes:
+        - "Your follow-through is a strength; avoid over-planning."
+
+  - id: "low_conscientiousness"
+    when: "scores.hexaco.C <= thresholds.low"
+    add_flags: ["LOW_C"]
+    add_snippets:
+      watchouts.notes:
+        - "Execution may require external scaffolding (deadlines, accountability partners)."
+      self_improvement.notes:
+        - "Use time-boxing and commitment devices to bridge the idea-action gap."
+
+  - id: "high_extraversion"
+    when: "scores.hexaco.X >= thresholds.high"
+    add_flags: ["HIGH_X"]
+    add_snippets:
+      relationships.notes:
+        - "Social energy is abundant; remember others may need more quiet time."
+      career.notes:
+        - "Collaborative, high-interaction roles likely energize you."
+
+  - id: "low_extraversion"
+    when: "scores.hexaco.X <= thresholds.low"
+    add_flags: ["LOW_X", "INTROVERT"]
+    add_snippets:
+      relationships.notes:
+        - "Social time costs energy; schedule recharge time explicitly."
+      career.notes:
+        - "Deep-work environments with limited meetings may suit you better."
+
+  - id: "high_agreeableness"
+    when: "scores.hexaco.A >= thresholds.high"
+    add_flags: ["HIGH_A"]
+    add_snippets:
+      relationships.notes:
+        - "Natural warmth makes connection easy; watch for over-accommodation."
+      watchouts.notes:
+        - "Your agreeableness is a strength, but boundaries matter too."
+
+  - id: "low_agreeableness"
+    when: "scores.hexaco.A <= thresholds.low"
+    add_flags: ["LOW_A"]
+    add_snippets:
+      relationships.notes:
+        - "Directness can be efficient but may occasionally feel abrasive to others."
+      career.notes:
+        - "Roles requiring tough decisions without consensus may fit well."
+
+  - id: "high_emotionality"
+    when: "scores.hexaco.E >= thresholds.high"
+    add_flags: ["HIGH_E"]
+    add_snippets:
+      relationships.notes:
+        - "High emotional sensitivity means deeper connections but also more vulnerability."
+      self_improvement.notes:
+        - "Emotional regulation practices may be especially valuable."
+
+  - id: "low_emotionality"
+    when: "scores.hexaco.E <= thresholds.low"
+    add_flags: ["LOW_E"]
+    add_snippets:
+      strengths.notes:
+        - "Emotional stability under pressure is a resilience asset."
+      relationships.notes:
+        - "Others may need more emotional acknowledgment than you naturally offer."
+
+  - id: "high_honesty_humility"
+    when: "scores.hexaco.H >= thresholds.high"
+    add_flags: ["HIGH_H"]
+    add_snippets:
+      strengths.notes:
+        - "Integrity and authenticity are core values you naturally embody."
+      career.notes:
+        - "Environments with ethical alignment matter more to you than to most."
+
+  - id: "low_honesty_humility"
+    when: "scores.hexaco.H <= thresholds.low"
+    add_flags: ["LOW_H"]
+    add_snippets:
+      watchouts.notes:
+        - "Status and self-interest may drive decisions more than you consciously recognize."
+
+  # ─────────────────────────────────────────────────────────────────
+  # MOTIVE-BASED FLAGS
+  # ─────────────────────────────────────────────────────────────────
+
+  - id: "high_autonomy"
+    when: "scores.motives.autonomy >= thresholds.high"
+    add_flags: ["HIGH_AUTONOMY"]
+    add_snippets:
+      career.notes:
+        - "Autonomy is non-negotiable; hierarchical control will feel corrosive."
+      money.notes:
+        - "Financial decisions often optimize for freedom over accumulation."
+
+  - id: "low_autonomy"
+    when: "scores.motives.autonomy <= thresholds.low"
+    add_flags: ["LOW_AUTONOMY"]
+    add_snippets:
+      career.notes:
+        - "Structure and guidance can feel supportive rather than constraining."
+
+  - id: "high_security"
+    when: "scores.motives.security >= thresholds.high"
+    add_flags: ["HIGH_SECURITY"]
+    add_snippets:
+      money.notes:
+        - "Financial safety margins matter; don't let others rush risky decisions."
+      career.notes:
+        - "Stability in employment matters more than average."
+
+  - id: "low_security"
+    when: "scores.motives.security <= thresholds.very_low"
+    add_flags: ["LOW_SECURITY"]
+    add_snippets:
+      money.notes:
+        - "Risk tolerance is higher than average; others may see this as reckless."
+      self_improvement.notes:
+        - "Some contingency planning may be wise even if it doesn't feel urgent."
+
+  - id: "high_belonging"
+    when: "scores.motives.belonging >= thresholds.high"
+    add_flags: ["HIGH_BELONGING"]
+    add_snippets:
+      relationships.notes:
+        - "Belonging is a core need; isolation can feel existentially threatening."
+      career.notes:
+        - "Team cohesion and workplace community matter deeply."
+
+  - id: "low_belonging"
+    when: "scores.motives.belonging <= thresholds.low"
+    add_flags: ["LOW_BELONGING"]
+    add_snippets:
+      relationships.notes:
+        - "Independence is natural; watch for isolation creep."
+      career.notes:
+        - "Remote work and solo contributions may fit well."
+
+  - id: "high_status"
+    when: "scores.motives.status >= thresholds.high"
+    add_flags: ["HIGH_STATUS"]
+    add_snippets:
+      career.notes:
+        - "Recognition and advancement are meaningful motivators."
+      money.notes:
+        - "Status symbols may hold genuine value for you."
+
+  - id: "low_status"
+    when: "scores.motives.status <= thresholds.very_low"
+    add_flags: ["LOW_STATUS"]
+    add_snippets:
+      money.notes:
+        - "Status isn't a driver; you may undervalue market rates or titles."
+      career.notes:
+        - "You won't play status games naturally; this can be freeing or career-limiting."
+
+  - id: "high_mastery"
+    when: "scores.motives.mastery >= thresholds.high"
+    add_flags: ["HIGH_MASTERY"]
+    add_snippets:
+      career.notes:
+        - "Skill development and competence are intrinsically rewarding."
+      self_improvement.notes:
+        - "Learning is self-motivating; no external push required."
+
+  - id: "low_mastery"
+    when: "scores.motives.mastery <= thresholds.low"
+    add_flags: ["LOW_MASTERY"]
+    add_snippets:
+      career.notes:
+        - "Skill-building may need external structure or incentives."
+
+  - id: "high_purpose"
+    when: "scores.motives.purpose >= thresholds.high"
+    add_flags: ["HIGH_PURPOSE"]
+    add_snippets:
+      career.notes:
+        - "Meaning-alignment with work is non-negotiable; paycheck alone won't sustain you."
+      self_improvement.notes:
+        - "Connect all efforts to 'why' or motivation fades."
+
+  - id: "low_purpose"
+    when: "scores.motives.purpose <= thresholds.low"
+    add_flags: ["LOW_PURPOSE"]
+    add_snippets:
+      self_improvement.notes:
+        - "Existential questions may feel irrelevant; practical outcomes matter more."
+
+  # ─────────────────────────────────────────────────────────────────
+  # AFFECT-BASED FLAGS
+  # ─────────────────────────────────────────────────────────────────
+
+  - id: "high_seeking"
+    when: "scores.affects.seeking >= thresholds.high"
+    add_flags: ["HIGH_SEEKING"]
+    add_snippets:
+      strengths.notes:
+        - "Curiosity and exploration drive are natural fuel."
+      watchouts.notes:
+        - "Novelty-seeking can scatter attention; channel it deliberately."
+
+  - id: "high_fear"
+    when: "scores.affects.fear >= thresholds.high"
+    add_flags: ["HIGH_FEAR"]
+    add_snippets:
+      watchouts.notes:
+        - "Anxiety may block action; distinguish real threats from false alarms."
+      self_improvement.notes:
+        - "Exposure practices and anxiety management skills may be high-leverage."
+
+  - id: "low_fear"
+    when: "scores.affects.fear <= thresholds.low"
+    add_flags: ["LOW_FEAR"]
+    add_snippets:
+      strengths.notes:
+        - "Low anxiety enables calm under pressure."
+      watchouts.notes:
+        - "May underestimate genuine risks; seek external risk-checking."
+
+  - id: "high_care"
+    when: "scores.affects.care >= thresholds.high"
+    add_flags: ["HIGH_CARE"]
+    add_snippets:
+      relationships.notes:
+        - "Nurturing instincts are strong; be mindful of over-giving."
+      parenting.notes:
+        - "Natural caretaking strengths; watch for burnout from over-extending."
+
+  - id: "high_play"
+    when: "scores.affects.play >= thresholds.high"
+    add_flags: ["HIGH_PLAY"]
+    add_snippets:
+      hobbies.notes:
+        - "Playfulness is a wellspring; protect leisure from productivity guilt."
+      relationships.notes:
+        - "Lightheartedness can ease tension and build connection."
+
+  - id: "low_play"
+    when: "scores.affects.play <= thresholds.low"
+    add_flags: ["LOW_PLAY"]
+    add_snippets:
+      hobbies.notes:
+        - "Schedule unstructured play deliberately; it won't happen naturally."
+      self_improvement.notes:
+        - "Seriousness is useful but unrelenting; find outlets for levity."
+
+  # ─────────────────────────────────────────────────────────────────
+  # COMPOUND PATTERNS
+  # ─────────────────────────────────────────────────────────────────
+
+  - id: "explorer_amplified"
+    when: "scores.hexaco.O >= thresholds.high AND scores.affects.seeking >= thresholds.high AND scores.motives.autonomy >= thresholds.moderate_high"
+    add_flags: ["EXPLORER_AMPLIFIED"]
+    add_snippets:
+      strengths.notes:
+        - "Triple-reinforced exploration drive: Openness + Seeking + Autonomy form a powerful discovery engine."
+
+  - id: "philosopher_amplified"
+    when: "scores.motives.purpose >= thresholds.high AND scores.hexaco.O >= thresholds.moderate_high"
+    add_flags: ["PHILOSOPHER_AMPLIFIED"]
+    add_snippets:
+      strengths.notes:
+        - "Meaning-seeking is a core identity marker, not just a preference."
+
+  - id: "protector_amplified"
+    when: "scores.motives.security >= thresholds.high AND scores.affects.fear >= thresholds.moderate_high"
+    add_flags: ["PROTECTOR_AMPLIFIED"]
+    add_snippets:
+      strengths.notes:
+        - "Vigilance is finely tuned; you catch threats others miss."
+      watchouts.notes:
+        - "Hypervigilance can tip into chronic worry; calibrate threat perception."
+
+  - id: "connector_amplified"
+    when: "scores.hexaco.A >= thresholds.high AND scores.motives.belonging >= thresholds.high AND scores.affects.care >= thresholds.moderate_high"
+    add_flags: ["CONNECTOR_AMPLIFIED"]
+    add_snippets:
+      strengths.notes:
+        - "Relational attunement is a superpower; you build bridges instinctively."
+
+  - id: "performer_amplified"
+    when: "scores.hexaco.X >= thresholds.high AND scores.motives.status >= thresholds.moderate_high AND scores.affects.play >= thresholds.moderate_high"
+    add_flags: ["PERFORMER_AMPLIFIED"]
+    add_snippets:
+      strengths.notes:
+        - "Charisma and presence come naturally; others gravitate toward your energy."
+
+  - id: "organizer_amplified"
+    when: "scores.hexaco.C >= thresholds.high AND scores.motives.mastery >= thresholds.high"
+    add_flags: ["ORGANIZER_AMPLIFIED"]
+    add_snippets:
+      strengths.notes:
+        - "Structure and excellence drive reinforce each other; you build things that last."
+
+  # ─────────────────────────────────────────────────────────────────
+  # TENSION PATTERNS (conflicting drivers)
+  # ─────────────────────────────────────────────────────────────────
+
+  - id: "autonomy_belonging_tension"
+    when: "scores.motives.autonomy >= thresholds.high AND scores.motives.belonging >= thresholds.high"
+    add_flags: ["AUTONOMY_BELONGING_TENSION"]
+    add_snippets:
+      relationships.notes:
+        - "You want both independence and deep connection—this is a legitimate tension, not a flaw."
+      self_improvement.notes:
+        - "Negotiate explicit 'together time' and 'alone time' rather than hoping both happen naturally."
+
+  - id: "security_seeking_tension"
+    when: "scores.motives.security >= thresholds.high AND scores.affects.seeking >= thresholds.high"
+    add_flags: ["SECURITY_SEEKING_TENSION"]
+    add_snippets:
+      watchouts.notes:
+        - "You want both safety and novelty—these can coexist through 'safe exploration' patterns."
+      self_improvement.notes:
+        - "Bounded experiments (time-boxed, reversible) let you explore without triggering security alarms."
+
+  - id: "mastery_play_tension"
+    when: "scores.motives.mastery >= thresholds.high AND scores.affects.play >= thresholds.high"
+    add_flags: ["MASTERY_PLAY_TENSION"]
+    add_snippets:
+      hobbies.notes:
+        - "You may turn hobbies into skill-building projects—sometimes let play just be play."
+
+  # ─────────────────────────────────────────────────────────────────
+  # VALIDITY-TRIGGERED NOTES
+  # ─────────────────────────────────────────────────────────────────
+
+  - id: "validity_idealized"
+    when: "validity.idealized == true"
+    add_flags: ["VALIDITY_WARNING"]
+    add_snippets:
+      validity.notes:
+        - "Some responses appear idealized. Results may reflect aspirations more than current patterns."
+
+  - id: "validity_random"
+    when: "validity.random == true"
+    add_flags: ["VALIDITY_WARNING"]
+    add_snippets:
+      validity.notes:
+        - "Response patterns appear inconsistent. Consider retaking with focused attention."
+
+  - id: "validity_inattentive"
+    when: "validity.inattentive == true"
+    add_flags: ["VALIDITY_WARNING"]
+    add_snippets:
+      validity.notes:
+        - "Attention check items were missed. Results may be less reliable."
+
+  # ─────────────────────────────────────────────────────────────────
+  # MODE-SPECIFIC ADDITIONS
+  # ─────────────────────────────────────────────────────────────────
+
+  - id: "twin_helix_integration"
+    when: "roster.duet.mode == 'TWIN_HELIX'"
+    add_flags: ["BALANCED_DUET"]
+    add_snippets:
+      self_improvement.notes:
+        - "With two balanced voices, explicitly name which is leading before major decisions."
+
+  - id: "pureline_shadow_work"
+    when: "roster.duet.mode == 'PURELINE' OR roster.duet.mode == 'SIGNATURE_ACCENT'"
+    add_flags: ["DOMINANT_VOICE"]
+    add_snippets:
+      self_improvement.notes:
+        - "Your secondary voice is quiet but not absent; check in with it monthly."
+
+  - id: "tri_helix_complexity"
+    when: "roster.trio.mode == 'TRI_HELIX'"
+    add_flags: ["BALANCED_TRIO"]
+    add_snippets:
+      self_improvement.notes:
+        - "Three balanced voices means more internal negotiation; use context-based switching rules."
+
+  - id: "chorus_integration"
+    when: "roster.structure == 'CHORUS' OR roster.structure == 'CHORD'"
+    add_flags: ["POLYPHONIC"]
+    add_snippets:
+      self_improvement.notes:
+        - "Your profile is genuinely complex; embrace it rather than forcing simplicity."
+      watchouts.notes:
+        - "Decision paralysis may come from too many internal voices; narrow to 2-3 for any given choice."

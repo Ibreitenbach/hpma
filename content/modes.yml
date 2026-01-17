@@ -1,0 +1,208 @@
+version: HPMA-Modes-1.0
+
+duet_modes:
+  TWIN_HELIX:
+    name: "Twin-Helix"
+    ratio: "~50/50"
+    description: "Both voices are equally active. Context determines which leads at any moment."
+    adds:
+      strengths:
+        - "Context-switching: you can run two engines without collapsing into one."
+        - "Versatility: different situations call different voices forward naturally."
+        - "Integration potential: when both align, you have unusual depth."
+      watchouts:
+        - "Oscillation risk: swapping engines mid-decision can look like indecision."
+        - "Identity confusion: 'which one am I really?' is a common internal question."
+        - "Energy drain: maintaining two active modes requires more cognitive bandwidth."
+      prescriptions:
+        - "Use explicit switching rules (e.g., 'morning is anchor time, evening is lens time')."
+        - "Name which voice is driving before big decisions."
+        - "Create rituals that honor both voices regularly."
+
+  LEANING_HELIX:
+    name: "Leaning Helix"
+    ratio: "~60/40"
+    description: "One voice leads slightly, but the other remains a strong co-driver."
+    adds:
+      strengths:
+        - "Slight clarity: one voice has a gentle home-court advantage."
+        - "Dynamic balance: still flexible enough to switch without strain."
+        - "Reduced identity friction compared to pure Twin-Helix."
+      watchouts:
+        - "Drift risk: the 60% voice may slowly absorb the 40% over time."
+        - "Lens suppression: the secondary voice may feel perpetually 'almost' expressed."
+      prescriptions:
+        - "Consciously activate the secondary voice weekly."
+        - "Notice when you're defaulting and ask if the other voice would serve better."
+
+  KEYSTONE_LENS:
+    name: "Keystone & Lens"
+    ratio: "~75/25"
+    description: "One clear keystone engine, with a consistent lens coloring expression."
+    adds:
+      strengths:
+        - "Clarity: you know what drives you; decisions are faster."
+        - "Consistency: others can predict your patterns."
+        - "Lens depth: the 25% adds nuance without confusion."
+      watchouts:
+        - "Lens neglect: the secondary voice may atrophy if never given airtime."
+        - "Rigidity: over-reliance on the keystone can blind you to when the lens should lead."
+      prescriptions:
+        - "Schedule lens-expression time weekly or biweekly."
+        - "Ask: 'What would my lens voice say here?' before finalizing decisions."
+        - "Create one lens-honoring ritual that's non-negotiable."
+
+  SIGNATURE_ACCENT:
+    name: "Signature & Accent"
+    ratio: "~90/10"
+    description: "Strong single-voice signature with a subtle accent coloring."
+    adds:
+      strengths:
+        - "Strong identity: you know exactly who you are."
+        - "Efficiency: decisions align with one clear value system."
+        - "Accent subtlety: the 10% adds texture without complication."
+      watchouts:
+        - "Accent dismissal: the minor voice may be treated as 'not really me.'"
+        - "Blind spots: the accent often holds wisdom the signature ignores."
+      prescriptions:
+        - "Monthly check-in: 'What is my accent voice trying to tell me?'"
+        - "Notice when the accent voice surfaces—it's usually important."
+
+  PURELINE:
+    name: "Pureline"
+    ratio: "~95/5+"
+    description: "Near-pure single-voice orientation with trace coloring."
+    adds:
+      strengths:
+        - "Extreme clarity: your identity is unmistakable."
+        - "Focus: no internal negotiation required."
+        - "Depth: you've likely developed this voice thoroughly."
+      watchouts:
+        - "Shadow blindness: the 5% often holds suppressed material."
+        - "Inflexibility: situations requiring the trace voice may feel alien."
+        - "Over-identification: you may resist acknowledging the trace exists."
+      prescriptions:
+        - "Acknowledge the trace voice exists, even if it rarely leads."
+        - "When stuck, ask: 'What would my 5% suggest?'"
+
+trio_modes:
+  TRI_HELIX:
+    name: "Tri-Helix"
+    ratio: "~33/33/33"
+    description: "Three voices in balanced rotation. Context-dependent expression."
+    adds:
+      strengths:
+        - "Maximum versatility: you have three distinct modes available."
+        - "Resilience: if one voice is blocked, two others remain."
+        - "Depth: triple-perspective on every situation."
+      watchouts:
+        - "Decision paralysis: three voices can debate indefinitely."
+        - "Identity diffusion: 'Who am I really?' intensifies."
+        - "Energy cost: maintaining three active modes is demanding."
+      prescriptions:
+        - "Assign situations to voices: 'Work = Voice A, Home = Voice B, Creative = Voice C.'"
+        - "Use time-boxing: let each voice have dedicated expression windows."
+
+  KEYSTONE_PRISM:
+    name: "Keystone Prism"
+    ratio: "~50/25/25"
+    description: "One keystone anchor with two equal lenses refracting it."
+    adds:
+      strengths:
+        - "Anchored flexibility: clear center with dual coloring."
+        - "Rich expression: two lenses create prismatic depth."
+        - "Stability: the keystone provides consistent ground."
+      watchouts:
+        - "Lens competition: the two secondary voices may conflict."
+        - "Keystone over-reliance: the lenses may feel like decorations."
+      prescriptions:
+        - "Notice which lens is active; name it before proceeding."
+        - "Create separate rituals for each lens voice."
+
+  KEYSTONE_ORBIT:
+    name: "Keystone Orbit"
+    ratio: "~60/25/15"
+    description: "Clear hierarchy: keystone leads, lens shapes, shadow observes."
+    adds:
+      strengths:
+        - "Clear command structure: keystone decides, lens advises, shadow watches."
+        - "Shadow wisdom: the 15% often holds unconventional insights."
+        - "Efficiency: less internal debate than balanced triads."
+      watchouts:
+        - "Shadow suppression: the 15% may be ignored until it erupts."
+        - "Hierarchy rigidity: sometimes the shadow should lead."
+      prescriptions:
+        - "Check in with the shadow voice monthly."
+        - "In crisis, deliberately ask: 'What does my shadow see?'"
+
+  TRIAD_STACK:
+    name: "Triad Stack"
+    ratio: "variable"
+    description: "Three active voices without a clean geometric pattern."
+    adds:
+      strengths:
+        - "Unique configuration: your blend doesn't fit neat boxes."
+        - "Adaptability: no preset hierarchy to follow."
+      watchouts:
+        - "Unpredictability: harder to explain your patterns to others."
+        - "Integration challenge: finding coherence requires more work."
+      prescriptions:
+        - "Map your specific ratios and name your stack."
+        - "Create personal rules for which voice leads when."
+
+polyphonic_modes:
+  CHORD_TOP4:
+    name: "Chord (Top-4)"
+    description: "Four meaningful voices in structured harmony."
+    adds:
+      strengths:
+        - "Rich harmony: four-part chord creates complex expression."
+        - "Flexibility: many configurations available."
+      watchouts:
+        - "Complexity: harder to maintain coherent identity."
+        - "Decision overhead: four voices voting takes time."
+      prescriptions:
+        - "Identify your 'first among equals' for tie-breaking."
+        - "Simplify when overwhelmed: pick two voices for the current context."
+
+  CHORD_TOP_HEAVY:
+    name: "Chord (Top-Heavy)"
+    description: "Strong top three with a meaningful fourth presence."
+    adds:
+      strengths:
+        - "Near-triad clarity with extra depth."
+        - "Fourth voice provides backup perspective."
+      watchouts:
+        - "Fourth voice neglect: may be treated as noise."
+      prescriptions:
+        - "Check what the fourth voice adds before dismissing it."
+
+  CHORUS_DISTRIBUTED:
+    name: "Chorus (Distributed)"
+    description: "Many voices active with similar weights."
+    adds:
+      strengths:
+        - "Ultimate flexibility: you can be many things."
+        - "Empathy: you understand many perspectives from inside."
+      watchouts:
+        - "Identity fog: 'What do I actually want?' is chronically unclear."
+        - "Decision paralysis: no clear tiebreaker."
+        - "Energy diffusion: maintaining many modes is exhausting."
+      prescriptions:
+        - "Create external structures to impose clarity."
+        - "For big decisions, artificially narrow to top 2-3 voices."
+        - "Embrace being a 'chorus person' rather than fighting it."
+
+  CHORUS_CONTEXT_SPLIT:
+    name: "Chorus (Context-Split)"
+    description: "Different anchors emerge in different contexts."
+    adds:
+      strengths:
+        - "Contextual mastery: you become what each situation needs."
+        - "Compartmentalization: clear mode switches."
+      watchouts:
+        - "Fragmentation: contexts may feel like different people."
+        - "Transition strain: switching modes takes energy."
+      prescriptions:
+        - "Map your context-voice associations explicitly."
+        - "Create transition rituals between contexts."

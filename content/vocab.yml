@@ -1,0 +1,67 @@
+version: HPMA-Vocab-1.0
+
+enums:
+  structure:
+    - SOLO
+    - DUET
+    - TRIO
+    - CHORD
+    - CHORUS
+    - MIST
+    - FAULTED
+
+  duet_mode:
+    - TWIN_HELIX
+    - LEANING_HELIX
+    - KEYSTONE_LENS
+    - SIGNATURE_ACCENT
+    - PURELINE
+
+  trio_mode:
+    - TRI_HELIX
+    - KEYSTONE_PRISM
+    - KEYSTONE_ORBIT
+    - TRIAD_STACK
+
+  polyphonic_mode:
+    - CHORD_TOP4
+    - CHORD_TOP_HEAVY
+    - CHORUS_DISTRIBUTED
+    - CHORUS_CONTEXT_SPLIT
+
+roles:
+  anchor: "Anchor"
+  lens: "Lens"
+  accent: "Accent"
+  shadow: "Shadow"
+  keystone: "Keystone"
+  voice: "Voice"
+
+structure_labels:
+  SOLO: "Solo"
+  DUET: "Duet"
+  TRIO: "Trio"
+  CHORD: "Chord"
+  CHORUS: "Chorus"
+  MIST: "Mist"
+  FAULTED: "Faulted"
+
+mode_labels:
+  TWIN_HELIX: "Twin-Helix"
+  LEANING_HELIX: "Leaning Helix"
+  KEYSTONE_LENS: "Keystone & Lens"
+  SIGNATURE_ACCENT: "Signature & Accent"
+  PURELINE: "Pureline"
+  TRI_HELIX: "Tri-Helix"
+  KEYSTONE_PRISM: "Keystone Prism"
+  KEYSTONE_ORBIT: "Keystone Orbit"
+  TRIAD_STACK: "Triad Stack"
+  CHORD_TOP4: "Chord (Top-4)"
+  CHORD_TOP_HEAVY: "Chord (Top-Heavy)"
+  CHORUS_DISTRIBUTED: "Chorus (Distributed)"
+  CHORUS_CONTEXT_SPLIT: "Chorus (Context-Split)"
+
+print_rules:
+  minimal_label: "{structure}: {identity} — {mode}"
+  full_label: "{structure}: {identity} — {mode} | Anchor={anchor} p1={p1}"
+  show_math: true

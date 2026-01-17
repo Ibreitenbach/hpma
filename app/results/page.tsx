@@ -11,6 +11,7 @@ import TraitHelix from '@/components/results/TraitHelix';
 import Hypergraph from '@/components/results/Hypergraph';
 import ArchetypeCard from '@/components/results/ArchetypeCard';
 import ExportButtons from '@/components/results/ExportButtons';
+import FieldGuide from '@/components/results/FieldGuide';
 
 export default function ResultsPage() {
   const router = useRouter();
@@ -197,6 +198,17 @@ export default function ResultsPage() {
             height={500}
           />
         </div>
+
+        {/* Field Guide */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="mb-8"
+        >
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Your Field Guide</h2>
+          <FieldGuide result={result} />
+        </motion.div>
 
         {/* Export buttons */}
         <ExportButtons result={result} />

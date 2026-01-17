@@ -1,0 +1,345 @@
+version: HPMA-Evals-Dyads-1.0
+
+SEEKER_SAGE:
+  tagline: "Discovery plus meaning. Curiosity with a compass."
+
+  domains:
+    strengths:
+      bullets:
+        - "Synthesis: connects disparate ideas into new frameworks."
+        - "Truth-seeking: prefers coherence and evidence over vibes and tradition."
+        - "Exploration drive: energized by possibility, learning, and uncharted territory."
+        - "Depth: willing to go further than most to understand something fully."
+        - "Value-driven: pursues meaning, not just novelty for its own sake."
+      evidence_hints:
+        - when: "traits.O >= 6.0 and affect.seeking >= 6.0"
+          because: "High Openness + high Seeking supports exploration/synthesis capacity."
+        - when: "motives.purpose >= 6.0"
+          because: "High Purpose drive ensures exploration serves meaning, not distraction."
+
+    watchouts:
+      bullets:
+        - "Infinite runway: more theories than shipping cycles."
+        - "Overthinking: decisions delayed by the desire for 'the clean model.'"
+        - "Abstraction bias: may intellectualize emotions rather than feeling them."
+        - "Perfectionism: the search for the 'right' answer can block good-enough action."
+        - "Isolation risk: deep work preferences can reduce connection time."
+      telltales:
+        - "You keep refining the plan after the plan is already sufficient."
+        - "You explain your feelings rather than expressing them."
+        - "You've researched a decision extensively but still haven't acted."
+
+    career:
+      best_environments:
+        - "Autonomy + deep work time + intellectual challenge."
+        - "Problem spaces where 'unknown unknowns' are normal."
+        - "Organizations that value thinking and meaning, not just output metrics."
+        - "Roles with exploration phases built into the job."
+      role_patterns:
+        - "Research → prototype → narrative → repeat."
+        - "Strategy + invention roles (not pure maintenance or operations)."
+        - "Teaching, writing, advising, consulting, R&D."
+      anti_patterns:
+        - "Status games and constant performance metrics."
+        - "Highly bureaucratic environments with rigid processes."
+        - "Roles requiring constant social performance without depth."
+        - "Pure execution work with no creative or strategic latitude."
+      collaboration:
+        - "Pairs well with builders who like finishing what you start."
+        - "Works well with connectors who can translate your ideas for broader audiences."
+        - "May frustrate pure doers who want action without theory."
+
+    money:
+      style:
+        - "Spends on learning/tools/experiments more than status symbols."
+        - "Values time and freedom over luxury goods."
+        - "May accumulate resources as 'optionality' rather than spending."
+      risks:
+        - "Tool/course accumulation without shipping."
+        - "Delayed financial action while 'researching the best approach.'"
+        - "May undervalue market rates because status isn't a driver."
+      guardrails:
+        - "Ship-to-spend rule: new learning spend unlocks after deliverables ship."
+        - "Set financial review dates to prevent indefinite research phases."
+        - "Automate savings/investing to bypass analysis paralysis."
+
+    relationships:
+      offers:
+        - "Depth, curiosity, meaningful conversation."
+        - "Loyal partnership once committed."
+        - "Intellectual companionship and growth orientation."
+        - "Values-driven consistency."
+      needs:
+        - "Freedom + intellectual intimacy + shared purpose."
+        - "Space for solitude and deep work."
+        - "A partner who respects your inner world."
+      triggers:
+        - "Control, shallow status games, dismissal of values."
+        - "Being rushed to decide without time to think."
+        - "Pressure to perform socially when you need to recharge."
+      repair:
+        - "Name the value conflict explicitly, then pick a concrete behavior change."
+        - "Don't over-explain; sometimes presence is the repair."
+        - "Acknowledge when you've intellectualized instead of connected."
+
+    parenting:
+      strengths:
+        - "Models curiosity and principled thinking."
+        - "Creates learning-rich environments."
+        - "Takes children's questions seriously."
+        - "Teaches frameworks for understanding the world."
+      traps:
+        - "Over-explaining when the child needs presence first."
+        - "Turning every moment into a teaching opportunity."
+        - "Expecting adult-level reasoning from children."
+      do_more:
+        - "Short rituals and consistency scaffolds."
+        - "Physical play and non-verbal connection."
+        - "Being present without agenda."
+      do_less:
+        - "Turning every moment into a philosophy seminar."
+        - "Analyzing the child's behavior instead of just being with them."
+
+    hobbies:
+      recharge:
+        - "Reading, building, tinkering, long walks with big questions."
+        - "Solitary activities that allow the mind to wander."
+        - "Nature, especially novel environments."
+      play:
+        - "Skill games, puzzles, creative tools, exploration trips."
+        - "Learning new domains for fun."
+        - "Building things (physical or digital)."
+      warning_signs:
+        - "Hobbies becoming another 'project' with metrics."
+        - "Guilt about unproductive leisure."
+
+    self_improvement:
+      leverage:
+        - "Timebox exploration; define 'done' early and commit to it."
+        - "Use external scaffolds that don't feel like cages."
+        - "Ship before it's perfect; iterate publicly."
+      keystone_constraints:
+        - "One active 'big exploration' at a time."
+        - "Finish before starting the next thing."
+      if_then_rules:
+        - "If I'm still researching after 3 sessions, then I must prototype the smallest test."
+        - "If I've explained my plan to 2 people, then I must act this week."
+        - "If I notice myself over-theorizing, then I stop and do one concrete thing."
+      growth_edges:
+        - "Practice shipping imperfect work."
+        - "Develop comfort with ambiguity in relationships."
+        - "Build embodied practices (movement, sensation) to balance intellectual ones."
+
+    compatibility:
+      complimentary:
+        - match: "VISIONARY_BUILDER"
+          why: "Builder energy helps ideas ship; shared exploration base."
+        - match: "BRIDGE_SCHOLAR"
+          why: "Depth + warmth; shared meaning orientation."
+        - match: "SYSTEMS_THEORIST"
+          why: "Both value coherent models; can co-create frameworks."
+      friction:
+        - match: "WATCHFUL_CHAMPION"
+          why: "Control vs freedom + tone mismatch; values may conflict."
+        - match: "SHOWRUNNER_EXECUTIVE"
+          why: "May feel too metrics-driven or performative."
+      conflict:
+        - match: "High-Status Performer profiles"
+          why: "Meaning-first vs applause-first value war; fundamentally different currencies."
+      general_notes:
+        - "You need intellectual respect; partners who dismiss your ideas will feel corrosive."
+        - "High belonging partners may want more togetherness than you naturally offer."
+        - "You may need to explicitly schedule connection time."
+
+VISIONARY_BUILDER:
+  tagline: "Ideas that ship. Exploration meets execution."
+
+  domains:
+    strengths:
+      bullets:
+        - "Idea-to-execution bridge: can both envision and build."
+        - "Practical creativity: innovations that actually work."
+        - "Progress-oriented: energized by seeing ideas become real."
+        - "Adaptive planning: explores options then commits to action."
+
+    watchouts:
+      bullets:
+        - "Scope creep: keeps adding features before shipping."
+        - "Torn between exploring more vs finishing current work."
+        - "May abandon projects for shinier ideas."
+
+    career:
+      best_environments:
+        - "Startups, R&D labs, product development roles."
+        - "Environments that reward both innovation and execution."
+      role_patterns:
+        - "Product manager, founder, inventor, entrepreneur."
+      anti_patterns:
+        - "Pure research with no shipping expectation."
+        - "Pure operations with no innovation latitude."
+
+    money:
+      style:
+        - "Invests in tools and capabilities."
+        - "May bootstrap ventures rather than pure consumption."
+
+    relationships:
+      offers:
+        - "Growth partnership, shared projects."
+      needs:
+        - "Space to work on ideas + appreciation for outputs."
+
+    self_improvement:
+      leverage:
+        - "Commit to shipping timelines before exploring."
+        - "Use explore-exploit cycles explicitly."
+
+# Additional dyads follow the same structure...
+# (Abbreviated for space - full content would include all 15 dyads)
+
+BRIDGE_SCHOLAR:
+  tagline: "Depth plus warmth. Ideas as bridges."
+
+  domains:
+    strengths:
+      bullets:
+        - "Translates complex ideas into relatable terms."
+        - "Builds intellectual communities."
+        - "Mentors and teaches naturally."
+        - "Combines rigor with emotional intelligence."
+
+    watchouts:
+      bullets:
+        - "May over-prioritize harmony over truth."
+        - "Difficulty with conflict or critique."
+        - "Can lose self in others' needs."
+
+    career:
+      best_environments:
+        - "Teaching, coaching, facilitation, therapy."
+        - "Research with collaborative elements."
+      role_patterns:
+        - "Professor, counselor, community builder."
+
+    relationships:
+      offers:
+        - "Deep understanding, patient listening, wisdom."
+      needs:
+        - "Intellectual stimulation + emotional closeness."
+
+SYSTEMS_THEORIST:
+  tagline: "Models that work. Theory meets practice."
+
+  domains:
+    strengths:
+      bullets:
+        - "Builds coherent systems from complexity."
+        - "Long-term strategic thinking."
+        - "Values efficiency and elegance."
+        - "Can explain 'why' behind processes."
+
+    watchouts:
+      bullets:
+        - "May over-optimize for elegance vs real-world messiness."
+        - "Can be rigid about 'the right way.'"
+        - "May dismiss emotional factors as noise."
+
+    career:
+      best_environments:
+        - "Strategy consulting, systems architecture, policy."
+        - "Roles requiring both analysis and implementation."
+
+    relationships:
+      offers:
+        - "Stability, clear thinking, long-term planning."
+      needs:
+        - "Respect for intellect + space for deep work."
+
+# Placeholder entries for remaining dyads (to be expanded)
+WAYFINDER_DIPLOMAT:
+  tagline: "New paths, new friends. Adventure as connection."
+  domains:
+    strengths:
+      bullets:
+        - "Makes friends anywhere."
+        - "Opens doors through genuine curiosity about people."
+
+SENTINEL_SCOUT:
+  tagline: "Careful curiosity. Exploration with eyes open."
+  domains:
+    strengths:
+      bullets:
+        - "Risk-aware exploration."
+        - "Preparation meets adventure."
+
+SPOTLIGHT_PIONEER:
+  tagline: "First on stage, first on the trail. Bold and visible."
+  domains:
+    strengths:
+      bullets:
+        - "Charismatic innovation."
+        - "Makes new things exciting for others."
+
+VIGILANT_STOIC:
+  tagline: "Prepared wisdom. Meaning under pressure."
+  domains:
+    strengths:
+      bullets:
+        - "Calm in crisis."
+        - "Values-driven resilience."
+
+PUBLIC_INTELLECTUAL:
+  tagline: "Ideas on stage. Thought leadership."
+  domains:
+    strengths:
+      bullets:
+        - "Communicates complex ideas compellingly."
+        - "Builds audiences around meaning."
+
+COMMUNITY_OPERATOR:
+  tagline: "Systems for people. Structure that serves."
+  domains:
+    strengths:
+      bullets:
+        - "Builds organizations that care."
+        - "Process + warmth combined."
+
+RISK_STEWARD:
+  tagline: "Managed uncertainty. Plans with backup plans."
+  domains:
+    strengths:
+      bullets:
+        - "Excellent contingency planning."
+        - "Brings order to chaos without killing flexibility."
+
+SHOWRUNNER_EXECUTIVE:
+  tagline: "Productions that deliver. Leadership with flair."
+  domains:
+    strengths:
+      bullets:
+        - "Gets things done with style."
+        - "Motivates teams toward visible results."
+
+GUARDIAN_CARETAKER:
+  tagline: "Safety through belonging. Protection as love."
+  domains:
+    strengths:
+      bullets:
+        - "Creates emotionally safe spaces."
+        - "Nurturing + protective instincts."
+
+CHARISMATIC_HOST:
+  tagline: "Everyone belongs. Energy that includes."
+  domains:
+    strengths:
+      bullets:
+        - "Makes everyone feel welcome."
+        - "High social energy + genuine care."
+
+WATCHFUL_CHAMPION:
+  tagline: "Visible strength. Protection with presence."
+  domains:
+    strengths:
+      bullets:
+        - "Commands attention while keeping watch."
+        - "Protective leadership."

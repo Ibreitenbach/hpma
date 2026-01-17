@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hpma.local/schema/report.schema.json",
+  "title": "HPMA Report Runtime Schema (v1.x)",
+  "type": "object",
+  "required": ["version", "roster", "scores", "validity"],
+  "properties": {
+    "version": { "type": "string", "minLength": 1 },
+
+    "subject": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "completed_at": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": true
+    },
+
+    "roster": {
+      "type": "object",
+      "required": ["structure", "mode", "identity", "anchor", "top", "derived"],
+      "properties": {
+        "structure": {
+          "type": "string",
+          "enum": ["SOLO", "DUET", "TRIO", "CHORD", "CHORUS", "MIST", "FAULTED"]
+        },
+        "mode": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        },
+        "identity": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        },
+        "anchor": { "$ref": "#/$defs/TypedProb" },
+        "lens": { "$ref": "#/$defs/TypedProb" },
+        "accent": { "$ref": "#/$defs/TypedProb" },
+        "shadow": { "$ref": "#/$defs/TypedProb" },
+
+        "top": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/TypedProb" }
+        },
+
+        "derived": {
+          "type": "object",
+          "required": ["S2", "gap12"],
+          "properties": {
+            "S2": { "type": "number", "minimum": 0, "maximum": 1 },
+            "S3": { "type": "number", "minimum": 0, "maximum": 1 },
+            "r2": { "type": "number", "minimum": 0, "maximum": 1 },
+            "r3": { "type": "number", "minimum": 0, "maximum": 1 },
+            "gap12": { "type": "number", "minimum": 0, "maximum": 1 },
+            "entropy_n": { "type": "number", "minimum": 0, "maximum": 1 }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+
+    "scores": {
+      "type": "object",
+      "required": ["traits", "motives", "affect"],
+      "properties": {
+        "traits": {
+          "type": "object",
+          "required": ["H", "E", "X", "A", "C", "O"],
+          "properties": {
+            "H": { "type": "number" },
+            "E": { "type": "number" },
+            "X": { "type": "number" },
+            "A": { "type": "number" },
+            "C": { "type": "number" },
+            "O": { "type": "number" }
+          },
+          "additionalProperties": true
+        },
+        "motives": {
+          "type": "object",
+          "required": ["security", "belonging", "status", "mastery", "autonomy", "purpose"],
+          "properties": {
+            "security": { "type": "number" },
+            "belonging": { "type": "number" },
+            "status": { "type": "number" },
+            "mastery": { "type": "number" },
+            "autonomy": { "type": "number" },
+            "purpose": { "type": "number" }
+          },
+          "additionalProperties": true
+        },
+        "affect": {
+          "type": "object",
+          "required": ["seeking", "fear", "anger", "care", "grief", "play", "desire"],
+          "properties": {
+            "seeking": { "type": "number" },
+            "fear": { "type": "number" },
+            "anger": { "type": "number" },
+            "care": { "type": "number" },
+            "grief": { "type": "number" },
+            "play": { "type": "number" },
+            "desire": { "type": "number" }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+
+    "validity": {
+      "type": "object",
+      "required": ["idealized", "random", "inattentive"],
+      "properties": {
+        "idealized": { "type": "string" },
+        "random": { "type": "string" },
+        "inattentive": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+
+    "context": {
+      "type": "object",
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "by_context": { "type": "object", "additionalProperties": true }
+      },
+      "additionalProperties": true
+    },
+
+    "flags": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" }
+    },
+
+    "selected_blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "id"],
+        "properties": {
+          "source": { "type": "string" },
+          "id": { "type": "string" },
+          "because": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+
+    "rendered": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "markdown": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  },
+
+  "$defs": {
+    "TypedProb": {
+      "type": "object",
+      "required": ["type", "p"],
+      "properties": {
+        "type": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" },
+        "p": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": true
+    }
+  },
+
+  "additionalProperties": true
+}

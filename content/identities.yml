@@ -1,0 +1,117 @@
+version: HPMA-Identities-1.0
+
+primaries:
+  EXPLORER:
+    name: "Explorer"
+    tagline: "Curiosity in motion. Seeks novel terrain."
+    core_drive: "Autonomy + discovery"
+    icon: "🧭"
+
+  PHILOSOPHER:
+    name: "Philosopher"
+    tagline: "Meaning over noise. Depth over breadth."
+    core_drive: "Purpose + coherence"
+    icon: "💭"
+
+  ORGANIZER:
+    name: "Organizer"
+    tagline: "Systems that work. Progress you can measure."
+    core_drive: "Mastery + structure"
+    icon: "📐"
+
+  CONNECTOR:
+    name: "Connector"
+    tagline: "Bridges over walls. Belonging over isolation."
+    core_drive: "Belonging + care"
+    icon: "🤝"
+
+  PROTECTOR:
+    name: "Protector"
+    tagline: "Safety first. Vigilance as love."
+    core_drive: "Security + stability"
+    icon: "🛡️"
+
+  PERFORMER:
+    name: "Performer"
+    tagline: "Energy in the room. Play meets presence."
+    core_drive: "Status + expression"
+    icon: "🎭"
+
+dyads:
+  SEEKER_SAGE:
+    pair: [EXPLORER, PHILOSOPHER]
+    name: "Seeker-Sage"
+    tagline: "Discovery plus meaning. Curiosity with a compass."
+
+  VISIONARY_BUILDER:
+    pair: [EXPLORER, ORGANIZER]
+    name: "Visionary Builder"
+    tagline: "Ideas that ship. Exploration meets execution."
+
+  WAYFINDER_DIPLOMAT:
+    pair: [EXPLORER, CONNECTOR]
+    name: "Wayfinder Diplomat"
+    tagline: "New paths, new friends. Adventure as connection."
+
+  SENTINEL_SCOUT:
+    pair: [EXPLORER, PROTECTOR]
+    name: "Sentinel Scout"
+    tagline: "Careful curiosity. Exploration with eyes open."
+
+  SPOTLIGHT_PIONEER:
+    pair: [EXPLORER, PERFORMER]
+    name: "Spotlight Pioneer"
+    tagline: "First on stage, first on the trail. Bold and visible."
+
+  SYSTEMS_THEORIST:
+    pair: [PHILOSOPHER, ORGANIZER]
+    name: "Systems Theorist"
+    tagline: "Models that work. Theory meets practice."
+
+  BRIDGE_SCHOLAR:
+    pair: [PHILOSOPHER, CONNECTOR]
+    name: "Bridge Scholar"
+    tagline: "Depth plus warmth. Ideas as bridges."
+
+  VIGILANT_STOIC:
+    pair: [PHILOSOPHER, PROTECTOR]
+    name: "Vigilant Stoic"
+    tagline: "Prepared wisdom. Meaning under pressure."
+
+  PUBLIC_INTELLECTUAL:
+    pair: [PHILOSOPHER, PERFORMER]
+    name: "Public Intellectual"
+    tagline: "Ideas on stage. Thought leadership."
+
+  COMMUNITY_OPERATOR:
+    pair: [ORGANIZER, CONNECTOR]
+    name: "Community Operator"
+    tagline: "Systems for people. Structure that serves."
+
+  RISK_STEWARD:
+    pair: [ORGANIZER, PROTECTOR]
+    name: "Risk Steward"
+    tagline: "Managed uncertainty. Plans with backup plans."
+
+  SHOWRUNNER_EXECUTIVE:
+    pair: [ORGANIZER, PERFORMER]
+    name: "Showrunner Executive"
+    tagline: "Productions that deliver. Leadership with flair."
+
+  GUARDIAN_CARETAKER:
+    pair: [CONNECTOR, PROTECTOR]
+    name: "Guardian Caretaker"
+    tagline: "Safety through belonging. Protection as love."
+
+  CHARISMATIC_HOST:
+    pair: [CONNECTOR, PERFORMER]
+    name: "Charismatic Host"
+    tagline: "Everyone belongs. Energy that includes."
+
+  WATCHFUL_CHAMPION:
+    pair: [PROTECTOR, PERFORMER]
+    name: "Watchful Champion"
+    tagline: "Visible strength. Protection with presence."
+
+# Fallback rule for unnamed combinations
+fallback_template: "{A}–{B} Hybrid"
