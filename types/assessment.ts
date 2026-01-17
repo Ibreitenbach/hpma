@@ -313,6 +313,107 @@ export interface AssessmentState {
   isComplete: boolean;
 }
 
+// ═══════════════════════════════════════════════════════════════
+// HPMA v1.0 - NEW MODULE TYPES
+// ═══════════════════════════════════════════════════════════════
+
+export type AttachmentStyle = 'SECURE' | 'PREOCCUPIED' | 'DISMISSIVE' | 'FEARFUL';
+
+export interface AttachmentProfile {
+  anxiety: number;      // 1-7 scale
+  avoidance: number;    // 1-7 scale
+  style: AttachmentStyle;
+  confidence: number;   // 0-1, distance from quadrant boundaries
+}
+
+export interface AntagonismProfile {
+  exploitative: number;   // 1-7 scale
+  callous: number;        // 1-7 scale
+  combative: number;      // 1-7 scale
+  image_driven: number;   // 1-7 scale
+  composite: number;      // Average of all 4
+  elevated: boolean;      // composite >= 5.0 threshold
+}
+
+export interface ContextDelta {
+  facet: HEXACOFacet;
+  facetId: string;
+  baseline: number;
+  contextScore: number;
+  delta: number;          // contextScore - baseline
+}
+
+export interface ContextProfile {
+  context: Exclude<ContextType, 'BASELINE'>;
+  deltas: ContextDelta[];
+  topShifts: ContextDelta[];     // Top 3 by |delta|
+  shiftPattern: 'STABLE' | 'MODERATE' | 'VOLATILE';
+}
+
+export interface ContextDependenceResult {
+  contexts: Record<Exclude<ContextType, 'BASELINE'>, ContextProfile>;
+  overallVolatility: number;     // Mean of |delta| across all contexts
+  mostContextDependentFacets: HEXACOFacet[];
+  mostStableFacets: HEXACOFacet[];
+}
+
+export interface FacetProfile {
+  scores: Record<HEXACOFacet, number>;       // Raw 1-7 scale
+  zScores: Record<HEXACOFacet, number>;      // Standardized
+}
+
+// ═══════════════════════════════════════════════════════════════
+// CLASS NAME GENERATOR TYPES
+// ═══════════════════════════════════════════════════════════════
+
+export type EpithetCategory =
+  | 'trait_facet'
+  | 'motive'
+  | 'affect'
+  | 'attachment'
+  | 'antagonism'
+  | 'context';
+
+export interface Epithet {
+  category: EpithetCategory;
+  sourceKey: string;       // e.g., 'O.inquisitiveness', 'motive.autonomy'
+  zScore: number;
+  salience: number;        // categoryWeight * |z|
+  positiveWord: string;    // e.g., 'Cipher-Sighted'
+  negativeWord: string;    // e.g., 'Routine-Bound'
+  direction: 'high' | 'low';
+}
+
+export interface ClassName {
+  short: string;            // Single most salient epithet
+  standard: string;         // 2 epithets
+  full: string;             // 3 epithets
+  epithets: Epithet[];
+  templateUsed: string;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// EXTENDED ASSESSMENT RESULT (V2)
+// ═══════════════════════════════════════════════════════════════
+
+export interface AssessmentResultV2 extends AssessmentResult {
+  version: 'HPMA-2.0';
+
+  // Context-specific responses (keyed by context, then by question ID)
+  contextResponses: Record<Exclude<ContextType, 'BASELINE'>, Record<number, number>>;
+
+  // New module profiles
+  attachment: AttachmentProfile;
+  antagonism: AntagonismProfile;
+  contextDependence: ContextDependenceResult;
+
+  // Facet-level scores (24 facets)
+  facetProfile: FacetProfile;
+
+  // Class name
+  className: ClassName;
+}
+
 export type AssessmentAction =
   | { type: 'SET_RESPONSE'; questionId: number; value: number }
   | { type: 'NEXT_QUESTION' }
