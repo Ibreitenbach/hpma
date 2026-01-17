@@ -1,6 +1,32 @@
 // HPMA - Hybrid Personality Matrix Assessment Types
 
 export type TraitDomain = 'H' | 'E' | 'X' | 'A' | 'C' | 'O';
+
+// ═══════════════════════════════════════════════════════════════
+// HPMA v1.0 - Facet-Level Types
+// ═══════════════════════════════════════════════════════════════
+
+export type HEXACOFacet =
+  | 'sincerity' | 'fairness' | 'greed_avoidance' | 'modesty'           // H
+  | 'fearfulness' | 'anxiety' | 'dependence' | 'sentimentality'        // E
+  | 'social_boldness' | 'sociability' | 'liveliness' | 'self_esteem'   // X
+  | 'forgivingness' | 'gentleness' | 'flexibility' | 'patience'        // A
+  | 'organization' | 'diligence' | 'perfectionism' | 'prudence'        // C
+  | 'aesthetic_appreciation' | 'inquisitiveness' | 'creativity' | 'unconventionality'; // O
+
+export type ContextType = 'BASELINE' | 'WORK' | 'STRESS' | 'INTIMACY' | 'PUBLIC';
+
+export interface QuestionV2 {
+  id: number;                // UI ordering only
+  facetId: string;           // scoring key e.g. "H_SIN_01", "AT_ANX_01"
+  text: string;
+  module: 'hexaco' | 'motive' | 'affect' | 'validity' | 'attachment' | 'antagonism' | 'context';
+  domain: TraitDomain | 'motive' | 'affect' | 'validity' | 'attachment' | 'antagonism';
+  subdomain: string;
+  reversed: boolean;
+  contextSentinel?: boolean; // true for 24 specific HEXACO items
+  context?: ContextType;     // BASELINE | WORK | STRESS | INTIMACY | PUBLIC
+}
 export type MotiveDomain = 'security' | 'belonging' | 'status' | 'mastery' | 'autonomy' | 'purpose';
 export type AffectDomain = 'seeking' | 'fear' | 'anger' | 'care' | 'grief' | 'play' | 'desire';
 
