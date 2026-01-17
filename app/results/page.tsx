@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { AssessmentResult } from '@/types/assessment';
+import { AssessmentResult, AssessmentResultV2 } from '@/types/assessment';
 import { getValidityMessage, hasValidityIssues } from '@/lib/validity';
 import RadarChart from '@/components/results/RadarChart';
 import BarChart from '@/components/results/BarChart';
@@ -12,10 +12,18 @@ import Hypergraph from '@/components/results/Hypergraph';
 import ArchetypeCard from '@/components/results/ArchetypeCard';
 import ExportButtons from '@/components/results/ExportButtons';
 import FieldGuide from '@/components/results/FieldGuide';
+import AttachmentQuadrant from '@/components/results/AttachmentQuadrant';
+import AntagonismBars from '@/components/results/AntagonismBars';
+import ClassNameDisplay from '@/components/results/ClassNameDisplay';
+
+// Type guard to check if result is v2
+function isV2Result(result: AssessmentResult | AssessmentResultV2): result is AssessmentResultV2 {
+  return 'version' in result && result.version === 'HPMA-2.0';
+}
 
 export default function ResultsPage() {
   const router = useRouter();
-  const [result, setResult] = useState<AssessmentResult | null>(null);
+  const [result, setResult] = useState<AssessmentResult | AssessmentResultV2 | null>(null);
 
   useEffect(() => {
     const stored = sessionStorage.getItem('hpma-result');
@@ -58,6 +66,18 @@ export default function ResultsPage() {
             {new Date(result.completedAt).toLocaleDateString()}
           </p>
         </motion.div>
+
+        {/* Class Name (v2 only) */}
+        {isV2Result(result) && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="max-w-2xl mx-auto mb-8"
+          >
+            <ClassNameDisplay className={result.className} />
+          </motion.div>
+        )}
 
         {/* Validity warning */}
         {hasValidityIssues(result.validity) && validityMessage && (
@@ -180,6 +200,22 @@ export default function ResultsPage() {
           </div>
         </div>
 
+        {/* Attachment & Antagonism (v2 only) */}
+        {isV2Result(result) && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.35 }}
+            className="mb-8"
+          >
+            <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">Interpersonal Patterns</h2>
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <AttachmentQuadrant profile={result.attachment} width={380} height={340} />
+              <AntagonismBars profile={result.antagonism} width={380} />
+            </div>
+          </motion.div>
+        )}
+
         {/* Full-width visualizations */}
         <div className="space-y-6 mb-8">
           <TraitHelix
@@ -220,7 +256,7 @@ export default function ResultsPage() {
           transition={{ delay: 1 }}
           className="text-center mt-12 text-sm text-gray-400"
         >
-          <p>HPMA v0.9 — Research prototype. Results are for exploration, not clinical diagnosis.</p>
+          <p>HPMA v{isV2Result(result) ? '2.0' : '0.9'} — Research prototype. Results are for exploration, not clinical diagnosis.</p>
           <p className="mt-1">All data processed locally. Nothing sent to any server.</p>
         </motion.footer>
       </div>

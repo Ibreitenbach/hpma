@@ -188,10 +188,10 @@ describe('Class Name Generation', () => {
     const facetProfile = neutralFacetProfile();
     facetProfile.zScores.inquisitiveness = 2.0;
     facetProfile.zScores.diligence = 1.5;
-    facetProfile.zScores.autonomy = 1.2;
+    facetProfile.zScores.creativity = 1.2;
 
-    // Need high autonomy in motives too
-    const motives = { ...neutralMotives(), autonomy: 5.8 };
+    // Motives stay neutral for this test
+    const motives = neutralMotives();
 
     const epithets = computeEpithets({
       facetProfile,

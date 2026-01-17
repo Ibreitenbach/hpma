@@ -421,3 +421,285 @@ rules:
         - "Your profile is genuinely complex; embrace it rather than forcing simplicity."
       watchouts.notes:
         - "Decision paralysis may come from too many internal voices; narrow to 2-3 for any given choice."
+
+  # ─────────────────────────────────────────────────────────────────
+  # DOMAIN: FINANCE
+  # ─────────────────────────────────────────────────────────────────
+
+  - id: "uncalibrated_risk"
+    when: "scores.affects.fear <= thresholds.low AND scores.motives.security <= thresholds.low"
+    add_flags: ["UNCALIBRATED_RISK"]
+    add_snippets:
+      money.risks:
+        - "May not maintain adequate emergency fund or insurance coverage."
+      money.guardrails:
+        - "Automate minimum savings before discretionary spending."
+        - "Have a trusted advisor review major financial decisions."
+
+  - id: "over_caution_finance"
+    when: "scores.affects.fear >= thresholds.high AND scores.motives.security >= thresholds.high"
+    add_flags: ["OVER_CAUTION"]
+    add_snippets:
+      money.risks:
+        - "May miss growth opportunities due to excessive risk aversion."
+      money.guardrails:
+        - "Define 'enough' security to create permission for calculated risks."
+        - "Separate worry from probability; not all fears are signals."
+
+  - id: "status_spending_risk"
+    when: "scores.motives.status >= thresholds.high AND scores.hexaco.C <= thresholds.moderate"
+    add_flags: ["STATUS_SPENDING"]
+    add_snippets:
+      money.risks:
+        - "Status-driven spending without discipline can erode financial foundation."
+      money.guardrails:
+        - "Budget for status purchases; make them intentional, not reactive."
+
+  - id: "generous_to_fault"
+    when: "scores.hexaco.A >= thresholds.high AND scores.affects.care >= thresholds.high"
+    add_flags: ["OVER_GENEROUS"]
+    add_snippets:
+      money.risks:
+        - "Difficulty saying no to financial requests from others."
+      money.guardrails:
+        - "Set giving budget to enable healthy boundaries."
+        - "Distinguish emergency help from chronic financial rescue."
+
+  - id: "autonomy_wealth_optimization"
+    when: "scores.motives.autonomy >= thresholds.high AND scores.motives.security >= thresholds.moderate_high"
+    add_flags: ["FREEDOM_FOCUSED_FINANCE"]
+    add_snippets:
+      money.style:
+        - "Optimize for freedom over accumulation; F-U money > status symbols."
+      money.guardrails:
+        - "Calculate your 'freedom number' and track progress toward it."
+
+  # ─────────────────────────────────────────────────────────────────
+  # DOMAIN: RELATIONSHIPS
+  # ─────────────────────────────────────────────────────────────────
+
+  - id: "care_polyphonic_overextension"
+    when: "scores.affects.care >= thresholds.high AND scores.motives.belonging >= thresholds.high AND (roster.structure == 'CHORUS' OR roster.structure == 'CHORD')"
+    add_flags: ["CARE_OVEREXTENSION"]
+    add_snippets:
+      relationships.notes:
+        - "In polyphonic profiles, care-giving can become over-extension across multiple relational fronts."
+      relationships.repair:
+        - "Audit where emotional labor goes; reallocate or release some responsibilities."
+
+  - id: "low_e_high_x_emotional_blindspot"
+    when: "scores.hexaco.E <= thresholds.low AND scores.hexaco.X >= thresholds.high"
+    add_flags: ["EMOTIONAL_BLINDSPOT"]
+    add_snippets:
+      relationships.notes:
+        - "Social confidence combined with emotional steadiness can miss others' distress signals."
+      relationships.repair:
+        - "Explicitly ask how partner is feeling; don't assume absence of complaint means satisfaction."
+
+  - id: "autonomy_belonging_negotiation"
+    when: "scores.motives.autonomy >= thresholds.high AND scores.motives.belonging >= thresholds.high"
+    add_flags: ["NEGOTIATED_INTIMACY"]
+    add_snippets:
+      relationships.notes:
+        - "Your need for both independence and connection requires explicit negotiation."
+      relationships.repair:
+        - "Calendar both 'together time' and 'solo time' rather than hoping both happen."
+
+  - id: "high_h_relationship_filter"
+    when: "scores.hexaco.H >= thresholds.high"
+    add_flags: ["HIGH_INTEGRITY_FILTER"]
+    add_snippets:
+      relationships.needs:
+        - "Partner must meet high integrity standards; you can't respect what you don't trust."
+      relationships.triggers:
+        - "Dishonesty or manipulation, even minor, erodes trust disproportionately."
+
+  - id: "conflict_avoidant_connector"
+    when: "scores.hexaco.A >= thresholds.high AND scores.affects.fear >= thresholds.moderate_high"
+    add_flags: ["CONFLICT_AVOIDANT"]
+    add_snippets:
+      relationships.triggers:
+        - "Conflict avoidance may enable problems to grow; small confrontations prevent large explosions."
+      relationships.repair:
+        - "Practice voicing minor concerns before they become major grievances."
+
+  # ─────────────────────────────────────────────────────────────────
+  # DOMAIN: PARENTING
+  # ─────────────────────────────────────────────────────────────────
+
+  - id: "high_e_anxiety_transmission"
+    when: "scores.hexaco.E >= thresholds.high AND scores.affects.fear >= thresholds.moderate_high"
+    add_flags: ["ANXIETY_TRANSMISSION_RISK"]
+    add_snippets:
+      parenting.traps:
+        - "May transmit anxiety to children through verbal worry or over-protective behavior."
+      parenting.do_less:
+        - "Verbalizing every worry or worst-case scenario around children."
+
+  - id: "high_o_overstimulation"
+    when: "scores.hexaco.O >= thresholds.high AND scores.affects.seeking >= thresholds.high"
+    add_flags: ["OVERSTIMULATION_PARENT"]
+    add_snippets:
+      parenting.traps:
+        - "May overwhelm children with constant new activities and learning opportunities."
+      parenting.do_more:
+        - "Let children experience boredom and self-directed play."
+
+  - id: "high_c_rigid_parenting"
+    when: "scores.hexaco.C >= thresholds.very_high AND scores.hexaco.A <= thresholds.moderate"
+    add_flags: ["RIGID_PARENT_RISK"]
+    add_snippets:
+      parenting.traps:
+        - "High standards + low flexibility can create pressure-cooker environment."
+      parenting.do_more:
+        - "Explicitly praise effort, not just achievement."
+        - "Model making mistakes and recovering gracefully."
+
+  - id: "performer_living_through_kids"
+    when: "scores.motives.status >= thresholds.high AND scores.affects.play >= thresholds.high"
+    add_flags: ["VICARIOUS_PERFORMER"]
+    add_snippets:
+      parenting.traps:
+        - "May live through children's performances and social success."
+      parenting.do_less:
+        - "Making children's activities about your reflected status."
+
+  - id: "protector_helicopter_risk"
+    when: "scores.motives.security >= thresholds.high AND scores.affects.fear >= thresholds.moderate_high AND scores.affects.care >= thresholds.high"
+    add_flags: ["HELICOPTER_RISK"]
+    add_snippets:
+      parenting.traps:
+        - "Love-driven protection can prevent necessary risk-taking for growth."
+      parenting.do_more:
+        - "Let children experience age-appropriate natural consequences."
+
+  # ─────────────────────────────────────────────────────────────────
+  # DOMAIN: SELF-IMPROVEMENT
+  # ─────────────────────────────────────────────────────────────────
+
+  - id: "rare_o_c_combination"
+    when: "scores.hexaco.O >= thresholds.high AND scores.hexaco.C >= thresholds.high AND validity.idealized == false"
+    add_flags: ["RARE_EXPLORER_ORGANIZER"]
+    add_snippets:
+      self_improvement.leverage:
+        - "You have the rare combination of seeing possibilities (O) and following through (C)—this is a superpower."
+
+  - id: "high_mastery_low_fear"
+    when: "scores.motives.mastery >= thresholds.high AND scores.affects.fear <= thresholds.low"
+    add_flags: ["FEARLESS_LEARNER"]
+    add_snippets:
+      self_improvement.leverage:
+        - "You can tackle hard skills without performance anxiety blocking progress."
+
+  - id: "idea_action_gap"
+    when: "scores.hexaco.O >= thresholds.high AND scores.hexaco.C <= thresholds.low"
+    add_flags: ["IDEA_ACTION_GAP"]
+    add_snippets:
+      self_improvement.keystone_constraints:
+        - "Bridge the idea-action gap with implementation intentions: 'When X, I will Y.'"
+        - "Find an execution partner or accountability structure."
+
+  - id: "analysis_paralysis"
+    when: "scores.motives.purpose >= thresholds.high AND scores.affects.fear >= thresholds.moderate_high AND scores.hexaco.O >= thresholds.moderate_high"
+    add_flags: ["ANALYSIS_PARALYSIS"]
+    add_snippets:
+      self_improvement.if_then_rules:
+        - "If analyzing for more than one hour without action, take the smallest possible step."
+      self_improvement.keystone_constraints:
+        - "Done is better than perfect; perfect never ships."
+
+  - id: "burnout_risk_profile"
+    when: "scores.hexaco.A >= thresholds.high AND scores.affects.care >= thresholds.high AND scores.motives.purpose >= thresholds.high"
+    add_flags: ["BURNOUT_RISK"]
+    add_snippets:
+      self_improvement.keystone_constraints:
+        - "You can't pour from an empty cup; self-care is prerequisite, not reward."
+      self_improvement.if_then_rules:
+        - "If feeling resentful, audit what you're giving vs. receiving."
+
+  - id: "introvert_belonging_balance"
+    when: "scores.hexaco.X <= thresholds.low AND scores.motives.belonging >= thresholds.high"
+    add_flags: ["INTROVERTED_CONNECTOR"]
+    add_snippets:
+      self_improvement.leverage:
+        - "Deep relationships over many acquaintances; quality over quantity in connection."
+      self_improvement.if_then_rules:
+        - "If socially drained, don't cancel—shorten and deepen the interaction instead."
+
+  - id: "solo_structure_integration"
+    when: "roster.structure == 'SOLO'"
+    add_flags: ["SOLO_STRUCTURE"]
+    add_snippets:
+      self_improvement.notes:
+        - "With a dominant single archetype, growth comes from developing complementary skills."
+      compatibility.general_notes:
+        - "Partner with complementary archetypes to round out your natural tendencies."
+
+  # ─────────────────────────────────────────────────────────────────
+  # DOMAIN: HOBBIES
+  # ─────────────────────────────────────────────────────────────────
+
+  - id: "productivity_guilt"
+    when: "scores.hexaco.C >= thresholds.high AND scores.motives.mastery >= thresholds.high AND scores.affects.play <= thresholds.moderate"
+    add_flags: ["PRODUCTIVITY_GUILT"]
+    add_snippets:
+      hobbies.warning_signs:
+        - "Leisure may feel wasteful; remember unstructured time has value."
+      hobbies.play:
+        - "Give yourself permission to engage in activities with no productive outcome."
+
+  - id: "hobby_collector"
+    when: "scores.hexaco.O >= thresholds.high AND scores.affects.seeking >= thresholds.high AND scores.hexaco.C <= thresholds.moderate"
+    add_flags: ["HOBBY_COLLECTOR"]
+    add_snippets:
+      hobbies.warning_signs:
+        - "Starting hobbies is fun; finishing or maintaining them is the challenge."
+      hobbies.recharge:
+        - "Rotate between a curated set rather than constantly adding new interests."
+
+  - id: "social_hobby_needed"
+    when: "scores.hexaco.X <= thresholds.low AND scores.motives.belonging >= thresholds.moderate_high"
+    add_flags: ["NEEDS_SOCIAL_HOBBY"]
+    add_snippets:
+      hobbies.play:
+        - "Build connection through shared activities rather than purely social events."
+
+  # ─────────────────────────────────────────────────────────────────
+  # DOMAIN: CAREER
+  # ─────────────────────────────────────────────────────────────────
+
+  - id: "ethical_alignment_required"
+    when: "scores.hexaco.H >= thresholds.high AND scores.motives.purpose >= thresholds.high"
+    add_flags: ["ETHICAL_REQUIREMENT"]
+    add_snippets:
+      career.best_environments:
+        - "Mission-driven organizations where you can believe in the work."
+      career.anti_patterns:
+        - "Organizations where ethics are compromised for profit."
+
+  - id: "structure_seeker"
+    when: "scores.hexaco.C >= thresholds.high AND scores.motives.security >= thresholds.moderate_high"
+    add_flags: ["STRUCTURE_SEEKER"]
+    add_snippets:
+      career.best_environments:
+        - "Organizations with clear processes, defined roles, and predictable advancement."
+      career.anti_patterns:
+        - "Chaotic startups or rapidly pivoting environments."
+
+  - id: "variety_seeker"
+    when: "scores.hexaco.O >= thresholds.high AND scores.affects.seeking >= thresholds.high AND scores.motives.autonomy >= thresholds.moderate_high"
+    add_flags: ["VARIETY_SEEKER"]
+    add_snippets:
+      career.best_environments:
+        - "Consulting, portfolio careers, or roles with rotating projects and clients."
+      career.anti_patterns:
+        - "Same-task repetition without learning curve."
+
+  - id: "leadership_natural"
+    when: "scores.hexaco.X >= thresholds.high AND scores.motives.status >= thresholds.moderate_high AND scores.hexaco.C >= thresholds.moderate_high"
+    add_flags: ["NATURAL_LEADER"]
+    add_snippets:
+      career.role_patterns:
+        - "Leadership roles where you can set direction and energize teams."
+      career.collaboration:
+        - "Build strong lieutenants who handle detail work you may overlook."

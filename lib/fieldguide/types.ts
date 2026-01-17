@@ -154,6 +154,16 @@ export interface DyadsContent {
   [key: string]: DyadEvaluation | string;
 }
 
+export interface PrimaryEvaluation {
+  tagline: string;
+  domains: DomainBlocks;
+}
+
+export interface PrimariesContent {
+  version: string;
+  [key: string]: PrimaryEvaluation | string;
+}
+
 // ─────────────────────────────────────────────────────────────────
 // Rules Engine Types
 // ─────────────────────────────────────────────────────────────────
@@ -330,5 +340,6 @@ export interface ContentBundle {
   identities: IdentitiesContent;
   modes: ModesContent;
   dyads: DyadsContent;
+  primaries: PrimariesContent;
   rules: RulesContent;
 }

@@ -2,6 +2,7 @@ import { AssessmentResult } from '@/types/assessment';
 import {
   ContentBundle,
   DyadEvaluation,
+  PrimaryEvaluation,
   FieldGuideReport,
   EvaluationContext,
   RuleMatch,
@@ -51,9 +52,24 @@ export function generateFieldGuide(
   const evaluator = new RuleEvaluator(content.rules.thresholds);
   const ruleMatches = evaluator.evaluateAll(content.rules.rules, context);
 
-  // Determine identity key for content lookup
+  // Determine identity key and content based on structure
   const identityKey = getIdentityKey(result);
-  const dyadContent = content.dyads[identityKey] as DyadEvaluation | undefined;
+  let identityContent: DyadEvaluation | PrimaryEvaluation | undefined;
+
+  if (result.roster.structure === 'SOLO') {
+    // For solo structures, look up in primaries
+    identityContent = content.primaries[identityKey.toLowerCase()] as PrimaryEvaluation | undefined;
+  } else if (result.roster.duet) {
+    // For duets, look up in dyads
+    identityContent = content.dyads[identityKey] as DyadEvaluation | undefined;
+  } else {
+    // For trio/chord/chorus, try dyads first, then fall back to primary of anchor
+    identityContent = content.dyads[identityKey] as DyadEvaluation | undefined;
+    if (!identityContent) {
+      const primaryKey = getPrimaryArchetypeKey(result);
+      identityContent = content.primaries[primaryKey.toLowerCase()] as PrimaryEvaluation | undefined;
+    }
+  }
 
   // Get mode modifiers
   const modeModifiers = getModeModifiers(result, content);
@@ -63,7 +79,7 @@ export function generateFieldGuide(
     result,
     context,
     content,
-    dyadContent,
+    identityContent,
     modeModifiers,
     ruleMatches
   );
@@ -84,6 +100,13 @@ function getIdentityKey(result: AssessmentResult): string {
   }
 
   // For non-duet structures, use primary archetype
+  return getPrimaryArchetypeKey(result);
+}
+
+/**
+ * Gets the primary archetype key for content lookup.
+ */
+function getPrimaryArchetypeKey(result: AssessmentResult): string {
   const sorted = Object.entries(result.archetypes)
     .sort((a, b) => b[1] - a[1]);
 
@@ -120,7 +143,7 @@ function buildReport(
   result: AssessmentResult,
   context: EvaluationContext,
   content: ContentBundle,
-  dyadContent: DyadEvaluation | undefined,
+  identityContent: DyadEvaluation | PrimaryEvaluation | undefined,
   modeModifiers: ModeModifiers | undefined,
   ruleMatches: RuleMatch[]
 ): FieldGuideReport {
@@ -133,7 +156,7 @@ function buildReport(
 
   // Get identity info
   const identityName = getIdentityName(result, content);
-  const identityTagline = dyadContent?.tagline || '';
+  const identityTagline = identityContent?.tagline || '';
   const modeName = getModeName(result);
   const modeRatio = modeModifiers?.ratio;
 
@@ -144,7 +167,7 @@ function buildReport(
   const roles = buildRoles(result);
 
   // Merge domains from identity content + mode adds + rule snippets
-  const domains = mergeDomains(dyadContent, modeModifiers, snippets, selectedBlocks);
+  const domains = mergeDomains(identityContent, modeModifiers, snippets, selectedBlocks);
 
   return {
     version: 'HPMA-Report-1.0',
@@ -270,7 +293,7 @@ function buildRoles(result: AssessmentResult): FieldGuideReport['roles'] {
  * Merges domain content from identity + mode + rules.
  */
 function mergeDomains(
-  dyadContent: DyadEvaluation | undefined,
+  identityContent: DyadEvaluation | PrimaryEvaluation | undefined,
   modeModifiers: ModeModifiers | undefined,
   ruleSnippets: Record<string, string[]>,
   selectedBlocks: string[]
@@ -288,8 +311,8 @@ function mergeDomains(
   };
 
   // Layer 1: Identity content
-  if (dyadContent?.domains) {
-    const d = dyadContent.domains;
+  if (identityContent?.domains) {
+    const d = identityContent.domains;
 
     if (d.strengths) {
       domains.strengths.bullets.push(...(d.strengths.bullets || []));

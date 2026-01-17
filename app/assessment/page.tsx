@@ -11,7 +11,9 @@ import { computeFullProfile } from '@/lib/scoring';
 import { computeArchetypeProbabilities, computeBlendProfile } from '@/lib/archetypes';
 import { computeRoster } from '@/lib/roster';
 import { checkValidity } from '@/lib/validity';
-import { AssessmentResult } from '@/types/assessment';
+import { computeAttachment, computeAntagonism, computeFacetProfile } from '@/lib/scoring-v2';
+import { computeClassName } from '@/lib/class-name';
+import { AssessmentResult, AssessmentResultV2 } from '@/types/assessment';
 
 function AssessmentContent() {
   const router = useRouter();
@@ -28,15 +30,28 @@ function AssessmentContent() {
 
   useEffect(() => {
     if (state.isComplete) {
-      // Compute results
+      // Compute core results
       const { hexaco, motives, affects } = computeFullProfile(state.responses);
       const { archetypes, uncertainty } = computeArchetypeProbabilities({ hexaco, motives, affects });
       const blendProfile = computeBlendProfile(archetypes, { hexaco, motives, affects });
       const roster = computeRoster(archetypes);
       const validity = checkValidity(state.responses);
 
-      const result: AssessmentResult = {
+      // Compute v2 module scores
+      const facetProfile = computeFacetProfile(state.responses);
+      const attachment = computeAttachment(state.responses);
+      const antagonism = computeAntagonism(state.responses);
+
+      // Generate class name from epithets
+      const className = computeClassName(
+        { facetProfile, motives, affects, attachment, antagonism },
+        roster
+      );
+
+      const result: AssessmentResultV2 = {
+        version: 'HPMA-2.0',
         responses: state.responses,
+        contextResponses: { WORK: {}, STRESS: {}, INTIMACY: {}, PUBLIC: {} },
         hexaco,
         motives,
         affects,
@@ -45,6 +60,21 @@ function AssessmentContent() {
         blendProfile,
         roster,
         validity,
+        attachment,
+        antagonism,
+        contextDependence: {
+          contexts: {
+            WORK: { context: 'WORK', deltas: [], topShifts: [], shiftPattern: 'STABLE' },
+            STRESS: { context: 'STRESS', deltas: [], topShifts: [], shiftPattern: 'STABLE' },
+            INTIMACY: { context: 'INTIMACY', deltas: [], topShifts: [], shiftPattern: 'STABLE' },
+            PUBLIC: { context: 'PUBLIC', deltas: [], topShifts: [], shiftPattern: 'STABLE' },
+          },
+          overallVolatility: 0,
+          mostContextDependentFacets: [],
+          mostStableFacets: [],
+        },
+        facetProfile,
+        className,
         completedAt: new Date().toISOString(),
         durationMs: Date.now() - state.startTime,
       };

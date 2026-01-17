@@ -11,10 +11,14 @@ SEEKER_SAGE:
         - "Exploration drive: energized by possibility, learning, and uncharted territory."
         - "Depth: willing to go further than most to understand something fully."
         - "Value-driven: pursues meaning, not just novelty for its own sake."
+        - "Original frameworks: creates mental models others adopt."
+      stress_strengths:
+        - "Under pressure, retreats to first principles and rebuilds from foundations."
+        - "Crisis clarifies what actually matters vs what was just interesting."
       evidence_hints:
-        - when: "traits.O >= 6.0 and affect.seeking >= 6.0"
+        - when: "scores.hexaco.O >= 6.0 AND scores.affects.seeking >= 6.0"
           because: "High Openness + high Seeking supports exploration/synthesis capacity."
-        - when: "motives.purpose >= 6.0"
+        - when: "scores.motives.purpose >= 6.0"
           because: "High Purpose drive ensures exploration serves meaning, not distraction."
 
     watchouts:
@@ -28,6 +32,7 @@ SEEKER_SAGE:
         - "You keep refining the plan after the plan is already sufficient."
         - "You explain your feelings rather than expressing them."
         - "You've researched a decision extensively but still haven't acted."
+        - "You start sentences with 'In theory...' when someone needs action."
 
     career:
       best_environments:
@@ -36,9 +41,10 @@ SEEKER_SAGE:
         - "Organizations that value thinking and meaning, not just output metrics."
         - "Roles with exploration phases built into the job."
       role_patterns:
-        - "Research → prototype → narrative → repeat."
+        - "Research -> prototype -> narrative -> repeat."
         - "Strategy + invention roles (not pure maintenance or operations)."
         - "Teaching, writing, advising, consulting, R&D."
+        - "Product vision, systems design, architecture."
       anti_patterns:
         - "Status games and constant performance metrics."
         - "Highly bureaucratic environments with rigid processes."
@@ -161,71 +167,378 @@ VISIONARY_BUILDER:
         - "Practical creativity: innovations that actually work."
         - "Progress-oriented: energized by seeing ideas become real."
         - "Adaptive planning: explores options then commits to action."
+        - "Converts novelty into systems others can use."
+      stress_strengths:
+        - "Deadlines focus the Explorer into shipping mode."
+        - "Crunch time reveals the Organizer's execution engine."
 
     watchouts:
       bullets:
         - "Scope creep: keeps adding features before shipping."
         - "Torn between exploring more vs finishing current work."
         - "May abandon projects for shinier ideas."
+        - "Overcommit: burnout from running two engines."
+      telltales:
+        - "You have multiple 80%-done projects."
+        - "You keep 'one more feature'-ing past deadlines."
 
     career:
       best_environments:
         - "Startups, R&D labs, product development roles."
         - "Environments that reward both innovation and execution."
+        - "Small teams with high autonomy and shipping culture."
       role_patterns:
         - "Product manager, founder, inventor, entrepreneur."
+        - "Creative engineer, technical product lead."
+        - "Innovation lead with operational authority."
       anti_patterns:
         - "Pure research with no shipping expectation."
         - "Pure operations with no innovation latitude."
+        - "Large bureaucracies where ideas die in committees."
+      collaboration:
+        - "Needs a finisher or 'last mile' partner."
+        - "Works well with detail-oriented implementers."
 
     money:
       style:
         - "Invests in tools and capabilities."
         - "May bootstrap ventures rather than pure consumption."
+        - "Values ROI on learning investments."
+      risks:
+        - "Tool accumulation that outpaces use."
+        - "Startup spending without revenue discipline."
+      guardrails:
+        - "Revenue-first rule for side projects."
+        - "Capability cap: finish learning X before buying Y."
 
     relationships:
       offers:
         - "Growth partnership, shared projects."
+        - "Excitement and forward momentum."
+        - "Building a life together, literally."
       needs:
         - "Space to work on ideas + appreciation for outputs."
+        - "Partner who values creation, not just consumption."
+      triggers:
+        - "Feeling that your projects don't matter to partner."
+        - "Being asked to 'just relax' when you're in build mode."
+      repair:
+        - "Show the work: invite partner into the project."
+        - "Schedule non-project time explicitly."
+
+    parenting:
+      strengths:
+        - "Teaches kids to make things."
+        - "Models iterative problem-solving."
+      traps:
+        - "Turning family time into project time."
+        - "Impatience with kids' slower pace."
+      do_more:
+        - "Unstructured play without a goal."
+      do_less:
+        - "Optimizing family activities for 'productivity'."
+
+    hobbies:
+      recharge:
+        - "Building side projects for fun."
+        - "Learning new tools and technologies."
+      play:
+        - "Maker activities, hackathons, prototyping."
+      warning_signs:
+        - "All hobbies become startups."
 
     self_improvement:
       leverage:
         - "Commit to shipping timelines before exploring."
         - "Use explore-exploit cycles explicitly."
+        - "Define MVP before starting."
+      keystone_constraints:
+        - "One major project at a time."
+        - "No new projects until current one ships or is explicitly killed."
+      if_then_rules:
+        - "If I'm excited about a new idea, I write it down and wait 1 week."
+        - "If a project is 80% done, I finish it before starting anything new."
 
-# Additional dyads follow the same structure...
-# (Abbreviated for space - full content would include all 15 dyads)
+    compatibility:
+      complimentary:
+        - match: "SEEKER_SAGE"
+          why: "Shared exploration base; Seeker provides vision, Builder ships it."
+        - match: "COMMUNITY_OPERATOR"
+          why: "Operator handles people systems while you build product."
+        - match: "BRIDGE_SCHOLAR"
+          why: "Scholar humanizes and translates your innovations."
+      friction:
+        - match: "SENTINEL_SCOUT"
+          why: "Scout's caution can slow Builder's momentum."
+      conflict:
+        - match: "RISK_STEWARD"
+          why: "Steward may block innovations for safety reasons."
 
-BRIDGE_SCHOLAR:
-  tagline: "Depth plus warmth. Ideas as bridges."
+WAYFINDER_DIPLOMAT:
+  tagline: "New paths, new friends. Adventure as connection."
 
   domains:
     strengths:
       bullets:
-        - "Translates complex ideas into relatable terms."
-        - "Builds intellectual communities."
-        - "Mentors and teaches naturally."
-        - "Combines rigor with emotional intelligence."
+        - "Explores through people; networking as adventure."
+        - "Culture translation: bridges different worlds."
+        - "Opens doors through genuine curiosity about people."
+        - "Makes friends anywhere in the world."
+        - "Integrates new experiences into relationships."
+      stress_strengths:
+        - "Social network activates to solve problems."
+        - "Finds allies in unexpected places."
 
     watchouts:
       bullets:
-        - "May over-prioritize harmony over truth."
-        - "Difficulty with conflict or critique."
-        - "Can lose self in others' needs."
+        - "Scattered social commitments; weak boundaries."
+        - "Overextends to please diverse groups."
+        - "May prioritize novelty in relationships over depth."
+        - "FOMO drives calendar chaos."
+      telltales:
+        - "Your calendar is full but you feel disconnected."
+        - "You say yes to everything social."
 
     career:
       best_environments:
-        - "Teaching, coaching, facilitation, therapy."
-        - "Research with collaborative elements."
+        - "Partnerships, community building, field research."
+        - "Travel-intensive roles with relationship components."
+        - "Cross-cultural or cross-functional bridge roles."
       role_patterns:
-        - "Professor, counselor, community builder."
+        - "Business development, partnerships, community lead."
+        - "Field researcher, travel educator, cultural liaison."
+      anti_patterns:
+        - "Desk-bound roles with no human variety."
+        - "Highly rule-bound environments."
+      collaboration:
+        - "Brings people together; needs executional support."
+
+    money:
+      style:
+        - "Generous + experience spending."
+        - "Invests in travel and social experiences."
+      risks:
+        - "Overspending on experiences and generosity."
+        - "Weak savings discipline."
+      guardrails:
+        - "Yes budget: fixed amount for social/travel spending."
+        - "Automate savings before the social fund."
 
     relationships:
       offers:
-        - "Deep understanding, patient listening, wisdom."
+        - "Adventure, novelty, expansive social world."
+        - "Introduction to diverse people and experiences."
       needs:
-        - "Intellectual stimulation + emotional closeness."
+        - "Freedom to explore + home base security."
+        - "Partner who enjoys new experiences."
+      triggers:
+        - "Being confined or isolated."
+        - "Partner who resents your social energy."
+      repair:
+        - "Bring partner into your world; include them in adventures."
+
+    parenting:
+      strengths:
+        - "Exposes kids to diversity and adventure."
+        - "Models social courage."
+      traps:
+        - "Overstimulating kids with constant novelty."
+        - "Inconsistent presence due to social calendar."
+      do_more:
+        - "Stable routines between adventures."
+      do_less:
+        - "Treating family time as another social event to optimize."
+
+    hobbies:
+      recharge:
+        - "Travel, cultural exploration, social adventures."
+      play:
+        - "Group activities with new people."
+      warning_signs:
+        - "Solo time feels like punishment."
+
+    self_improvement:
+      leverage:
+        - "Use social accountability for goals."
+        - "Channel networking energy into depth with key people."
+      keystone_constraints:
+        - "Maintain 3-5 deep relationships, not 50 shallow ones."
+      if_then_rules:
+        - "If I'm overcommitted, I cancel the newest commitment first."
+
+    compatibility:
+      complimentary:
+        - match: "SYSTEMS_THEORIST"
+          why: "Theorist provides structure; Diplomat provides reach."
+        - match: "CHARISMATIC_HOST"
+          why: "Shared social energy; mutual amplification."
+      friction:
+        - match: "RISK_STEWARD"
+          why: "Steward's rules constrain Diplomat's freedom."
+      conflict:
+        - match: "VIGILANT_STOIC"
+          why: "Stoic's caution frustrates adventurous spirit."
+
+SENTINEL_SCOUT:
+  tagline: "Careful curiosity. Exploration with eyes open."
+
+  domains:
+    strengths:
+      bullets:
+        - "Risk-aware exploration: adventurous but prepared."
+        - "Calculated risk-taking: knows when to push and when to hold."
+        - "Preparation meets adventure."
+        - "Sees threats others miss while still moving forward."
+      stress_strengths:
+        - "Crisis activates both vigilance and creative problem-solving."
+        - "Can explore unknown territory without recklessness."
+
+    watchouts:
+      bullets:
+        - "Internal tug-of-war: risk vs safety creates decision paralysis."
+        - "May over-prepare and miss opportunities."
+        - "Difficulty trusting when both engines disagree."
+      telltales:
+        - "You research endlessly before any new experience."
+        - "You want adventure but keep finding reasons to wait."
+
+    career:
+      best_environments:
+        - "Investigative work, emergency management innovation."
+        - "Resilient operations, safety-conscious innovation."
+        - "Roles requiring both creativity and risk management."
+      role_patterns:
+        - "Security researcher, resilient systems designer."
+        - "Risk-aware entrepreneur, investigative journalist."
+      anti_patterns:
+        - "Pure bureaucratic safety roles (too restrictive)."
+        - "Pure chaos startups (too much unmanaged risk)."
+      collaboration:
+        - "Balances risk-takers and risk-avoiders."
+
+    money:
+      style:
+        - "Balanced: saves but invests in experiences."
+        - "Research-heavy before financial decisions."
+      risks:
+        - "Can hesitate on big moves due to internal conflict."
+        - "Over-researching investments until opportunities pass."
+      guardrails:
+        - "Decision deadlines for financial choices."
+        - "Pre-committed risk budget for exploration."
+
+    relationships:
+      offers:
+        - "Thoughtful adventure partner."
+        - "Security + novelty balance."
+      needs:
+        - "Partner who respects both sides."
+        - "Space to process risk vs reward."
+      triggers:
+        - "Being pushed into unvetted risks."
+        - "Being told you're 'too cautious' or 'too reckless'."
+      repair:
+        - "Name which engine is driving; ask partner to support that one."
+
+    self_improvement:
+      leverage:
+        - "Embrace the tension as a feature, not a bug."
+        - "Assign contexts to each mode (work = Scout, home = Sentinel)."
+      keystone_constraints:
+        - "Decision rule: if both engines agree, act immediately."
+      if_then_rules:
+        - "If I'm paralyzed, I flip a coin and commit to the result."
+
+    compatibility:
+      complimentary:
+        - match: "ORGANIZER types"
+          why: "Provides structure that satisfies Sentinel side."
+        - match: "VISIONARY_BUILDER"
+          why: "Builder's execution focus complements Scout's exploration."
+      friction:
+        - match: "SPOTLIGHT_PIONEER"
+          why: "Pioneer's recklessness triggers Sentinel's anxiety."
+
+SPOTLIGHT_PIONEER:
+  tagline: "First on stage, first on the trail. Bold and visible."
+
+  domains:
+    strengths:
+      bullets:
+        - "Magnetic innovator: launches movements and products."
+        - "Makes new things exciting for others."
+        - "Charismatic exploration: draws people into the journey."
+        - "Energy + novelty + visibility combined."
+      stress_strengths:
+        - "Thrives under spotlight pressure."
+        - "Crisis becomes a performance opportunity."
+
+    watchouts:
+      bullets:
+        - "Novelty + applause chasing."
+        - "Overpromising what exploration can deliver."
+        - "Impulse risk without adequate preparation."
+        - "Burns out the less adventurous."
+      telltales:
+        - "You announce projects before they're viable."
+        - "You need an audience to feel motivated."
+
+    career:
+      best_environments:
+        - "Evangelist, creator-founder, marketing innovation."
+        - "Media tech, influencer roles, movement building."
+        - "High-visibility innovation leadership."
+      role_patterns:
+        - "Chief evangelist, product launch specialist."
+        - "Content creator with innovation focus."
+      anti_patterns:
+        - "Behind-the-scenes roles."
+        - "Slow-moving organizations."
+      collaboration:
+        - "Needs operational support to deliver on promises."
+
+    money:
+      style:
+        - "Impulse risk spending."
+        - "Invests in visibility and experiences."
+      risks:
+        - "Overspending on launches and appearances."
+        - "Financial instability from boom-bust cycles."
+      guardrails:
+        - "Accountability partner for financial decisions."
+        - "Automatic savings before discretionary spending."
+
+    relationships:
+      offers:
+        - "Excitement, adventure, social cachet."
+        - "Life is never boring."
+      needs:
+        - "Admiration + freedom to explore."
+        - "Partner who enjoys the spotlight."
+      triggers:
+        - "Being ignored or underappreciated."
+        - "Requests to 'settle down' and be boring."
+      repair:
+        - "Share the spotlight; make partner a co-star."
+
+    self_improvement:
+      leverage:
+        - "Channel visibility drive into meaningful projects."
+        - "Build substance behind the style."
+      keystone_constraints:
+        - "Deliver before announcing."
+      if_then_rules:
+        - "If I want to announce something, I wait until it's 50% done."
+
+    compatibility:
+      complimentary:
+        - match: "RISK_STEWARD"
+          why: "Steward provides guardrails for Pioneer's boldness."
+        - match: "COMMUNITY_OPERATOR"
+          why: "Operator builds the systems Pioneer announces."
+      friction:
+        - match: "VIGILANT_STOIC"
+          why: "Stoic's caution frustrates Pioneer's momentum."
 
 SYSTEMS_THEORIST:
   tagline: "Models that work. Theory meets practice."
@@ -237,109 +550,794 @@ SYSTEMS_THEORIST:
         - "Long-term strategic thinking."
         - "Values efficiency and elegance."
         - "Can explain 'why' behind processes."
+        - "Rigorous models that actually work in practice."
+      stress_strengths:
+        - "Crisis triggers systematic problem-solving."
+        - "Finds order in chaos."
 
     watchouts:
       bullets:
         - "May over-optimize for elegance vs real-world messiness."
         - "Can be rigid about 'the right way.'"
         - "May dismiss emotional factors as noise."
+        - "Perfectionism in systems design."
+      telltales:
+        - "You redesign systems that are working fine."
+        - "You get frustrated when others don't follow the process."
 
     career:
       best_environments:
         - "Strategy consulting, systems architecture, policy."
         - "Roles requiring both analysis and implementation."
+        - "Organizations that value intellectual rigor."
+      role_patterns:
+        - "Systems architect, strategy lead, policy designer."
+        - "Analytics director, process engineer."
+      anti_patterns:
+        - "Chaotic environments with no process appetite."
+        - "Roles requiring constant improvisation."
+      collaboration:
+        - "Pairs well with executional talent."
+        - "Needs people-oriented partners for stakeholder management."
+
+    money:
+      style:
+        - "Stable, systematic approach to finances."
+        - "Models and optimizes spending."
+      risks:
+        - "Can under-take upside risk."
+        - "Over-planning instead of acting."
+      guardrails:
+        - "Allocate 'experimental' fund outside the system."
 
     relationships:
       offers:
         - "Stability, clear thinking, long-term planning."
+        - "Reliable partnership with intellectual depth."
       needs:
         - "Respect for intellect + space for deep work."
+        - "Partner who values coherence."
+      triggers:
+        - "Chaos and unpredictability at home."
+        - "Dismissal of your frameworks."
+      repair:
+        - "Apply systematic thinking to relationship improvement."
 
-# Placeholder entries for remaining dyads (to be expanded)
-WAYFINDER_DIPLOMAT:
-  tagline: "New paths, new friends. Adventure as connection."
+    self_improvement:
+      leverage:
+        - "Design systems for your own growth."
+        - "Treat self-improvement as systems optimization."
+      keystone_constraints:
+        - "Allow for emergence, not just design."
+      if_then_rules:
+        - "If the system isn't working, I question the system, not just the execution."
+
+    compatibility:
+      complimentary:
+        - match: "SEEKER_SAGE"
+          why: "Shared rigor; Sage provides vision, Theorist provides structure."
+        - match: "WAYFINDER_DIPLOMAT"
+          why: "Diplomat provides reach, Theorist provides coherence."
+      friction:
+        - match: "CHARISMATIC_HOST"
+          why: "Host's vibe-first approach clashes with rigor-first."
+
+BRIDGE_SCHOLAR:
+  tagline: "Depth plus warmth. Ideas as bridges."
+
   domains:
     strengths:
       bullets:
-        - "Makes friends anywhere."
-        - "Opens doors through genuine curiosity about people."
+        - "Translates complex ideas into relatable terms."
+        - "Builds intellectual communities."
+        - "Mentors and teaches naturally."
+        - "Combines rigor with emotional intelligence."
+        - "Compassionate intellect: makes thinking feel warm."
+      stress_strengths:
+        - "Crisis activates both deep thinking and empathy."
+        - "Can hold space for others while analyzing problems."
 
-SENTINEL_SCOUT:
-  tagline: "Careful curiosity. Exploration with eyes open."
-  domains:
-    strengths:
+    watchouts:
       bullets:
-        - "Risk-aware exploration."
-        - "Preparation meets adventure."
+        - "May over-prioritize harmony over truth."
+        - "Difficulty with conflict or critique."
+        - "Can lose self in others' needs."
+        - "Over-explains when action is needed."
+      telltales:
+        - "You explain when you should decide."
+        - "You carry others' emotional burdens."
 
-SPOTLIGHT_PIONEER:
-  tagline: "First on stage, first on the trail. Bold and visible."
-  domains:
-    strengths:
-      bullets:
-        - "Charismatic innovation."
-        - "Makes new things exciting for others."
+    career:
+      best_environments:
+        - "Teaching, coaching, facilitation, therapy-adjacent."
+        - "Research with collaborative elements."
+        - "Roles bridging technical and human domains."
+      role_patterns:
+        - "Professor, counselor, community builder."
+        - "Technical educator, UX researcher."
+      anti_patterns:
+        - "Cutthroat competitive environments."
+        - "Roles requiring harsh feedback delivery."
+      collaboration:
+        - "Humanizes teams; needs protection from exploitation."
+
+    money:
+      style:
+        - "Values-driven giving."
+        - "Invests in education and growth."
+      risks:
+        - "Over-giving; weak financial boundaries."
+        - "Undercharging for expertise."
+      guardrails:
+        - "Giving budget with hard cap."
+        - "Rate card for professional services."
+
+    relationships:
+      offers:
+        - "Deep understanding, patient listening, wisdom."
+        - "Intellectual and emotional intimacy combined."
+      needs:
+        - "Intellectual stimulation + emotional closeness."
+        - "Partner who values both thinking and feeling."
+      triggers:
+        - "Intellectual dismissal."
+        - "Emotional unavailability."
+      repair:
+        - "Balance explaining with listening."
+
+    self_improvement:
+      leverage:
+        - "Teach what you're learning."
+        - "Build communities around your interests."
+      keystone_constraints:
+        - "Boundaries: helping others can't deplete you."
+      if_then_rules:
+        - "If I'm exhausted from helping, I take a teaching break."
+
+    compatibility:
+      complimentary:
+        - match: "VISIONARY_BUILDER"
+          why: "Scholar humanizes Builder's innovations."
+        - match: "SEEKER_SAGE"
+          why: "Shared depth; Scholar adds warmth."
+      friction:
+        - match: "SHOWRUNNER_EXECUTIVE"
+          why: "Executive's speed may trample Scholar's nuance."
 
 VIGILANT_STOIC:
   tagline: "Prepared wisdom. Meaning under pressure."
+
   domains:
     strengths:
       bullets:
-        - "Calm in crisis."
+        - "Principled realism: sees what could go wrong without losing values."
+        - "Foresight: anticipates problems before they arrive."
+        - "Moral risk analysis: ethics + practicality combined."
+        - "Calm in crisis: composed when others panic."
         - "Values-driven resilience."
+      stress_strengths:
+        - "Crisis reveals the prepared mind."
+        - "Others look to you when things go wrong."
+
+    watchouts:
+      bullets:
+        - "Pessimism drift: always sees the dark side."
+        - "Emotional distance: thinking replaces feeling."
+        - "Can be seen as a wet blanket."
+        - "May miss joy by over-preparing for pain."
+      telltales:
+        - "You're the person who asks 'but what if it fails?'"
+        - "You prepare for disaster more than you celebrate success."
+
+    career:
+      best_environments:
+        - "Security policy, compliance ethics, critical infrastructure."
+        - "Risk management with values alignment."
+        - "Roles where foresight is valued."
+      role_patterns:
+        - "Risk analyst, ethics officer, resilience architect."
+        - "Crisis advisor, strategic planner."
+      anti_patterns:
+        - "Move-fast-break-things cultures."
+        - "Roles requiring ungrounded optimism."
+      collaboration:
+        - "Grounds optimistic teams; needs appreciation."
+
+    money:
+      style:
+        - "Conservative: savings-first approach."
+        - "Prepares for worst case."
+      risks:
+        - "May miss growth opportunities."
+        - "Under-investing in joy and experience."
+      guardrails:
+        - "Joy fund: mandatory spending on non-essential pleasures."
+
+    relationships:
+      offers:
+        - "Stability, preparation, principled partnership."
+        - "Will be there when things go wrong."
+      needs:
+        - "Partner who appreciates foresight."
+        - "Permission to occasionally be optimistic."
+      triggers:
+        - "Dismissal of concerns as 'negative'."
+        - "Reckless partners who ignore warnings."
+      repair:
+        - "Balance warning with appreciation."
+
+    self_improvement:
+      leverage:
+        - "Apply stoic philosophy intentionally."
+        - "Practice finding opportunity in adversity."
+      keystone_constraints:
+        - "Celebrate wins before analyzing risks."
+      if_then_rules:
+        - "If I'm warning, I also offer solutions."
+
+    compatibility:
+      complimentary:
+        - match: "SPOTLIGHT_PIONEER"
+          why: "Pioneer's optimism balances Stoic's caution (if managed)."
+      friction:
+        - match: "High-risk Explorers"
+          why: "Recklessness triggers Stoic's anxiety."
 
 PUBLIC_INTELLECTUAL:
   tagline: "Ideas on stage. Thought leadership."
+
   domains:
     strengths:
       bullets:
+        - "Makes ideas contagious: persuasive truth-telling."
         - "Communicates complex ideas compellingly."
         - "Builds audiences around meaning."
+        - "Combines depth with reach."
+      stress_strengths:
+        - "Pressure of audience focuses the message."
+        - "Crisis becomes a teaching moment."
+
+    watchouts:
+      bullets:
+        - "Identity tied to audience approval."
+        - "Hot takes risk: saying things for attention."
+        - "Meaning vs applause tension never fully resolves."
+        - "May sacrifice nuance for virality."
+      telltales:
+        - "You check engagement stats obsessively."
+        - "You hold back ideas that won't 'land' publicly."
+
+    career:
+      best_environments:
+        - "Speaking, media, advocacy, leadership."
+        - "Teaching with public platform."
+        - "Thought leadership roles."
+      role_patterns:
+        - "Author, speaker, podcaster, professor with reach."
+        - "Thought leader, public voice for organizations."
+      anti_patterns:
+        - "Anonymous roles."
+        - "Technical work without communication component."
+      collaboration:
+        - "Needs operational support behind the scenes."
+
+    money:
+      style:
+        - "Variable: tied to platform success."
+        - "Invests in visibility and content."
+      risks:
+        - "Income instability from platform dependence."
+        - "Overspending on audience growth."
+      guardrails:
+        - "Cash buffer for platform volatility."
+        - "Diversified income streams."
+
+    relationships:
+      offers:
+        - "Intellectual excitement, social cachet."
+        - "Life of ideas and conversation."
+      needs:
+        - "Partner who supports public life."
+        - "Private space to be imperfect."
+      triggers:
+        - "Public criticism of ideas."
+        - "Partner competing for attention."
+      repair:
+        - "Separate public persona from private relationship."
+
+    self_improvement:
+      leverage:
+        - "Build substance behind the platform."
+        - "Prioritize truth over applause."
+      keystone_constraints:
+        - "Ideas first, audience second."
+      if_then_rules:
+        - "If I'm chasing attention, I return to first principles."
+
+    compatibility:
+      complimentary:
+        - match: "BRIDGE_SCHOLAR"
+          why: "Scholar provides depth; Intellectual provides reach."
+        - match: "COMMUNITY_OPERATOR"
+          why: "Operator builds systems behind the platform."
+      friction:
+        - match: "VIGILANT_STOIC"
+          why: "Stoic's pessimism clashes with Intellectual's optimism."
 
 COMMUNITY_OPERATOR:
   tagline: "Systems for people. Structure that serves."
+
   domains:
     strengths:
       bullets:
         - "Builds organizations that care."
         - "Process + warmth combined."
+        - "Stable teams with human-centered systems."
+        - "Gets things done while keeping people happy."
+      stress_strengths:
+        - "Crisis reveals organized compassion."
+        - "Holds teams together under pressure."
+
+    watchouts:
+      bullets:
+        - "Over-responsibility: carries too much."
+        - "Resentment if unappreciated."
+        - "May sacrifice self for the system."
+        - "Can over-process human relationships."
+      telltales:
+        - "You're tired but can't stop because 'someone has to.'"
+        - "You've built systems that only you can run."
+
+    career:
+      best_environments:
+        - "School leadership, ops management, HR ops."
+        - "Program director, community manager."
+        - "Roles blending systems and people."
+      role_patterns:
+        - "Operations leader with heart."
+        - "Community builder with process."
+      anti_patterns:
+        - "Cutthroat competitive environments."
+        - "Roles without human interaction."
+      collaboration:
+        - "Builds the machine; needs visionary direction."
+
+    money:
+      style:
+        - "Solid budgeting; generous with others."
+        - "Invests in community and people."
+      risks:
+        - "Over-giving; under-saving for self."
+        - "Funding others' dreams over your own."
+      guardrails:
+        - "Self-first fund before community fund."
+
+    relationships:
+      offers:
+        - "Reliability, warmth, organized life."
+        - "Partner who makes things work."
+      needs:
+        - "Appreciation and reciprocity."
+        - "Partner who shares the load."
+      triggers:
+        - "Being taken for granted."
+        - "Partners who don't contribute equally."
+      repair:
+        - "Ask for help; don't martyr."
+
+    self_improvement:
+      leverage:
+        - "Delegate and train others."
+        - "Build systems that work without you."
+      keystone_constraints:
+        - "You can't pour from an empty cup."
+      if_then_rules:
+        - "If I'm resentful, I need to ask for help or let something go."
+
+    compatibility:
+      complimentary:
+        - match: "VISIONARY_BUILDER"
+          why: "Builder provides vision; Operator provides execution."
+        - match: "PUBLIC_INTELLECTUAL"
+          why: "Intellectual provides platform; Operator provides backend."
+      friction:
+        - match: "SENTINEL_SCOUT"
+          why: "Scout's anxiety can burden Operator."
 
 RISK_STEWARD:
   tagline: "Managed uncertainty. Plans with backup plans."
+
   domains:
     strengths:
       bullets:
         - "Excellent contingency planning."
         - "Brings order to chaos without killing flexibility."
+        - "Reliability + safety combined."
+        - "Sees risks others miss."
+      stress_strengths:
+        - "Crisis activates prepared contingencies."
+        - "Calm when others panic because plans exist."
+
+    watchouts:
+      bullets:
+        - "Says 'no' too often."
+        - "Innovation constipation: blocks new ideas for safety."
+        - "May optimize for risk avoidance over opportunity."
+        - "Can be seen as obstructionist."
+      telltales:
+        - "You've prevented disasters but also prevented wins."
+        - "People stop sharing ideas with you because you'll find problems."
+
+    career:
+      best_environments:
+        - "QA, compliance, safety engineering, finance controls."
+        - "Risk management with some innovation latitude."
+        - "Roles where caution is valued."
+      role_patterns:
+        - "Risk manager, compliance lead, safety officer."
+        - "Quality assurance, audit, controls."
+      anti_patterns:
+        - "Move-fast-break-things cultures."
+        - "Roles requiring constant risk-taking."
+      collaboration:
+        - "Grounds risk-takers; needs to learn when to say yes."
+
+    money:
+      style:
+        - "Saver: prioritizes security over growth."
+        - "Conservative investments."
+      risks:
+        - "Under-investing in growth and joy."
+        - "Missing opportunities from over-caution."
+      guardrails:
+        - "Joy fund: mandatory non-essential spending."
+        - "Growth allocation: some money must be at risk."
+
+    relationships:
+      offers:
+        - "Safety, stability, prepared partnership."
+        - "Will protect you from risks."
+      needs:
+        - "Appreciation for protective instincts."
+        - "Partner who doesn't constantly trigger worry."
+      triggers:
+        - "Reckless partners who ignore warnings."
+        - "Being told you worry too much."
+      repair:
+        - "Balance protection with permission."
+
+    self_improvement:
+      leverage:
+        - "Learn to say 'yes, if' instead of just 'no.'"
+        - "Practice calculated risk-taking."
+      keystone_constraints:
+        - "For every 'no,' offer an alternative path."
+      if_then_rules:
+        - "If I'm blocking, I must propose a safer version."
+
+    compatibility:
+      complimentary:
+        - match: "SPOTLIGHT_PIONEER"
+          why: "Steward provides guardrails; Pioneer provides momentum."
+        - match: "EXPLORER types"
+          why: "Steward enables safe exploration."
+      friction:
+        - match: "WAYFINDER_DIPLOMAT"
+          why: "Diplomat's spontaneity triggers Steward's anxiety."
 
 SHOWRUNNER_EXECUTIVE:
   tagline: "Productions that deliver. Leadership with flair."
+
   domains:
     strengths:
       bullets:
         - "Gets things done with style."
         - "Motivates teams toward visible results."
+        - "Visible leadership + execution combined."
+        - "Ships with flair."
+      stress_strengths:
+        - "Deadline pressure brings out peak performance."
+        - "Crisis becomes a leadership showcase."
+
+    watchouts:
+      bullets:
+        - "Overcommit: takes on too much for the spotlight."
+        - "Control + ego collisions with team."
+        - "May sacrifice sustainability for visible wins."
+        - "Burnout from running at max visibility."
+      telltales:
+        - "You're always 'on' even when exhausted."
+        - "Team members feel overshadowed."
+
+    career:
+      best_environments:
+        - "Operations leader, sales leader with process."
+        - "Media production, event management."
+        - "High-visibility execution roles."
+      role_patterns:
+        - "COO with flair, sales VP, production lead."
+        - "Event producer, launch specialist."
+      anti_patterns:
+        - "Behind-the-scenes technical roles."
+        - "Slow-moving bureaucracies."
+      collaboration:
+        - "Needs strong operational support; must share credit."
+
+    money:
+      style:
+        - "High earning potential."
+        - "Spending can rise with status."
+      risks:
+        - "Lifestyle inflation."
+        - "Financial overextension for appearances."
+      guardrails:
+        - "Lifestyle cap: save the raises."
+
+    relationships:
+      offers:
+        - "Energy, achievement, exciting life."
+        - "Partner who makes things happen."
+      needs:
+        - "Admiration and support."
+        - "Space to decompress from public performance."
+      triggers:
+        - "Competition from partner."
+        - "Being asked to be less visible."
+      repair:
+        - "Create private space separate from public performance."
+
+    self_improvement:
+      leverage:
+        - "Build sustainable systems, not just sprints."
+        - "Develop team so success doesn't depend solely on you."
+      keystone_constraints:
+        - "Rest is part of the performance."
+      if_then_rules:
+        - "If I'm exhausted, I delegate before I drop."
+
+    compatibility:
+      complimentary:
+        - match: "BRIDGE_SCHOLAR"
+          why: "Scholar humanizes Executive's drive."
+      friction:
+        - match: "VIGILANT_STOIC"
+          why: "Stoic's caution frustrates Executive's momentum."
 
 GUARDIAN_CARETAKER:
   tagline: "Safety through belonging. Protection as love."
+
   domains:
     strengths:
       bullets:
         - "Creates emotionally safe spaces."
-        - "Nurturing + protective instincts."
+        - "Nurturing + protective instincts combined."
+        - "Loyal protector for those they love."
+        - "Emotionally vigilant for others' wellbeing."
+      stress_strengths:
+        - "Crisis activates both protection and care."
+        - "Holds space for others while managing threats."
+
+    watchouts:
+      bullets:
+        - "Anxiety caregiving: worry becomes the care."
+        - "Over-involvement in others' lives."
+        - "May sacrifice self for protected others."
+        - "Can smother with protection."
+      telltales:
+        - "You worry about loved ones constantly."
+        - "You can't relax until everyone else is safe."
+
+    career:
+      best_environments:
+        - "Nursing-adjacent, student support, community safety."
+        - "Advocacy, social work, protective services."
+        - "Roles combining care and protection."
+      role_patterns:
+        - "Social worker, nurse, counselor, child advocate."
+        - "Community safety coordinator."
+      anti_patterns:
+        - "Roles without human care component."
+        - "High-conflict environments without support."
+      collaboration:
+        - "Creates safe teams; needs boundaries protection."
+
+    money:
+      style:
+        - "Cautious + generous."
+        - "Prioritizes family security."
+      risks:
+        - "Over-giving; under-saving for self."
+        - "Financial anxiety transferred to family."
+      guardrails:
+        - "Boundaries on giving."
+        - "Self-care fund."
+
+    relationships:
+      offers:
+        - "Deep care, protection, emotional safety."
+        - "Partner who will always be there."
+      needs:
+        - "Reassurance and stability."
+        - "Partner who appreciates protection."
+      triggers:
+        - "Threats to loved ones."
+        - "Feeling unappreciated for care."
+      repair:
+        - "Communicate care without controlling."
+
+    self_improvement:
+      leverage:
+        - "Care for self as well as you care for others."
+        - "Trust others to handle their own problems sometimes."
+      keystone_constraints:
+        - "You can't protect everyone from everything."
+      if_then_rules:
+        - "If I'm anxious about someone, I ask what they actually need."
+
+    compatibility:
+      complimentary:
+        - match: "EXPLORER types"
+          why: "Explorer adds optimism to Caretaker's vigilance."
+      friction:
+        - match: "SPOTLIGHT_PIONEER"
+          why: "Pioneer's risk-taking triggers Caretaker's anxiety."
 
 CHARISMATIC_HOST:
   tagline: "Everyone belongs. Energy that includes."
+
   domains:
     strengths:
       bullets:
         - "Makes everyone feel welcome."
         - "High social energy + genuine care."
+        - "Social glue + energy combined."
+        - "Morale and momentum builder."
+      stress_strengths:
+        - "Social skills activate under pressure."
+        - "Can rally people when needed."
+
+    watchouts:
+      bullets:
+        - "Approval seeking: needs to be liked."
+        - "Avoids hard conflicts."
+        - "May sacrifice truth for harmony."
+        - "Exhaustion from constant social performance."
+      telltales:
+        - "You can't say no to social requests."
+        - "You change positions to avoid conflict."
+
+    career:
+      best_environments:
+        - "Sales, community, events, team leadership."
+        - "Customer-facing roles with relationship building."
+        - "Roles requiring social energy and warmth."
+      role_patterns:
+        - "Community manager, event coordinator, sales lead."
+        - "Team morale builder, customer success."
+      anti_patterns:
+        - "Isolated technical roles."
+        - "Roles requiring harsh feedback."
+      collaboration:
+        - "Energizes teams; needs analytical support."
+
+    money:
+      style:
+        - "Spends socially."
+        - "Generous with hospitality."
+      risks:
+        - "Overspending on social experiences."
+        - "Financial decisions influenced by social pressure."
+      guardrails:
+        - "Automation for savings."
+        - "Social spending budget."
+
+    relationships:
+      offers:
+        - "Warmth, fun, social world."
+        - "Partner who makes life lively."
+      needs:
+        - "Appreciation and reciprocal energy."
+        - "Partner who enjoys social life."
+      triggers:
+        - "Social rejection."
+        - "Partner who wants to stay home."
+      repair:
+        - "Balance social energy with intimate connection."
+
+    self_improvement:
+      leverage:
+        - "Channel social energy into depth."
+        - "Practice saying no with warmth."
+      keystone_constraints:
+        - "Some relationships matter more than all acquaintances."
+      if_then_rules:
+        - "If I'm exhausted, I cancel social plans without guilt."
+
+    compatibility:
+      complimentary:
+        - match: "RISK_STEWARD"
+          why: "Steward provides stability for Host's social energy."
+        - match: "WAYFINDER_DIPLOMAT"
+          why: "Shared social energy; mutual amplification."
+      friction:
+        - match: "SYSTEMS_THEORIST"
+          why: "Theorist's rigor clashes with Host's vibe-first approach."
 
 WATCHFUL_CHAMPION:
   tagline: "Visible strength. Protection with presence."
+
   domains:
     strengths:
       bullets:
         - "Commands attention while keeping watch."
         - "Protective leadership."
+        - "Courageous defender: rallies others under threat."
+        - "Visible strength that reassures."
+      stress_strengths:
+        - "Crisis activates both protection and performance."
+        - "Steps up when others shrink back."
+
+    watchouts:
+      bullets:
+        - "Combative cycles: always looking for threats."
+        - "Status + vigilance can turn controlling."
+        - "May create enemies where none exist."
+        - "Exhaustion from constant vigilance + performance."
+      telltales:
+        - "You're always ready for a fight."
+        - "People find you intimidating even when you're helping."
+
+    career:
+      best_environments:
+        - "Crisis leadership, advocacy, security leadership."
+        - "Politics-adjacent, protective services."
+        - "Roles requiring visible strength."
+      role_patterns:
+        - "Crisis manager, advocacy leader, security director."
+        - "Union leader, community protector."
+      anti_patterns:
+        - "Behind-the-scenes roles."
+        - "Environments requiring constant harmony."
+      collaboration:
+        - "Protects teams; needs softening influence."
+
+    money:
+      style:
+        - "Swings: big bets to 'win'."
+        - "Invests in security and status."
+      risks:
+        - "Financial volatility from competitive spending."
+        - "Risk-taking for dominance."
+      guardrails:
+        - "Guardrails on competitive spending."
+        - "Long-term stability fund."
+
+    relationships:
+      offers:
+        - "Protection, strength, loyalty."
+        - "Partner who will fight for you."
+      needs:
+        - "Appreciation for protective role."
+        - "Partner who doesn't trigger combativeness."
+      triggers:
+        - "Challenges to authority or competence."
+        - "Threats to loved ones."
+      repair:
+        - "Channel protective energy into support, not control."
+
+    self_improvement:
+      leverage:
+        - "Learn when not to fight."
+        - "Soften presence without losing strength."
+      keystone_constraints:
+        - "Not every situation needs a champion."
+      if_then_rules:
+        - "If I'm ready to fight, I ask if this is worth it."
+
+    compatibility:
+      complimentary:
+        - match: "BRIDGE_SCHOLAR"
+          why: "Scholar softens Champion's intensity."
+      friction:
+        - match: "SEEKER_SAGE"
+          why: "Sage's freedom clashes with Champion's control."

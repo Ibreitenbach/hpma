@@ -24,6 +24,7 @@ function generateContentBundle() {
   const modes = loadYaml('modes.yml');
   const rules = loadYaml('rules.yml');
   const dyads = loadYaml('evaluations/dyads.yml');
+  const primaries = loadYaml('evaluations/primaries.yml');
 
   const bundle = {
     vocab,
@@ -31,6 +32,7 @@ function generateContentBundle() {
     modes,
     rules,
     dyads,
+    primaries,
   };
 
   console.log('Generating TypeScript module...');
