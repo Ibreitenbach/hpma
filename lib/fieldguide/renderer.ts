@@ -3,6 +3,7 @@ import {
   ContentBundle,
   DyadEvaluation,
   PrimaryEvaluation,
+  TriadEvaluation,
   FieldGuideReport,
   EvaluationContext,
   RuleMatch,
@@ -54,7 +55,7 @@ export function generateFieldGuide(
 
   // Determine identity key and content based on structure
   const identityKey = getIdentityKey(result);
-  let identityContent: DyadEvaluation | PrimaryEvaluation | undefined;
+  let identityContent: DyadEvaluation | PrimaryEvaluation | TriadEvaluation | undefined;
 
   if (result.roster.structure === 'SOLO') {
     // For solo structures, look up in primaries
@@ -62,9 +63,24 @@ export function generateFieldGuide(
   } else if (result.roster.duet) {
     // For duets, look up in dyads
     identityContent = content.dyads[identityKey] as DyadEvaluation | undefined;
+  } else if (result.roster.trio) {
+    // For trios, look up in triads first, then fall back to dyad of top two
+    const triadKey = getTriadKey(result);
+    identityContent = content.triads[triadKey] as TriadEvaluation | undefined;
+    if (!identityContent) {
+      identityContent = content.dyads[identityKey] as DyadEvaluation | undefined;
+    }
+    if (!identityContent) {
+      const primaryKey = getPrimaryArchetypeKey(result);
+      identityContent = content.primaries[primaryKey.toLowerCase()] as PrimaryEvaluation | undefined;
+    }
   } else {
-    // For trio/chord/chorus, try dyads first, then fall back to primary of anchor
-    identityContent = content.dyads[identityKey] as DyadEvaluation | undefined;
+    // For chord/chorus, try triads, then dyads, then primaries
+    const triadKey = getTriadKey(result);
+    identityContent = content.triads[triadKey] as TriadEvaluation | undefined;
+    if (!identityContent) {
+      identityContent = content.dyads[identityKey] as DyadEvaluation | undefined;
+    }
     if (!identityContent) {
       const primaryKey = getPrimaryArchetypeKey(result);
       identityContent = content.primaries[primaryKey.toLowerCase()] as PrimaryEvaluation | undefined;
@@ -115,6 +131,20 @@ function getPrimaryArchetypeKey(result: AssessmentResult): string {
   }
 
   return 'UNKNOWN';
+}
+
+/**
+ * Gets the triad key for content lookup (e.g., "EXPLORER_PHILOSOPHER_ORGANIZER").
+ * Uses the top 3 archetypes sorted alphabetically for consistent key generation.
+ */
+function getTriadKey(result: AssessmentResult): string {
+  const sorted = Object.entries(result.archetypes)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3)
+    .map(([name]) => name.toUpperCase())
+    .sort(); // Alphabetical for consistent key
+
+  return sorted.join('_');
 }
 
 /**

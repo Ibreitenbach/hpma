@@ -164,6 +164,16 @@ export interface PrimariesContent {
   [key: string]: PrimaryEvaluation | string;
 }
 
+export interface TriadEvaluation {
+  tagline: string;
+  domains: DomainBlocks;
+}
+
+export interface TriadsContent {
+  version: string;
+  [key: string]: TriadEvaluation | string;
+}
+
 // ─────────────────────────────────────────────────────────────────
 // Rules Engine Types
 // ─────────────────────────────────────────────────────────────────
@@ -341,5 +351,6 @@ export interface ContentBundle {
   modes: ModesContent;
   dyads: DyadsContent;
   primaries: PrimariesContent;
+  triads: TriadsContent;
   rules: RulesContent;
 }

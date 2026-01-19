@@ -4455,5 +4455,3768 @@ export const contentBundle: ContentBundle = {
         }
       }
     }
+  },
+  "triads": {
+    "version": "HPMA-Evals-Triads-1.0",
+    "EXPLORER_PHILOSOPHER_ORGANIZER": {
+      "tagline": "The systems theorist who builds what they discover",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Rare capacity to explore, understand deeply, AND systematize findings",
+            "Creates frameworks that others can actually use",
+            "Balances curiosity with follow-through - the Organizer grounds the other two",
+            "Produces intellectual work that ships, not just ideas that sit",
+            "Can teach complex subjects because they organize while learning",
+            "Natural fit for building tools, methodologies, and curricula"
+          ],
+          "stress_strengths": [
+            "Under pressure, the Organizer takes over - structured crisis response",
+            "Stress clarifies priorities: what's worth systematizing vs. abandoning"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.O >= 5.5 AND scores.hexaco.C >= 5.5",
+              "because": "High Openness + Conscientiousness enables explore-then-organize pattern"
+            },
+            {
+              "when": "scores.motives.purpose >= 5.5 AND scores.motives.mastery >= 5.5",
+              "because": "Purpose seeks meaning, Mastery drives systematic improvement"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "Perfectionism squared: the framework must be both profound AND complete",
+            "May over-engineer solutions that need to be 'good enough'",
+            "Analysis paralysis from three angles: is it novel? meaningful? organized?",
+            "Can become the bottleneck - only they understand their system",
+            "Risk of building elaborate structures around ideas that should be discarded"
+          ],
+          "telltales": [
+            "You've reorganized your note system multiple times seeking the perfect structure",
+            "Projects have extensive documentation but unclear completion criteria",
+            "Others find your systems impressive but overwhelming to adopt",
+            "You resist shipping until the theoretical foundation is 'solid'"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Research institutions with expectations to publish and teach",
+            "Think tanks where ideas must become policy-ready frameworks",
+            "Consulting firms that value methodology development",
+            "Product organizations building tools for knowledge workers",
+            "Academic positions with both research and curriculum design"
+          ],
+          "role_patterns": [
+            "Research → Framework → Implementation → Teaching cycle",
+            "Methodology development and process architecture",
+            "Technical writing that bridges theory and practice",
+            "Building internal knowledge systems and documentation"
+          ],
+          "anti_patterns": [
+            "Pure execution roles with no design latitude",
+            "Fast-moving environments that punish reflection",
+            "Roles where good-enough ships and perfect doesn't",
+            "Positions requiring shallow coverage of many topics"
+          ],
+          "collaboration": [
+            "Pairs well with Performers who can evangelize your frameworks",
+            "Needs Connectors to gather requirements from actual users",
+            "May frustrate pure Explorers who want to move on before systematizing"
+          ]
+        },
+        "money": {
+          "style": [
+            "Builds financial systems and tracking frameworks",
+            "Researches investments deeply before committing",
+            "Values tools that enable both exploration AND organization",
+            "May create elaborate budgets that are intellectually satisfying"
+          ],
+          "risks": [
+            "Over-researching financial decisions while opportunities pass",
+            "Building tracking systems more sophisticated than needed",
+            "Delayed action while perfecting the financial framework"
+          ],
+          "guardrails": [
+            "Set decision deadlines before research begins",
+            "Use 'good enough' heuristics for low-stakes financial choices",
+            "Automate to reduce friction from system maintenance"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Intellectual depth with practical reliability",
+            "Creates shared systems that actually work",
+            "Thoughtful communication with follow-through",
+            "Genuine interest in understanding partner's world, then organizing how to support them"
+          ],
+          "needs": [
+            "Partner who appreciates both depth and structure",
+            "Space for intellectual work and system-building",
+            "Recognition that organization is an act of care"
+          ],
+          "triggers": [
+            "Chaos without reason - disorder that could be prevented",
+            "Being rushed to decide before the framework is clear",
+            "Partner dismissing systems as 'over-thinking'"
+          ],
+          "repair": [
+            "Create a shared system for the conflict domain",
+            "Acknowledge when structure became control",
+            "Balance: 'here's the principle' with 'here's what I'll do differently'"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Creates learning environments that are both stimulating and organized",
+            "Teaches children frameworks for understanding, not just facts",
+            "Models both curiosity and follow-through",
+            "Builds family systems that support growth"
+          ],
+          "traps": [
+            "Over-structuring children's exploration",
+            "Expecting kids to appreciate elaborate systems",
+            "Turning play into curriculum too quickly"
+          ],
+          "practices": [
+            "Create 'discovery zones' with organized materials",
+            "Teach meta-skills: how to learn, how to organize",
+            "Let some exploration stay messy and unstructured"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Learning new domains and building reference libraries",
+            "Tool-making: creating systems, templates, frameworks for others",
+            "Teaching and curriculum development as hobby",
+            "Collecting that requires organization (taxonomy, cataloging)"
+          ],
+          "anti_patterns": [
+            "Pure physical activities with no intellectual component",
+            "Social hobbies that are 'just hanging out'",
+            "Activities that can't be systematized or improved upon"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Ship before the framework is perfect",
+            "Let some things be exploratory without systematization",
+            "Trust others to build on incomplete foundations",
+            "Recognize when organization becomes procrastination"
+          ],
+          "practices": [
+            "Set 'minimum viable framework' criteria before starting",
+            "Schedule shipping dates before refinement feels complete",
+            "Practice explaining ideas before they're fully organized"
+          ],
+          "blockers": [
+            "Belief that incomplete = worthless",
+            "Fear of criticism for imperfect structures",
+            "Conflating thoroughness with quality"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Connector",
+              "why": "Translates your frameworks for human consumption"
+            },
+            {
+              "match": "Performer",
+              "why": "Energizes and evangelizes your systematized insights"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Pure Explorer",
+              "why": "They want to move on; you want to finish organizing"
+            },
+            {
+              "match": "Pure Protector",
+              "why": "Your new frameworks threaten their existing systems"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Connector-Protector",
+              "why": "Grounds you in human needs and stability"
+            }
+          ]
+        }
+      }
+    },
+    "EXPLORER_PHILOSOPHER_CONNECTOR": {
+      "tagline": "The curious diplomat who weaves meaning through relationships",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Explores ideas AND explores people with equal curiosity",
+            "Translates complex insights for diverse audiences",
+            "Builds bridges between different intellectual communities",
+            "Finds meaning in connection, not just in concepts",
+            "Natural facilitator of deep conversations",
+            "Can hold space for ambiguity in relationships and ideas"
+          ],
+          "stress_strengths": [
+            "Under pressure, Connector stabilizes while Philosopher reframes",
+            "Crisis triggers both meaning-making AND relationship repair"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.O >= 5.5 AND scores.hexaco.A >= 5.5",
+              "because": "High Openness + Agreeableness enables curious empathy"
+            },
+            {
+              "when": "scores.motives.affiliation >= 5.5 AND scores.motives.purpose >= 5.5",
+              "because": "Seeks both connection and meaning simultaneously"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "May intellectualize relationship problems instead of feeling them",
+            "Can get lost in fascinating people and neglect own direction",
+            "Over-explains emotional content when presence is needed",
+            "May avoid conflict by reframing instead of addressing",
+            "Scattered across too many intellectual-social circles"
+          ],
+          "telltales": [
+            "You have deep friendships in many different worlds that never overlap",
+            "You explain why someone feels what they feel before validating the feeling",
+            "You're the 'interesting friend' everyone calls but you feel spread thin",
+            "Conversations become lectures when you should be listening"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Facilitation and workshop design",
+            "Organizational development and culture work",
+            "Coaching with intellectual depth",
+            "Community building around ideas",
+            "Bridge roles between technical and non-technical teams"
+          ],
+          "role_patterns": [
+            "Connect → Understand → Synthesize → Teach back",
+            "Translator between domains and disciplines",
+            "Podcast host, interviewer, convener of conversations",
+            "Therapist, counselor, or coach with philosophical bent"
+          ],
+          "anti_patterns": [
+            "Isolated deep work without human interaction",
+            "Purely transactional relationship management",
+            "Roles requiring quick shallow connections",
+            "Technical work with no teaching or facilitation component"
+          ],
+          "collaboration": [
+            "Pairs well with Organizers who structure what you facilitate",
+            "Works with Protectors who provide stability for exploration",
+            "May frustrate Performers who want spotlight, not dialogue"
+          ]
+        },
+        "money": {
+          "style": [
+            "Invests in experiences that combine learning AND connection",
+            "Spends on hosting, gathering, facilitating spaces",
+            "Values economic relationships as much as transactions",
+            "May support others' ventures as expression of connection"
+          ],
+          "risks": [
+            "Over-giving financially to maintain relationships",
+            "Undercharging for facilitation/translation skills",
+            "Neglecting financial foundations for social-intellectual activities"
+          ],
+          "guardrails": [
+            "Separate giving budget from operating budget",
+            "Value your bridging skills at market rates",
+            "Track time spent on unpaid intellectual-social labor"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Deep curiosity about partner's inner world",
+            "Ability to hold meaningful conversations indefinitely",
+            "Bridge to new ideas, people, and worlds",
+            "Genuine interest in understanding, not just being understood"
+          ],
+          "needs": [
+            "Partner who engages intellectually AND emotionally",
+            "Space for both solitary exploration and deep connection",
+            "Someone who appreciates being 'figured out'"
+          ],
+          "triggers": [
+            "Superficiality - small talk that never deepens",
+            "Being seen as 'too much' or 'too intense'",
+            "Partner who wants presence without ideas"
+          ],
+          "repair": [
+            "Reframe the conflict AND address the emotion (both needed)",
+            "Ask what partner needs before offering interpretation",
+            "Be curious about their experience, not just your theory of it"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Helps children understand their own emotional experience",
+            "Teaches perspective-taking early",
+            "Creates family culture of meaningful conversation",
+            "Models curiosity about other people"
+          ],
+          "traps": [
+            "Explaining feelings to children who need co-regulation",
+            "Over-facilitating instead of just being present",
+            "Treating family life as intellectual seminar"
+          ],
+          "practices": [
+            "Name emotions before analyzing them",
+            "Let some moments be simple, not meaningful",
+            "Ask children questions, then wait for their answers"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Hosting salons, dinner parties with themes",
+            "Book clubs and discussion groups",
+            "Podcast consumption and creation",
+            "Travel that involves meeting locals and understanding culture"
+          ],
+          "anti_patterns": [
+            "Purely solitary intellectual pursuits",
+            "Competition-focused activities",
+            "Hobbies with no social component"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Be present before analyzing",
+            "Let relationships be simple sometimes",
+            "Finish your own work, not just facilitate others'",
+            "Receive support without immediately reciprocating"
+          ],
+          "practices": [
+            "Practice sitting with someone in silence",
+            "Complete a project alone before sharing",
+            "Accept help without explaining or theorizing"
+          ],
+          "blockers": [
+            "Belief that understanding = connection",
+            "Fear of being boring without ideas to offer",
+            "Over-responsibility for others' emotional experience"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Organizer",
+              "why": "Grounds your facilitation with structure"
+            },
+            {
+              "match": "Protector",
+              "why": "Creates stability while you explore together"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Pure Explorer",
+              "why": "They want novelty; you want depth of connection"
+            },
+            {
+              "match": "Pure Philosopher",
+              "why": "They want ideas; you want relationship around ideas"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Organizer-Protector",
+              "why": "Provides structure and stability you need to flourish"
+            }
+          ]
+        }
+      }
+    },
+    "EXPLORER_PHILOSOPHER_PROTECTOR": {
+      "tagline": "The careful pioneer who guards what matters while seeking truth",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Explores with awareness of risk and consequence",
+            "Seeks truth but protects what's valuable in tradition",
+            "Can navigate between innovation and preservation",
+            "Thoughtful about what to change vs. what to protect",
+            "Brings intellectual depth to security and stability concerns",
+            "Natural fit for reform rather than revolution"
+          ],
+          "stress_strengths": [
+            "Under pressure, Protector provides stability while Philosopher processes",
+            "Crisis triggers careful analysis before action"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.O >= 5.0 AND scores.affects.fear >= 4.5",
+              "because": "Curiosity tempered by appropriate caution"
+            },
+            {
+              "when": "scores.motives.purpose >= 5.5 AND scores.affects.care >= 5.5",
+              "because": "Seeks meaning while caring about impact on others"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "Internal tension between exploring and protecting can paralyze",
+            "May over-analyze risks until opportunities pass",
+            "Can become the person who sees problems in every new idea",
+            "Protective instincts may override genuine curiosity",
+            "Philosophical pessimism can reinforce excessive caution"
+          ],
+          "telltales": [
+            "You research opportunities until they're no longer opportunities",
+            "You explain why new approaches are risky before trying them",
+            "You're the 'voice of reason' that slows groups down",
+            "Your curiosity activates only after safety is assured"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Risk management with intellectual depth",
+            "Policy work balancing innovation and protection",
+            "Quality assurance with strategic perspective",
+            "Security research and responsible disclosure",
+            "Ethics oversight in technology or science"
+          ],
+          "role_patterns": [
+            "Investigate → Assess risk → Recommend safeguards",
+            "Red team thinking with philosophical grounding",
+            "Long-term strategic planning with downside protection",
+            "Reform initiatives that preserve what works"
+          ],
+          "anti_patterns": [
+            "Move-fast-break-things startup culture",
+            "Roles requiring immediate action on incomplete information",
+            "Innovation without accountability for consequences",
+            "Environments that dismiss caution as weakness"
+          ],
+          "collaboration": [
+            "Pairs well with Performers who build momentum",
+            "Works with Organizers who structure risk mitigation",
+            "May frustrate pure Explorers who want speed"
+          ]
+        },
+        "money": {
+          "style": [
+            "Conservative investing with intellectual rationale",
+            "Emergency funds before exploration spending",
+            "Deep research before any financial commitment",
+            "Values security but understands opportunity cost"
+          ],
+          "risks": [
+            "Over-conservative allocation missing growth",
+            "Analysis paralysis on time-sensitive opportunities",
+            "Protecting wealth so carefully it doesn't serve life goals"
+          ],
+          "guardrails": [
+            "Define 'enough' security, then allow exploration",
+            "Set decision deadlines to prevent infinite research",
+            "Allocate 'exploration budget' that's safe to lose"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Thoughtful, loyal partnership with intellectual depth",
+            "Protective care combined with genuine curiosity",
+            "Stability that doesn't preclude growth",
+            "Long-term thinking about relationship health"
+          ],
+          "needs": [
+            "Partner who respects both curiosity and caution",
+            "Safety to explore without judgment",
+            "Patience with deliberate decision-making"
+          ],
+          "triggers": [
+            "Recklessness that threatens stability",
+            "Dismissing concerns as excessive worry",
+            "Pressure to decide before feeling safe"
+          ],
+          "repair": [
+            "Acknowledge the valid concern before asking for flexibility",
+            "Create safety structures that enable exploration",
+            "Separate 'I'm worried' from 'this is bad'"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Creates safe environments for age-appropriate exploration",
+            "Teaches critical thinking about risk",
+            "Models thoughtful decision-making",
+            "Protects while still encouraging curiosity"
+          ],
+          "traps": [
+            "Over-protecting until exploration feels dangerous",
+            "Transmitting anxiety along with valid concerns",
+            "Philosophical lectures about consequences"
+          ],
+          "practices": [
+            "Scaffold risk-taking with safety nets, not prohibition",
+            "Distinguish your anxiety from actual danger",
+            "Let children experience manageable failure"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Careful research before trying new activities",
+            "Historical and philosophical reading",
+            "Nature activities with appropriate preparation",
+            "Learning about risk, safety, and security as interest"
+          ],
+          "anti_patterns": [
+            "Extreme sports or high-risk activities",
+            "Spontaneous travel without planning",
+            "Hobbies requiring reckless experimentation"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Distinguish real risk from excessive caution",
+            "Act on 80% certainty, not 100%",
+            "Let some exploration be genuinely open-ended",
+            "Trust that you can handle consequences"
+          ],
+          "practices": [
+            "Take one calculated risk per month",
+            "Notice when 'research' becomes avoidance",
+            "Practice small failures in low-stakes domains"
+          ],
+          "blockers": [
+            "Belief that enough analysis prevents all problems",
+            "Conflating preparation with protection",
+            "Using philosophy to justify inaction"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Connector",
+              "why": "Softens your caution with relationship warmth"
+            },
+            {
+              "match": "Organizer",
+              "why": "Helps structure your risk assessments"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Pure Explorer",
+              "why": "Your caution frustrates their momentum"
+            },
+            {
+              "match": "Performer",
+              "why": "They take risks for attention you find irresponsible"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Explorer-Performer",
+              "why": "Pushes you to act despite uncertainty"
+            }
+          ]
+        }
+      }
+    },
+    "EXPLORER_PHILOSOPHER_PERFORMER": {
+      "tagline": "The charismatic theorist who makes ideas irresistible",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Explores ideas AND explores how to present them compellingly",
+            "Natural teacher who makes complex concepts accessible and exciting",
+            "Generates insights and has the presence to spread them",
+            "Combines intellectual depth with audience awareness",
+            "Creates content, talks, and experiences that move people",
+            "Can hold attention while delivering substance"
+          ],
+          "stress_strengths": [
+            "Under pressure, Performer rallies energy while Philosopher provides grounding",
+            "Crisis becomes story and meaning simultaneously"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.O >= 5.5 AND scores.hexaco.X >= 5.5",
+              "because": "High Openness + Extraversion enables charismatic curiosity"
+            },
+            {
+              "when": "scores.motives.purpose >= 5.5 AND scores.affects.play >= 5.5",
+              "because": "Meaning-seeking with playful expression"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "May prioritize insight that performs well over insight that's true",
+            "Idea exploration can become content production treadmill",
+            "Audience feedback can distort genuine intellectual direction",
+            "Risk of becoming entertainer who sounds deep rather than thinker who entertains",
+            "Scattered between too many platforms and projects"
+          ],
+          "telltales": [
+            "You think about how to present an idea while still forming it",
+            "You've built audience but feel emptier, not wiser",
+            "The ideas that 'perform' start shaping what you believe",
+            "You can't think without imagining the eventual content"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Public intellectual roles with genuine inquiry",
+            "Science communication and popularization",
+            "TED-style speaking and keynotes",
+            "Educational content creation",
+            "Training and development with thought leadership"
+          ],
+          "role_patterns": [
+            "Explore → Synthesize → Present → Engage audience → Explore deeper",
+            "Building personal brand around genuine expertise",
+            "Conference speaking with real research behind it",
+            "Creating courses that combine depth and engagement"
+          ],
+          "anti_patterns": [
+            "Pure performance without intellectual substance",
+            "Academic work with no communication component",
+            "Roles requiring quiet, solitary production",
+            "Corporate communication without creative latitude"
+          ],
+          "collaboration": [
+            "Pairs well with Organizers who structure your content production",
+            "Works with Protectors who fact-check your claims",
+            "May frustrate Connectors who want depth over breadth of audience"
+          ]
+        },
+        "money": {
+          "style": [
+            "Monetizes intellectual work through attention and presence",
+            "Invests in tools, courses, and experiences that enable creation",
+            "Comfortable with audience-funded models (Patreon, courses)",
+            "May spend on status signals that support platform building"
+          ],
+          "risks": [
+            "Chasing trending topics for revenue vs. genuine interest",
+            "Over-investing in production quality vs. substance",
+            "Income volatility from audience-dependent models"
+          ],
+          "guardrails": [
+            "Separate 'exploration budget' from 'content budget'",
+            "Build sustainable income before chasing scale",
+            "Create without publishing regularly to stay grounded"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Excitement, intellectual stimulation, and social capital",
+            "Makes partner feel like main character in interesting story",
+            "Brings energy and ideas to relationship",
+            "Natural ability to celebrate and spotlight partner"
+          ],
+          "needs": [
+            "Audience AND intimate connection (both, not one or other)",
+            "Partner who engages with ideas, not just supports platform",
+            "Private space to be boring and uncertain"
+          ],
+          "triggers": [
+            "Being seen as 'just a performer' without intellectual respect",
+            "Partner competing for spotlight",
+            "Demands for consistency that constrain exploration"
+          ],
+          "repair": [
+            "Show genuine uncertainty, not performed vulnerability",
+            "Ask partner's ideas, then truly incorporate them",
+            "Be privately imperfect, not just publicly authentic"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Makes learning genuinely exciting for children",
+            "Models public engagement with ideas",
+            "Creates memorable learning experiences",
+            "Celebrates children's curiosity and expression"
+          ],
+          "traps": [
+            "Children as content or audience",
+            "Performance mode at home preventing genuine connection",
+            "Expecting children to be impressive to others"
+          ],
+          "practices": [
+            "Unplug and be genuinely present without camera or story",
+            "Let children have private achievements",
+            "Model intellectual humility, not just confidence"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Activities that combine learning and sharing",
+            "Content creation as genuine play, not just work",
+            "Teaching and mentoring as recreation",
+            "Events and gatherings with intellectual themes"
+          ],
+          "anti_patterns": [
+            "Private hobbies with no shareable component",
+            "Activities requiring quiet anonymity",
+            "Purely physical pursuits with no narrative"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Create without publishing - private exploration",
+            "Develop ideas fully before thinking about presentation",
+            "Value depth over performance metrics",
+            "Be boring and uncertain with trusted others"
+          ],
+          "practices": [
+            "Regular unplugged thinking time with no content output",
+            "Keep a private journal that will never be shared",
+            "Practice saying 'I don't know' without performing uncertainty"
+          ],
+          "blockers": [
+            "Conflating audience size with truth value",
+            "Inability to think without imagining presentation",
+            "Fear of being uninteresting without content"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Organizer",
+              "why": "Manages your content and calendar sustainably"
+            },
+            {
+              "match": "Protector",
+              "why": "Grounds you when performance pressure distorts"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Another Performer",
+              "why": "Competing for attention and spotlight"
+            },
+            {
+              "match": "Pure Connector",
+              "why": "They want depth; you want breadth of impact"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Protector-Organizer",
+              "why": "Provides stability and structure for sustainable creation"
+            }
+          ]
+        }
+      }
+    },
+    "EXPLORER_ORGANIZER_CONNECTOR": {
+      "tagline": "The community builder who creates systems for people",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Explores new approaches to organization and community",
+            "Builds systems that serve people, not just efficiency",
+            "Creates infrastructure for collaboration and connection",
+            "Natural community manager with operational excellence",
+            "Can design processes that people actually enjoy using",
+            "Balances innovation with reliability, ideas with people"
+          ],
+          "stress_strengths": [
+            "Under pressure, Organizer provides structure while Connector maintains relationships",
+            "Crisis triggers both systematic response AND emotional support"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.C >= 5.5 AND scores.hexaco.A >= 5.5",
+              "because": "Conscientiousness + Agreeableness enables structured care"
+            },
+            {
+              "when": "scores.motives.affiliation >= 5.5 AND scores.motives.mastery >= 5.0",
+              "because": "Seeks connection AND competence in systems"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "May over-systematize relationships until they feel mechanical",
+            "Can become indispensable bottleneck for community operations",
+            "Exploration gets channeled only into process improvement",
+            "People-pleasing can distort system design",
+            "Burnout from maintaining both systems AND relationships"
+          ],
+          "telltales": [
+            "You've built elaborate community infrastructure but feel exhausted",
+            "Your CRM is immaculate but you're behind on actual conversations",
+            "You can't stop optimizing the group's processes",
+            "Everyone depends on you for both emotional and logistical support"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Community management with operational ownership",
+            "Customer success with process design authority",
+            "HR/People operations with strategic latitude",
+            "Program management for people-centric initiatives",
+            "Non-profit operations combining mission and systems"
+          ],
+          "role_patterns": [
+            "Design systems → Onboard people → Iterate based on feedback",
+            "Community building with clear operational frameworks",
+            "Event production combining logistics and hospitality",
+            "Team operations: making groups work well together"
+          ],
+          "anti_patterns": [
+            "Pure systems work with no human interaction",
+            "Pure relationship work with no operational control",
+            "Roles requiring rapid context-switching without relationship continuity",
+            "Environments that sacrifice people for efficiency"
+          ],
+          "collaboration": [
+            "Pairs well with Philosophers who provide strategic depth",
+            "Works with Performers who bring energy to community",
+            "May frustrate Protectors who want stability over innovation"
+          ]
+        },
+        "money": {
+          "style": [
+            "Budgets for both tools/systems AND relationship investment",
+            "Tracks spending but includes generosity as line item",
+            "Values efficiency AND hospitality spending",
+            "May over-invest in community and under-invest in self"
+          ],
+          "risks": [
+            "Subsidizing community activities from personal funds",
+            "Systems spending that doesn't serve actual relationships",
+            "Burnout-driven financial decisions"
+          ],
+          "guardrails": [
+            "Separate community budget from personal budget",
+            "Track time investment, not just money",
+            "Build financial boundaries that protect sustainability"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Reliable partner who also brings fresh ideas",
+            "Creates household systems that work for both people",
+            "Remembers what matters to partner and creates structures to honor it",
+            "Social infrastructure for couple's community"
+          ],
+          "needs": [
+            "Partner who appreciates both care AND organization",
+            "Help with relationship maintenance, not just receiving care",
+            "Recognition that systems are expressions of love"
+          ],
+          "triggers": [
+            "Partner who benefits from systems but doesn't help maintain them",
+            "Disorganization that affects people you care about",
+            "Being seen as 'just' the operations person"
+          ],
+          "repair": [
+            "Acknowledge feeling taken for granted",
+            "Redistribute operational load explicitly",
+            "Create systems for relationship repair, not just conflict prevention"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Creates organized environments that prioritize children's needs",
+            "Builds family systems that everyone participates in",
+            "Models both reliability and innovation",
+            "Connects family to broader community"
+          ],
+          "traps": [
+            "Over-scheduling children's social lives",
+            "Systems that serve parents' need for organization more than children",
+            "Burnout from managing everything for everyone"
+          ],
+          "practices": [
+            "Involve children in system design, not just compliance",
+            "Leave unstructured time for genuine connection",
+            "Let some things be imperfect"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Organizing gatherings and community events",
+            "Building tools for groups you're part of",
+            "Volunteering with operational component",
+            "Creative projects that bring people together"
+          ],
+          "anti_patterns": [
+            "Solitary hobbies with no community component",
+            "Purely consumption-based leisure",
+            "Activities that add to operational burden"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Delegate operations without guilt",
+            "Pursue exploration that doesn't serve community",
+            "Let some relationships be unmanaged",
+            "Rest before you're depleted"
+          ],
+          "practices": [
+            "Schedule solo exploration time weekly",
+            "Practice saying no to community requests",
+            "Build systems for your own care, not just others'"
+          ],
+          "blockers": [
+            "Belief that community collapses without your operations",
+            "Guilt about unproductive time",
+            "Identity over-fused with caretaker role"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Philosopher",
+              "why": "Provides depth and meaning to your community work"
+            },
+            {
+              "match": "Performer",
+              "why": "Brings energy you can channel through your systems"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Pure Explorer",
+              "why": "They generate ideas faster than you can systematize"
+            },
+            {
+              "match": "Pure Protector",
+              "why": "They resist the changes you want to implement"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Philosopher-Protector",
+              "why": "Helps you work sustainably with deeper purpose"
+            }
+          ]
+        }
+      }
+    },
+    "EXPLORER_ORGANIZER_PROTECTOR": {
+      "tagline": "The careful architect who builds lasting infrastructure",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Explores innovations that can be safely systematized",
+            "Builds structures designed to endure and protect",
+            "Natural risk manager with operational excellence",
+            "Creates processes that prevent rather than just respond to problems",
+            "Combines curiosity with caution in productive tension",
+            "Can innovate within constraints, not just around them"
+          ],
+          "stress_strengths": [
+            "Under pressure, defaults to tried-and-true systems",
+            "Crisis triggers both structure AND protective caution"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.C >= 5.5 AND scores.affects.fear >= 4.5",
+              "because": "High Conscientiousness + appropriate caution"
+            },
+            {
+              "when": "scores.motives.mastery >= 5.5 AND scores.affects.care >= 5.0",
+              "because": "Seeks competence while protecting what matters"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "Exploration gets constrained to 'safe' innovations only",
+            "May build systems to prevent problems that were learning opportunities",
+            "Over-engineered solutions for unlikely risks",
+            "Internal tension between 'try new things' and 'prevent bad outcomes'",
+            "Can become organizational bottleneck through risk review"
+          ],
+          "telltales": [
+            "You've built elaborate safeguards around processes that rarely fail",
+            "Your systems prevent problems AND prevent experimentation",
+            "You research new approaches but rarely implement them",
+            "You're known as the person who finds problems in every proposal"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Quality assurance with innovation mandate",
+            "Security architecture and design",
+            "Regulatory compliance with process improvement",
+            "Infrastructure engineering with reliability focus",
+            "Risk management in innovative organizations"
+          ],
+          "role_patterns": [
+            "Design → Test → Fortify → Monitor → Iterate carefully",
+            "Building systems that are both new AND reliable",
+            "Controlled experimentation with rollback capability",
+            "Documentation and process governance"
+          ],
+          "anti_patterns": [
+            "Move-fast environments that celebrate breaking things",
+            "Roles with no operational ownership",
+            "Innovation theater with no implementation",
+            "Environments that dismiss caution as obstruction"
+          ],
+          "collaboration": [
+            "Pairs well with Performers who build momentum for careful changes",
+            "Works with Connectors who help communicate risk decisions",
+            "May frustrate pure Explorers who want to move faster"
+          ]
+        },
+        "money": {
+          "style": [
+            "Conservative allocation with systematic approach",
+            "Emergency funds before investment exploration",
+            "Deep research before any new financial strategy",
+            "Values predictability and reliability in financial systems"
+          ],
+          "risks": [
+            "Over-conservative allocation missing reasonable opportunities",
+            "Infinite research cycle before any action",
+            "Building financial infrastructure more elaborate than needed"
+          ],
+          "guardrails": [
+            "Define 'enough' protection, then allow measured risk",
+            "Set deadlines for financial decisions",
+            "Allocate 'learning budget' for controlled experiments"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Exceptionally reliable partner with growth orientation",
+            "Builds household systems designed to last",
+            "Protective care expressed through organization",
+            "Steady presence that still brings new ideas"
+          ],
+          "needs": [
+            "Partner who values both stability AND growth",
+            "Appreciation for protective planning",
+            "Space to explore within safe boundaries"
+          ],
+          "triggers": [
+            "Recklessness that threatens stability",
+            "Dismissing careful analysis as excessive worry",
+            "Chaos that could have been prevented"
+          ],
+          "repair": [
+            "Acknowledge the protection was care, even if excessive",
+            "Create explicit space for measured risk-taking together",
+            "Distinguish fear from legitimate concern"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Creates safe, organized environments for children",
+            "Teaches responsible risk assessment",
+            "Models systematic thinking with appropriate caution",
+            "Builds routines that children can rely on"
+          ],
+          "traps": [
+            "Over-structuring until exploration feels dangerous",
+            "Protective systems that prevent necessary learning",
+            "Transmitting anxiety through over-preparation"
+          ],
+          "practices": [
+            "Build safety nets, not safety cages",
+            "Let children fail in controlled ways",
+            "Distinguish protection from control"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Building and maintaining systems",
+            "Research and documentation",
+            "Controlled experiments and careful crafts",
+            "Preparedness activities and planning"
+          ],
+          "anti_patterns": [
+            "High-risk spontaneous activities",
+            "Unstructured creative exploration",
+            "Group activities with unpredictable others"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Take action before full certainty",
+            "Let some experiments run without safeguards",
+            "Trust that you can handle unexpected outcomes",
+            "Distinguish preparation from procrastination"
+          ],
+          "practices": [
+            "One 'minimum viable' project per quarter",
+            "Set 'good enough' criteria before perfectionism kicks in",
+            "Practice small failures in safe domains"
+          ],
+          "blockers": [
+            "Belief that enough preparation prevents all problems",
+            "Conflating caution with wisdom",
+            "Using organization to avoid risk rather than manage it"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Connector",
+              "why": "Softens your caution with relationship warmth"
+            },
+            {
+              "match": "Philosopher",
+              "why": "Provides strategic depth to your systematic thinking"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Pure Explorer",
+              "why": "Your caution slows their momentum"
+            },
+            {
+              "match": "Performer",
+              "why": "They take risks for impact you find irresponsible"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Connector-Performer",
+              "why": "Pushes you toward action and connection"
+            }
+          ]
+        }
+      }
+    },
+    "EXPLORER_ORGANIZER_PERFORMER": {
+      "tagline": "The production powerhouse who ships creative work reliably",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Explores ideas AND has systems to bring them to completion",
+            "Creates content/products with professional reliability",
+            "Natural producer: concept to delivery with audience awareness",
+            "Combines creative energy with operational discipline",
+            "Can scale impact through systematic production",
+            "Both generates ideas AND executes on them"
+          ],
+          "stress_strengths": [
+            "Under pressure, systems kick in while performer maintains energy",
+            "Crisis becomes manageable project with clear deliverables"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.C >= 5.5 AND scores.hexaco.X >= 5.5",
+              "because": "Conscientiousness + Extraversion enables reliable creation"
+            },
+            {
+              "when": "scores.motives.mastery >= 5.5 AND scores.affects.play >= 5.0",
+              "because": "Seeks competence AND enjoys performance"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "Production schedule can override genuine exploration",
+            "Systems optimized for output may sacrifice quality or depth",
+            "Performance metrics can become the goal rather than measure",
+            "Burnout from maintaining both creation AND production",
+            "May lose authenticity in pursuit of scalable production"
+          ],
+          "telltales": [
+            "You have efficient systems but feel like a content factory",
+            "Your output is reliable but you're not sure what you actually think",
+            "The production calendar drives your curiosity, not the reverse",
+            "You've optimized everything except meaning"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Creative production with clear deliverables",
+            "Marketing and content with systematic approach",
+            "Event production combining creativity and logistics",
+            "Product development with launch orientation",
+            "Agency work balancing creativity and client delivery"
+          ],
+          "role_patterns": [
+            "Ideate → Produce → Ship → Measure → Iterate",
+            "Building creative systems that scale",
+            "Project management for creative teams",
+            "Solo creator with production discipline"
+          ],
+          "anti_patterns": [
+            "Open-ended exploration with no shipping requirement",
+            "Pure operations with no creative component",
+            "Roles requiring consistent energy without creative renewal",
+            "Environments that sacrifice quality for speed"
+          ],
+          "collaboration": [
+            "Pairs well with Philosophers who provide depth",
+            "Works with Protectors who ensure quality control",
+            "May frustrate Connectors who want depth over output"
+          ]
+        },
+        "money": {
+          "style": [
+            "Monetizes creative work through systematic production",
+            "Invests in tools and systems for creation",
+            "Tracks ROI on creative investments",
+            "May over-invest in production infrastructure"
+          ],
+          "risks": [
+            "Chasing revenue through volume over value",
+            "Tool and system spending that doesn't serve actual creation",
+            "Burnout-driven financial decisions"
+          ],
+          "guardrails": [
+            "Track revenue per hour, not just total",
+            "Build in fallow periods for renewal",
+            "Separate 'exploration time' from 'production time'"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Energy, reliability, and creative partnership",
+            "Makes things happen for shared projects",
+            "Brings excitement AND follow-through",
+            "Creates memorable experiences systematically"
+          ],
+          "needs": [
+            "Partner who appreciates both sides",
+            "Support during production crunch times",
+            "Space for genuine rest, not just efficient recovery"
+          ],
+          "triggers": [
+            "Being seen as 'just' the executor",
+            "Chaos that disrupts production systems",
+            "Partner who benefits from output but doesn't help sustain it"
+          ],
+          "repair": [
+            "Acknowledge burnout before breakdown",
+            "Create systems for relationship investment, not just work",
+            "Allow genuine rest, not just efficient recovery"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Creates exciting, organized experiences for children",
+            "Models productive creativity",
+            "Turns parenting into creative projects",
+            "Reliable AND fun parent"
+          ],
+          "traps": [
+            "Over-producing children's experiences",
+            "Turning family time into content or production",
+            "Optimizing childhood rather than experiencing it"
+          ],
+          "practices": [
+            "Schedule unproductive time with children",
+            "Let some experiences be unremarkable",
+            "Model rest, not just productive recovery"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Creating and producing as recreation",
+            "Building and shipping personal projects",
+            "Structured creative challenges",
+            "Performance with systematic preparation"
+          ],
+          "anti_patterns": [
+            "Hobbies that feel like more production",
+            "Unstructured leisure without output",
+            "Activities that don't create tangible results"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Create without shipping sometimes",
+            "Value process over product occasionally",
+            "Rest before you're depleted",
+            "Explore without production intent"
+          ],
+          "practices": [
+            "One 'just for you' project with no audience",
+            "Scheduled fallow periods in production calendar",
+            "Practice boredom without reaching for creation"
+          ],
+          "blockers": [
+            "Identity over-fused with productivity",
+            "Fear of irrelevance without constant output",
+            "Conflating rest with laziness"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Philosopher",
+              "why": "Provides depth that elevates your production"
+            },
+            {
+              "match": "Connector",
+              "why": "Helps you create for and with community"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Pure Explorer",
+              "why": "They want to keep exploring; you want to ship"
+            },
+            {
+              "match": "Pure Protector",
+              "why": "They slow down your production velocity"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Philosopher-Protector",
+              "why": "Helps you create more sustainably with deeper purpose"
+            }
+          ]
+        }
+      }
+    },
+    "EXPLORER_CONNECTOR_PROTECTOR": {
+      "tagline": "The trusted guide who leads safely into new territory",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Explores with care for those who follow",
+            "Creates safe spaces for others to take risks",
+            "Natural mentor who opens doors cautiously",
+            "Combines adventurous spirit with protective care",
+            "Can lead change while maintaining trust and safety",
+            "Brings people along on journeys rather than leaving them behind"
+          ],
+          "stress_strengths": [
+            "Under pressure, protects relationships while assessing new options",
+            "Crisis triggers both innovation AND care for affected people"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.A >= 5.5 AND scores.affects.care >= 5.5",
+              "because": "Agreeableness + Care ensures protective empathy"
+            },
+            {
+              "when": "scores.hexaco.O >= 5.0 AND scores.affects.fear >= 4.0",
+              "because": "Openness tempered by appropriate caution for others"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "May hold back exploration to protect others who don't need protecting",
+            "Can become over-responsible for others' safety in change",
+            "Exploration gets limited to what everyone can safely do together",
+            "Protectiveness may read as controlling",
+            "Burnout from carrying both innovation AND emotional safety"
+          ],
+          "telltales": [
+            "You scout ahead but then wait for everyone to catch up",
+            "Your ideas get filtered through 'will this upset anyone?'",
+            "You're everyone's trusted advisor but rarely act on your own vision",
+            "You protect people from changes they actually want to make"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Change management with human-centered approach",
+            "Mentoring and coaching with exploratory orientation",
+            "Community leadership during transitions",
+            "Counseling or therapy with growth focus",
+            "Team leadership balancing innovation and psychological safety"
+          ],
+          "role_patterns": [
+            "Explore → Assess safety → Invite others → Support transition",
+            "Guide roles: onboarding, mentoring, transition support",
+            "Creating safe containers for experimentation",
+            "Leading organizations through change"
+          ],
+          "anti_patterns": [
+            "Solo exploration with no people component",
+            "Roles requiring rapid change without people buy-in",
+            "Environments that sacrifice relationships for innovation",
+            "Positions where protecting others is seen as weakness"
+          ],
+          "collaboration": [
+            "Pairs well with Organizers who structure safe transitions",
+            "Works with Performers who energize change",
+            "May frustrate pure Explorers who want to move faster"
+          ]
+        },
+        "money": {
+          "style": [
+            "Financial decisions consider impact on those who depend on you",
+            "Cautious innovation in finance - exploring but with safety net",
+            "May under-take financial risks due to protective instincts",
+            "Generous with resources for others' safety and growth"
+          ],
+          "risks": [
+            "Over-conservative allocation to protect dependents",
+            "Giving away financial opportunities to avoid risking others",
+            "Neglecting own financial needs for others' security"
+          ],
+          "guardrails": [
+            "Separate your financial security from others' choices",
+            "Define what protection actually requires financially",
+            "Invest in your own growth, not just others'"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Trustworthy partner who also brings growth and adventure",
+            "Creates safety for partner to take risks",
+            "Loyal companion on life's explorations",
+            "Protective care that doesn't stifle"
+          ],
+          "needs": [
+            "Partner who respects both curiosity and protectiveness",
+            "Someone who doesn't need protecting all the time",
+            "Space for your own unguarded exploration"
+          ],
+          "triggers": [
+            "Partner taking risks that affect you without consultation",
+            "Being blamed for protective concern",
+            "Having to choose between protecting and exploring"
+          ],
+          "repair": [
+            "Distinguish protection from control",
+            "Create explicit space for individual risk-taking",
+            "Acknowledge when caution came from your fear, not their need"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Creates safe foundation for children's exploration",
+            "Models both courage and caution",
+            "Teaches risk assessment as life skill",
+            "Protective without overprotective"
+          ],
+          "traps": [
+            "Scaffolding so much that children don't learn to self-protect",
+            "Living through children's explorations rather than your own",
+            "Anxiety about children's risks masquerading as wisdom"
+          ],
+          "practices": [
+            "Expand safety zone gradually as children demonstrate capacity",
+            "Share your own explorations, not just theirs",
+            "Let children face consequences with support, not rescue"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Mentoring others in activities you've explored",
+            "Group adventures with safety planning",
+            "Teaching and guiding in areas of expertise",
+            "Nature activities with community"
+          ],
+          "anti_patterns": [
+            "Solo high-risk activities",
+            "Competitive individual pursuits",
+            "Hobbies with no relational component"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Explore for yourself, not just to guide others",
+            "Let people face consequences you could prevent",
+            "Take risks that only affect you",
+            "Receive care instead of always providing it"
+          ],
+          "practices": [
+            "One solo adventure per month",
+            "Practice not offering advice when not asked",
+            "Let someone fail without intervening"
+          ],
+          "blockers": [
+            "Over-identification with guide/protector role",
+            "Belief that others can't handle what you can handle",
+            "Fear of being selfish if you explore alone"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Organizer",
+              "why": "Structures your care into sustainable systems"
+            },
+            {
+              "match": "Philosopher",
+              "why": "Provides depth to your guidance"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Pure Performer",
+              "why": "They take risks for attention that worry you"
+            },
+            {
+              "match": "Pure Explorer",
+              "why": "They don't wait for others or assess safety"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Organizer-Performer",
+              "why": "Helps you ship and shine without over-protecting"
+            }
+          ]
+        }
+      }
+    },
+    "EXPLORER_CONNECTOR_PERFORMER": {
+      "tagline": "The magnetic host who makes every gathering an adventure",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Explores ideas AND people with equal enthusiasm",
+            "Creates experiences that are novel, connected, AND exciting",
+            "Natural host who makes events both interesting and welcoming",
+            "Combines curiosity, warmth, and presence effortlessly",
+            "Can introduce diverse people and make it feel natural",
+            "Generates energy that draws people into new experiences"
+          ],
+          "stress_strengths": [
+            "Under pressure, maintains performance while keeping relationships",
+            "Crisis becomes opportunity for dramatic connection"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.X >= 5.5 AND scores.hexaco.A >= 5.0",
+              "because": "Extraversion + Agreeableness enables warm presence"
+            },
+            {
+              "when": "scores.affects.play >= 5.5 AND scores.motives.affiliation >= 5.0",
+              "because": "Playful energy combined with connection drive"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "Scattered across too many social-creative-exploratory commitments",
+            "Surface-level across all domains - wide but not deep",
+            "FOMO drives more activity than genuine interest",
+            "Performance can crowd out authentic connection",
+            "Burnout from maintaining energy across all fronts"
+          ],
+          "telltales": [
+            "You're the one everyone wants at their party but you're exhausted",
+            "Your calendar is packed with interesting things but you feel empty",
+            "You know many people but few know the real you",
+            "You can't stop performing even in intimate settings"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Event production and experience design",
+            "Community building with creative focus",
+            "Hosting: podcasts, shows, gatherings",
+            "Marketing and brand work with relationship emphasis",
+            "Entertainment with genuine audience connection"
+          ],
+          "role_patterns": [
+            "Discover → Connect people → Create experience → Energize",
+            "Building communities around shared interests",
+            "Introducing and connecting diverse networks",
+            "Content creation that builds relationships"
+          ],
+          "anti_patterns": [
+            "Solitary work with no performance or connection",
+            "Deep analytical work requiring sustained focus",
+            "Roles requiring consistent energy without variety",
+            "Pure logistics without creative or relational component"
+          ],
+          "collaboration": [
+            "Pairs well with Organizers who handle logistics",
+            "Works with Philosophers who provide depth",
+            "May frustrate Protectors who find the pace overwhelming"
+          ]
+        },
+        "money": {
+          "style": [
+            "Spends on experiences that combine novelty, people, and fun",
+            "Invests in social capital and network building",
+            "May over-spend on hosting and experiences",
+            "Monetizes through performance and community"
+          ],
+          "risks": [
+            "Lifestyle spending outpacing income",
+            "Over-investing in social experiences vs. foundations",
+            "FOMO-driven financial decisions"
+          ],
+          "guardrails": [
+            "Budget for experiences but with caps",
+            "Distinguish investment in relationships from performance spending",
+            "Build foundation before expanding social investment"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Excitement, novelty, warmth, and social richness",
+            "Introduces partner to interesting worlds and people",
+            "Makes everyday life feel like an adventure",
+            "Celebrates partner publicly and genuinely"
+          ],
+          "needs": [
+            "Partner who can match energy sometimes",
+            "Space for private connection without audience",
+            "Someone who sees past the performance to real self"
+          ],
+          "triggers": [
+            "Partner competing for attention",
+            "Feeling unseen behind the performance",
+            "Being wanted for access rather than self"
+          ],
+          "repair": [
+            "Drop performance and be genuinely uncertain together",
+            "Create private rituals with no audience",
+            "Acknowledge when connection was surface-level"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Makes family life genuinely fun and connected",
+            "Introduces children to diverse worlds and people",
+            "Creates memorable experiences",
+            "Models social warmth and creative energy"
+          ],
+          "traps": [
+            "Over-programming family time",
+            "Children as audience or content",
+            "Difficulty with boring essential parenting tasks"
+          ],
+          "practices": [
+            "Quiet one-on-one time with each child",
+            "Let children be boring without entertaining them",
+            "Model genuine rest, not just recovery"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Social activities with creative/exploratory component",
+            "Hosting and event organizing as recreation",
+            "Trying new things with groups of friends",
+            "Performance in community contexts"
+          ],
+          "anti_patterns": [
+            "Solitary hobbies with no social component",
+            "Deep skill-building requiring isolated practice",
+            "Activities that require being unremarkable"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Develop genuine depth in fewer areas",
+            "Be boring with trusted people",
+            "Connect without performing",
+            "Explore alone sometimes"
+          ],
+          "practices": [
+            "One evening per week completely unscheduled",
+            "Deep conversation with one person without audience",
+            "Practice silence in groups"
+          ],
+          "blockers": [
+            "Fear of being uninteresting without activity",
+            "Conflating busyness with meaningfulness",
+            "Difficulty distinguishing real self from performed self"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Organizer",
+              "why": "Manages logistics so you can focus on energy and connection"
+            },
+            {
+              "match": "Protector",
+              "why": "Provides stability you need to sustainably perform"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Another Performer",
+              "why": "Competing for spotlight"
+            },
+            {
+              "match": "Pure Philosopher",
+              "why": "They want depth; you want breadth and energy"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Philosopher-Organizer",
+              "why": "Helps you create sustainably with deeper purpose"
+            }
+          ]
+        }
+      }
+    },
+    "EXPLORER_PROTECTOR_PERFORMER": {
+      "tagline": "The courageous entertainer who protects through presence",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Explores and performs while watching out for others",
+            "Uses presence and performance to create safety",
+            "Natural leader in uncertain situations - visible AND protective",
+            "Can take risks for others that they wouldn't take for self",
+            "Combines adventure, loyalty, and charisma",
+            "Protective instincts expressed through visible action"
+          ],
+          "stress_strengths": [
+            "Under pressure, performs calm while assessing threats",
+            "Crisis triggers visible leadership combined with protective action"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.X >= 5.0 AND scores.affects.fear >= 4.5",
+              "because": "Extraversion combined with protective caution"
+            },
+            {
+              "when": "scores.affects.care >= 5.5 AND scores.affects.play >= 5.0",
+              "because": "Care for others expressed through energetic protection"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "Performance can mask genuine protective anxiety",
+            "May take dramatic protective action when subtle would work",
+            "Exploration limited to what allows protective performance",
+            "Can become exhausted from maintaining brave face",
+            "Protective drama may create anxiety it claims to address"
+          ],
+          "telltales": [
+            "You project confidence while feeling anxious about others' safety",
+            "Your protective actions are visible even when unnecessary",
+            "You perform courage to keep others calm",
+            "The 'brave face' has become a permanent mask"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Leadership roles requiring visible presence during uncertainty",
+            "Emergency services with public-facing component",
+            "Teaching or coaching in challenging domains",
+            "Security or protection with performance aspect",
+            "Sports or physical disciplines with protective culture"
+          ],
+          "role_patterns": [
+            "Assess risk → Take visible action → Maintain presence → Protect",
+            "Public leadership during transitions or crises",
+            "Coaching that builds courage in others",
+            "First-responder energy in various contexts"
+          ],
+          "anti_patterns": [
+            "Behind-the-scenes roles with no visibility",
+            "Work without protective purpose",
+            "Pure entertainment without meaning",
+            "Roles requiring vulnerability in public"
+          ],
+          "collaboration": [
+            "Pairs well with Organizers who handle planning",
+            "Works with Connectors who handle emotional needs",
+            "May frustrate Philosophers who want depth over action"
+          ]
+        },
+        "money": {
+          "style": [
+            "Financial protection for dependents is priority",
+            "May spend on visible symbols of security",
+            "Invests in capability to handle crises",
+            "Conservative with others' money, more exploratory with own"
+          ],
+          "risks": [
+            "Over-insuring against unlikely catastrophes",
+            "Under-investing in growth due to protective priority",
+            "Performance spending to look secure rather than be secure"
+          ],
+          "guardrails": [
+            "Distinguish actual protection from visible protection",
+            "Balance security spending with growth investment",
+            "Build foundation before performing prosperity"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Excitement combined with fierce loyalty",
+            "Visible commitment and protective presence",
+            "Leadership in couple's adventures",
+            "Makes partner feel both excited and safe"
+          ],
+          "needs": [
+            "Partner who appreciates protection without being smothered",
+            "Space to be afraid without performing courage",
+            "Recognition of the effort behind the brave face"
+          ],
+          "triggers": [
+            "Partner taking risks that could hurt them or others",
+            "Being blamed for protective actions",
+            "Having to choose between adventure and safety"
+          ],
+          "repair": [
+            "Drop the brave face and share real fears",
+            "Let partner protect you sometimes",
+            "Distinguish protective love from controlling fear"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Models courage and protective care",
+            "Creates exciting experiences with safety awareness",
+            "Teaches children to be brave AND careful",
+            "Visible protective presence that builds security"
+          ],
+          "traps": [
+            "Performing courage instead of modeling authentic bravery",
+            "Dramatic protection that increases children's anxiety",
+            "Unable to let children face age-appropriate risks"
+          ],
+          "practices": [
+            "Show children your process, not just your performance",
+            "Let them see you be afraid and work through it",
+            "Scaffold their bravery rather than performing yours"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Adventure activities with safety awareness",
+            "Physical disciplines with protective applications",
+            "Group activities where you can lead and protect",
+            "Performance in communities you want to protect"
+          ],
+          "anti_patterns": [
+            "Solitary activities with no protective purpose",
+            "Pure entertainment without meaning",
+            "Reckless activities that model bad risk-taking"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Be vulnerable without performing vulnerability",
+            "Let others protect you",
+            "Explore without protective purpose sometimes",
+            "Rest without performing strength"
+          ],
+          "practices": [
+            "Practice receiving care without reciprocating immediately",
+            "Share fears without resolving them into strength",
+            "Take vacations from protective responsibility"
+          ],
+          "blockers": [
+            "Belief that showing fear endangers others",
+            "Identity fused with visible protective performance",
+            "Difficulty being genuinely taken care of"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Organizer",
+              "why": "Structures your protective energy sustainably"
+            },
+            {
+              "match": "Connector",
+              "why": "Handles emotional needs you protect but don't meet directly"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Pure Explorer",
+              "why": "They take risks you have to worry about"
+            },
+            {
+              "match": "Pure Philosopher",
+              "why": "They want to analyze; you want to act"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Connector-Philosopher",
+              "why": "Helps you process emotions and find meaning beyond protection"
+            }
+          ]
+        }
+      }
+    },
+    "PHILOSOPHER_ORGANIZER_CONNECTOR": {
+      "tagline": "The wise community architect who builds meaningful systems for people",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Combines depth of understanding with practical structure AND human warmth",
+            "Creates organizations and communities grounded in purpose",
+            "Natural fit for culture-building and organizational development",
+            "Can translate abstract values into concrete practices",
+            "Builds systems that serve both efficiency and meaning",
+            "Trusted advisor who combines wisdom with reliability"
+          ],
+          "stress_strengths": [
+            "Under pressure, provides both structure and emotional grounding",
+            "Crisis triggers principled decision-making with human consideration"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.C >= 5.5 AND scores.hexaco.A >= 5.5",
+              "because": "Conscientiousness + Agreeableness enables structured care"
+            },
+            {
+              "when": "scores.motives.purpose >= 5.5 AND scores.motives.affiliation >= 5.0",
+              "because": "Seeks meaning AND connection simultaneously"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "May over-design systems to satisfy all three drives",
+            "Can become the indispensable center everyone depends on",
+            "Perfectionism about both principles AND processes AND relationships",
+            "Risk of exhaustion from maintaining meaning, structure, AND connection",
+            "May sacrifice own needs to serve collective purpose"
+          ],
+          "telltales": [
+            "You've built the organization's culture but have no time for yourself",
+            "Every process must be both principled AND efficient AND relationship-preserving",
+            "You're everyone's trusted advisor but rarely seek counsel",
+            "You can't delegate because no one shares your holistic view"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Organizational development and culture consulting",
+            "Non-profit leadership with operational excellence",
+            "HR/People operations with philosophical depth",
+            "Community building with systematic approach",
+            "Educational administration combining mission and structure"
+          ],
+          "role_patterns": [
+            "Design values → Build systems → Connect people → Iterate",
+            "Chief of staff or COO roles with culture mandate",
+            "Executive coaching with organizational lens",
+            "Building sustainable institutions"
+          ],
+          "anti_patterns": [
+            "Pure profit-focused environments without meaning",
+            "Roles without both strategic and relational components",
+            "Isolated work without community impact",
+            "Fast-moving contexts that sacrifice principle for speed"
+          ],
+          "collaboration": [
+            "Pairs well with Explorers who bring fresh perspectives",
+            "Works with Performers who energize the community",
+            "May frustrate Protectors who resist principled changes"
+          ]
+        },
+        "money": {
+          "style": [
+            "Financial decisions aligned with values AND practical wisdom",
+            "Builds sustainable economic foundations for communities",
+            "Values both security and meaning in financial choices",
+            "Generous but systematic in giving"
+          ],
+          "risks": [
+            "Over-investing in organizational causes",
+            "Neglecting personal finances for collective good",
+            "Analysis paralysis when values conflict with practical concerns"
+          ],
+          "guardrails": [
+            "Maintain clear boundaries between personal and organizational finances",
+            "Set giving budgets that don't compromise foundation",
+            "Value your own contribution appropriately"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Depth, reliability, and genuine warmth",
+            "Partner who builds shared life with intention",
+            "Creates meaningful household culture",
+            "Combines wisdom with practical care"
+          ],
+          "needs": [
+            "Partner who values both depth and connection",
+            "Space for own reflection and renewal",
+            "Someone who doesn't only take counsel but also gives it"
+          ],
+          "triggers": [
+            "Superficiality that dismisses meaning",
+            "Chaos that could be prevented with forethought",
+            "Being taken for granted as advisor and organizer"
+          ],
+          "repair": [
+            "Name the imbalance explicitly",
+            "Create systems for mutual support, not just one-way care",
+            "Acknowledge when perfectionism created pressure"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Creates intentional family culture with warmth",
+            "Teaches both principles and practical skills",
+            "Models thoughtful decision-making",
+            "Builds family systems everyone contributes to"
+          ],
+          "traps": [
+            "Over-designing childhood experiences",
+            "Expecting children to appreciate systemic thinking",
+            "Parenting as organizational project"
+          ],
+          "practices": [
+            "Let some family moments be unstructured",
+            "Model receiving help, not just giving it",
+            "Celebrate spontaneity alongside tradition"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Community building as recreation",
+            "Teaching and mentoring",
+            "Creating meaningful gatherings",
+            "Philosophical reading with practical application"
+          ],
+          "anti_patterns": [
+            "Purely individual pursuits",
+            "Activities without meaning or connection",
+            "Entertainment without reflection"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Receive care without immediately reciprocating",
+            "Let some systems be imperfect",
+            "Pursue meaning without organizing it",
+            "Rest without productivity justification"
+          ],
+          "practices": [
+            "Schedule solo reflection time",
+            "Delegate without perfecting",
+            "Ask for help before exhaustion"
+          ],
+          "blockers": [
+            "Belief that only you see the whole picture",
+            "Identity fused with organizational caretaking",
+            "Difficulty accepting imperfect systems"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Explorer",
+              "why": "Brings fresh perspectives to your structures"
+            },
+            {
+              "match": "Performer",
+              "why": "Energizes the communities you build"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Pure Protector",
+              "why": "They resist principled changes"
+            },
+            {
+              "match": "Pure Explorer",
+              "why": "They disrupt your carefully built systems"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Explorer-Performer",
+              "why": "Pushes you toward energy and renewal"
+            }
+          ]
+        }
+      }
+    },
+    "PHILOSOPHER_ORGANIZER_PROTECTOR": {
+      "tagline": "The institutional steward who preserves wisdom through careful systems",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Combines deep thinking with systematic preservation",
+            "Builds institutions designed to last and protect what matters",
+            "Natural archivist, curator, and guardian of knowledge",
+            "Creates processes that embody and protect values",
+            "Long-term strategic thinking with operational execution",
+            "Trusted keeper of organizational memory and purpose"
+          ],
+          "stress_strengths": [
+            "Under pressure, falls back to proven systems and principles",
+            "Crisis triggers careful, values-aligned response"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.C >= 5.5 AND scores.affects.fear >= 4.5",
+              "because": "Conscientiousness + protective caution enables preservation"
+            },
+            {
+              "when": "scores.motives.purpose >= 5.5 AND scores.affects.care >= 5.0",
+              "because": "Seeks meaning while protecting what matters"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "May become rigid guardian of tradition rather than living purpose",
+            "Over-systematization of protection until growth is blocked",
+            "Can become organizational bottleneck through review processes",
+            "Risk of mistaking preservation for purpose",
+            "May resist necessary change in service of stability"
+          ],
+          "telltales": [
+            "You've built elaborate safeguards around processes that don't need them",
+            "New ideas must pass through your values AND systems AND risk filters",
+            "You're the keeper of 'how we do things' and feel threatened by change",
+            "Your protection systems have become the thing being protected"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Archives, libraries, and knowledge preservation",
+            "Compliance and ethics with philosophical grounding",
+            "Quality assurance with strategic perspective",
+            "Institutional leadership focused on sustainability",
+            "Foundation or endowment management"
+          ],
+          "role_patterns": [
+            "Understand → Systematize → Protect → Maintain",
+            "Building institutions that outlast individuals",
+            "Governance and oversight roles",
+            "Long-term strategic planning with risk management"
+          ],
+          "anti_patterns": [
+            "Fast-moving environments that sacrifice stability",
+            "Roles requiring rapid change without consideration",
+            "Organizations without principled foundation",
+            "Contexts where preservation is seen as obstruction"
+          ],
+          "collaboration": [
+            "Pairs well with Explorers who identify what's worth preserving",
+            "Works with Connectors who maintain relationships during change",
+            "May frustrate Performers who want momentum over process"
+          ]
+        },
+        "money": {
+          "style": [
+            "Conservative stewardship with principled allocation",
+            "Endowment mindset - preserve principal, use proceeds",
+            "Deep consideration before any financial change",
+            "Values intergenerational thinking in financial decisions"
+          ],
+          "risks": [
+            "Over-conservative allocation missing necessary adaptation",
+            "Protecting wealth beyond what purpose requires",
+            "Infinite deliberation on financial decisions"
+          ],
+          "guardrails": [
+            "Define what 'enough' protection means, then allow measured risk",
+            "Set decision timelines to prevent analysis paralysis",
+            "Remember that preservation requires some growth"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Exceptionally stable, principled partnership",
+            "Deep commitment to relationship longevity",
+            "Creates household traditions and systems",
+            "Thoughtful, reliable presence"
+          ],
+          "needs": [
+            "Partner who values stability AND meaning",
+            "Appreciation for protective planning",
+            "Someone who doesn't demand constant change"
+          ],
+          "triggers": [
+            "Recklessness that threatens stability",
+            "Dismissing traditions as meaningless",
+            "Pressure to change without consideration"
+          ],
+          "repair": [
+            "Acknowledge when protection became control",
+            "Distinguish preservation from rigidity",
+            "Create space for growth within stability"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Creates stable, principled environment",
+            "Teaches respect for traditions and wisdom",
+            "Models careful decision-making",
+            "Provides deep sense of security"
+          ],
+          "traps": [
+            "Over-protecting children from necessary growth experiences",
+            "Rigidity in household systems",
+            "Expecting children to appreciate long-term thinking"
+          ],
+          "practices": [
+            "Allow children to question traditions",
+            "Distinguish between essential and optional systems",
+            "Create traditions children help shape"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Collecting and archiving",
+            "Historical research and preservation",
+            "Building lasting things",
+            "Traditions and rituals"
+          ],
+          "anti_patterns": [
+            "Spontaneous, unplanned activities",
+            "Hobbies that feel reckless or wasteful",
+            "Activities without lasting value"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Allow some things to change without grief",
+            "Distinguish preservation from fear of change",
+            "Trust that meaning survives transformation",
+            "Let go of systems that no longer serve"
+          ],
+          "practices": [
+            "Intentionally discard something you've been protecting",
+            "Try something new without researching first",
+            "Notice when preservation becomes avoidance"
+          ],
+          "blockers": [
+            "Belief that change equals loss",
+            "Conflating systems with purpose",
+            "Fear of impermanence"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Connector",
+              "why": "Brings warmth to your structured stability"
+            },
+            {
+              "match": "Explorer",
+              "why": "Identifies what's actually worth preserving"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Performer",
+              "why": "They want momentum; you want consideration"
+            },
+            {
+              "match": "Pure Explorer",
+              "why": "Their novelty-seeking threatens your stability"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Explorer-Connector",
+              "why": "Helps you adapt while maintaining relationships"
+            }
+          ]
+        }
+      }
+    },
+    "PHILOSOPHER_ORGANIZER_PERFORMER": {
+      "tagline": "The thought leader who delivers wisdom with impact",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Combines intellectual depth with systematic delivery AND audience impact",
+            "Creates educational content that is profound, well-organized, AND engaging",
+            "Natural professor, keynote speaker, or course creator",
+            "Can take complex ideas and make them both accessible and memorable",
+            "Builds intellectual authority through consistent, quality output",
+            "Thought leadership with real substance behind it"
+          ],
+          "stress_strengths": [
+            "Under pressure, falls back on prepared systems and performance skills",
+            "Crisis becomes teaching moment with structured delivery"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.C >= 5.0 AND scores.hexaco.X >= 5.0",
+              "because": "Conscientiousness + Extraversion enables disciplined performance"
+            },
+            {
+              "when": "scores.motives.purpose >= 5.5 AND scores.affects.play >= 4.5",
+              "because": "Seeks meaning AND enjoys expression"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "Content production can override genuine inquiry",
+            "May over-systematize creativity until it loses spark",
+            "Performance metrics can distort intellectual direction",
+            "Risk of becoming entertainer who sounds profound rather than thinker who entertains",
+            "Burnout from maintaining depth, organization, AND energy"
+          ],
+          "telltales": [
+            "Your content calendar drives your thinking instead of the reverse",
+            "You produce consistently but feel intellectually hollow",
+            "The system is optimized but the spark is gone",
+            "You're known for delivery more than discovery"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Academia with public engagement expectation",
+            "Professional speaking with intellectual substance",
+            "Course creation and educational entrepreneurship",
+            "Think tank work with communication mandate",
+            "Publishing and media with expertise focus"
+          ],
+          "role_patterns": [
+            "Research → Systematize → Present → Iterate based on impact",
+            "Building intellectual authority through consistent output",
+            "Professor, author, speaker, thought leader",
+            "Training and development with expertise"
+          ],
+          "anti_patterns": [
+            "Pure performance without depth",
+            "Research without communication",
+            "Isolated work without audience",
+            "Environments that sacrifice quality for speed"
+          ],
+          "collaboration": [
+            "Pairs well with Explorers who bring fresh material",
+            "Works with Connectors who build communities around your content",
+            "May frustrate Protectors who want stability over growth"
+          ]
+        },
+        "money": {
+          "style": [
+            "Monetizes intellectual work through systematic production",
+            "Invests in tools for creation and delivery",
+            "Values both intellectual and financial returns",
+            "May over-invest in platform and production"
+          ],
+          "risks": [
+            "Chasing engagement over truth",
+            "Over-systematizing until authenticity suffers",
+            "Production costs exceeding content value"
+          ],
+          "guardrails": [
+            "Separate exploration time from production time",
+            "Track intellectual satisfaction, not just metrics",
+            "Budget for genuine inquiry without output requirements"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Intellectual stimulation with reliability",
+            "Public pride in partnership",
+            "Consistent presence combined with depth",
+            "Makes partner feel part of meaningful work"
+          ],
+          "needs": [
+            "Partner who values both substance and presence",
+            "Private space to be uncertain and unpolished",
+            "Someone who engages with ideas, not just supports platform"
+          ],
+          "triggers": [
+            "Being seen as performer without intellectual respect",
+            "Partner competing for spotlight",
+            "Demands for consistency that block genuine inquiry"
+          ],
+          "repair": [
+            "Share unpolished thinking, not just finished products",
+            "Create private space without performance",
+            "Value partner's perspective genuinely, not as content"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Creates intellectually rich, organized environment",
+            "Models discipline AND curiosity AND expression",
+            "Makes learning engaging and structured",
+            "Teaches both depth and communication"
+          ],
+          "traps": [
+            "Children as audience or case study",
+            "Over-systematizing learning experiences",
+            "Performance mode at home"
+          ],
+          "practices": [
+            "Genuine curiosity with children, not lessons",
+            "Unproduced family time",
+            "Let children see you learn, not just teach"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Learning and teaching as recreation",
+            "Creating content about interests",
+            "Public speaking and performance",
+            "Writing and intellectual production"
+          ],
+          "anti_patterns": [
+            "Private hobbies with no output",
+            "Purely physical activities without intellectual component",
+            "Recreation without structure"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Learn without producing",
+            "Be uncertain in public",
+            "Value process over product sometimes",
+            "Rest without performing recovery"
+          ],
+          "practices": [
+            "Private exploration without output expectation",
+            "Admit not knowing to audience",
+            "Schedule genuine downtime, not just productive rest"
+          ],
+          "blockers": [
+            "Conflating output with thinking",
+            "Fear of appearing unproductive",
+            "Identity fused with thought leadership"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Explorer",
+              "why": "Brings fresh material to your system"
+            },
+            {
+              "match": "Connector",
+              "why": "Builds community around your content"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Another Performer",
+              "why": "Competing for intellectual spotlight"
+            },
+            {
+              "match": "Pure Protector",
+              "why": "They want stability; you want growth"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Connector-Protector",
+              "why": "Helps you build sustainable community"
+            }
+          ]
+        }
+      }
+    },
+    "PHILOSOPHER_CONNECTOR_PROTECTOR": {
+      "tagline": "The wise guardian of community who nurtures growth safely",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Combines deep wisdom with relational warmth AND protective care",
+            "Creates safe spaces for meaningful connection and growth",
+            "Natural therapist, counselor, or spiritual director",
+            "Understands both principles and people, and guards both",
+            "Builds trust through consistency, depth, and care",
+            "Can hold difficult truths with compassion"
+          ],
+          "stress_strengths": [
+            "Under pressure, provides both meaning-making AND emotional support",
+            "Crisis triggers protective care grounded in wisdom"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.A >= 5.5 AND scores.affects.care >= 5.5",
+              "because": "Agreeableness + Care enables compassionate protection"
+            },
+            {
+              "when": "scores.motives.purpose >= 5.5 AND scores.affects.fear >= 4.0",
+              "because": "Seeks meaning while remaining appropriately cautious"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "May become over-responsible for others' wellbeing",
+            "Can protect people from growth experiences they need",
+            "Risk of defining self entirely through caregiving",
+            "Protective wisdom can become controlling guidance",
+            "May neglect own needs while attending to others"
+          ],
+          "telltales": [
+            "You're everyone's safe harbor but have no harbor yourself",
+            "Your protection prevents the struggles people need to grow",
+            "You know what's best for everyone and guide them there",
+            "Your wisdom becomes prescription rather than offering"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Counseling and therapy",
+            "Pastoral care and spiritual direction",
+            "Social work with reflective practice",
+            "Mentoring programs and developmental coaching",
+            "Hospice, healthcare ethics, or end-of-life care"
+          ],
+          "role_patterns": [
+            "Listen → Understand → Hold → Guide carefully",
+            "Creating safe containers for transformation",
+            "Long-term developmental relationships",
+            "Wisdom keeping with relational warmth"
+          ],
+          "anti_patterns": [
+            "Fast-transactional helping without relationship",
+            "Roles requiring detachment from people",
+            "Environments that sacrifice care for efficiency",
+            "Work without meaning or human connection"
+          ],
+          "collaboration": [
+            "Pairs well with Organizers who structure your care",
+            "Works with Performers who bring energy to communities",
+            "May frustrate Explorers who want faster change"
+          ]
+        },
+        "money": {
+          "style": [
+            "Financial decisions prioritize security for dependents",
+            "Generous with resources but cautious about risk",
+            "Values helping others but may undervalue own contribution",
+            "Invests in relationships and community"
+          ],
+          "risks": [
+            "Giving beyond sustainable capacity",
+            "Undercharging for wisdom and care",
+            "Neglecting own financial foundation for others"
+          ],
+          "guardrails": [
+            "Set clear boundaries on giving",
+            "Value your wisdom at market rates",
+            "Protect your own foundation first"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Profound depth, warmth, and protective care",
+            "Creates genuinely safe partnership",
+            "Wisdom combined with unconditional regard",
+            "Steady presence through life's difficulties"
+          ],
+          "needs": [
+            "Partner who can receive AND give care",
+            "Someone who doesn't only lean on you",
+            "Space for your own uncertainty and need"
+          ],
+          "triggers": [
+            "Partner taking risks that threaten the relationship",
+            "Being wisdom-source without receiving wisdom",
+            "Feeling responsible for partner's choices"
+          ],
+          "repair": [
+            "Ask for care before you're depleted",
+            "Let partner solve problems without your guidance",
+            "Acknowledge when wisdom became control"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Creates deeply safe, meaningful environment",
+            "Attunes to children's needs with wisdom",
+            "Teaches both values and self-protection",
+            "Models thoughtful care"
+          ],
+          "traps": [
+            "Over-protecting until children can't self-regulate",
+            "Wisdom becomes prescription",
+            "Taking responsibility for children's emotional lives"
+          ],
+          "practices": [
+            "Let children struggle with support, not rescue",
+            "Offer wisdom when asked, not always proactively",
+            "Model receiving care from others"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Deep conversation and connection",
+            "Contemplative practices",
+            "Reading and reflecting on human experience",
+            "Mentoring and accompanying others"
+          ],
+          "anti_patterns": [
+            "Competitive activities",
+            "Purely individual pursuits",
+            "Entertainment without depth"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Receive care without reciprocating",
+            "Let others make their own mistakes",
+            "Trust that people can handle difficulty",
+            "Prioritize your own needs sometimes"
+          ],
+          "practices": [
+            "Schedule receiving care (massage, therapy, retreat)",
+            "Practice not offering wisdom when not asked",
+            "Let someone fail without catching them"
+          ],
+          "blockers": [
+            "Belief that you're responsible for others' wellbeing",
+            "Difficulty receiving what you give",
+            "Conflating love with protection"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Organizer",
+              "why": "Structures your care sustainably"
+            },
+            {
+              "match": "Explorer",
+              "why": "Brings new perspectives to your wisdom"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Performer",
+              "why": "They want spotlight; you want depth"
+            },
+            {
+              "match": "Pure Explorer",
+              "why": "Their risk-taking triggers your protection"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Explorer-Performer",
+              "why": "Helps you take risks and be seen"
+            }
+          ]
+        }
+      }
+    },
+    "PHILOSOPHER_CONNECTOR_PERFORMER": {
+      "tagline": "The inspiring teacher who makes meaning magnetic",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Combines intellectual depth with relational warmth AND charismatic presence",
+            "Natural inspirational teacher, speaker, or leader",
+            "Makes profound ideas feel personal and exciting",
+            "Creates movements around meaning",
+            "Connects people through shared purpose",
+            "Can shift perspectives through presence, not just argument"
+          ],
+          "stress_strengths": [
+            "Under pressure, maintains presence while drawing on deep principles",
+            "Crisis becomes opportunity for inspiring leadership"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.X >= 5.5 AND scores.hexaco.A >= 5.0",
+              "because": "Extraversion + Agreeableness enables warm charisma"
+            },
+            {
+              "when": "scores.motives.purpose >= 5.5 AND scores.motives.affiliation >= 5.0",
+              "because": "Seeks meaning AND connection simultaneously"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "Charisma can overshadow substance",
+            "May collect followers rather than empower independent thinkers",
+            "Performance pressure can distort genuine inquiry",
+            "Risk of becoming guru rather than guide",
+            "Scattered across too many relationships and ideas"
+          ],
+          "telltales": [
+            "People are inspired by you but don't know your ideas deeply",
+            "You have followers but wonder if they see the real you",
+            "The performance of wisdom has replaced genuine inquiry",
+            "You're more recognizable than your ideas"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Inspirational speaking and teaching",
+            "Movement building and social entrepreneurship",
+            "Religious or spiritual leadership",
+            "Coaching and transformational facilitation",
+            "Media and content that inspires and connects"
+          ],
+          "role_patterns": [
+            "Embody → Inspire → Connect → Transform",
+            "Building communities around shared purpose",
+            "Charismatic leadership with intellectual substance",
+            "Public intellectualism with relational warmth"
+          ],
+          "anti_patterns": [
+            "Isolated intellectual work",
+            "Pure entertainment without meaning",
+            "Transactional roles without relationship",
+            "Anonymous contribution"
+          ],
+          "collaboration": [
+            "Pairs well with Organizers who structure your movements",
+            "Works with Protectors who ground your inspiration",
+            "May frustrate pure Philosophers who want depth over inspiration"
+          ]
+        },
+        "money": {
+          "style": [
+            "Monetizes through inspiration and community",
+            "Values both meaning and impact in financial decisions",
+            "Generous with resources for mission",
+            "May conflate personal and organizational finances"
+          ],
+          "risks": [
+            "Platform spending exceeding substance",
+            "Giving too much to movement at cost to self",
+            "Financial decisions driven by inspiration, not analysis"
+          ],
+          "guardrails": [
+            "Separate personal and mission finances",
+            "Balance inspiration with sustainable planning",
+            "Value your own contribution appropriately"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Inspiring, warm, meaningful partnership",
+            "Makes partner feel part of larger purpose",
+            "Brings excitement and depth simultaneously",
+            "Creates rich social world"
+          ],
+          "needs": [
+            "Partner who sees beyond the public persona",
+            "Private space to be uninspiring",
+            "Someone who values you, not your audience"
+          ],
+          "triggers": [
+            "Being wanted for access or inspiration, not self",
+            "Partner competing for spotlight",
+            "Feeling unseen behind the performance"
+          ],
+          "repair": [
+            "Be genuinely uncertain together",
+            "Create private rituals without performance",
+            "Share doubts about your own message"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Makes meaning feel exciting for children",
+            "Connects family to larger purpose",
+            "Models passionate engagement with ideas",
+            "Creates rich community around family"
+          ],
+          "traps": [
+            "Children as audience or movement members",
+            "Inspiring when presence is needed",
+            "Public family life at cost of private"
+          ],
+          "practices": [
+            "Quiet presence without teaching",
+            "Let children lead meaning-making",
+            "Protect private family time from mission"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Speaking and teaching as recreation",
+            "Building communities of meaning",
+            "Deep conversations with new people",
+            "Creating content that connects and inspires"
+          ],
+          "anti_patterns": [
+            "Solitary activities",
+            "Entertainment without meaning",
+            "Competition without collaboration"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Inquire without inspiring",
+            "Connect without performing",
+            "Value ideas that don't land with audiences",
+            "Be boring and uncertain"
+          ],
+          "practices": [
+            "Private intellectual work without output",
+            "Deep friendship without inspiration mandate",
+            "Rest without performing recovery"
+          ],
+          "blockers": [
+            "Conflating impact with truth",
+            "Fear of being ordinary",
+            "Difficulty with private intellectual work"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Organizer",
+              "why": "Structures your movements sustainably"
+            },
+            {
+              "match": "Protector",
+              "why": "Grounds your inspiration in reality"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Another Performer",
+              "why": "Competing for inspirational spotlight"
+            },
+            {
+              "match": "Pure Philosopher",
+              "why": "They want depth; you want impact"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Organizer-Protector",
+              "why": "Builds sustainable institutions for your vision"
+            }
+          ]
+        }
+      }
+    },
+    "PHILOSOPHER_PROTECTOR_PERFORMER": {
+      "tagline": "The principled champion who defends truth with presence",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Combines deep principles with protective instincts AND visible leadership",
+            "Natural advocate, activist, or principled leader",
+            "Defends what matters with both wisdom and courage",
+            "Can make protective action inspiring and meaningful",
+            "Visible commitment to principle draws others to cause",
+            "Leadership grounded in genuine conviction"
+          ],
+          "stress_strengths": [
+            "Under pressure, stands visibly on principle",
+            "Crisis triggers principled, courageous response"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.X >= 5.0 AND scores.affects.fear >= 4.5",
+              "because": "Extraversion + protective caution enables visible defense"
+            },
+            {
+              "when": "scores.motives.purpose >= 5.5 AND scores.affects.care >= 5.0",
+              "because": "Seeks meaning while protecting what matters"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "Principled stand can become rigid ideology",
+            "Protection can become aggression against perceived threats",
+            "May see threats to principle where none exist",
+            "Performance of conviction can override genuine inquiry",
+            "Risk of exhaustion from constant visible defense"
+          ],
+          "telltales": [
+            "You're always in fighting stance for your principles",
+            "Every issue becomes a principled battle",
+            "You perform conviction more than you feel it",
+            "Defense has become offense without you noticing"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Advocacy and activism",
+            "Civil rights and legal defense",
+            "Principled journalism and watchdog work",
+            "Religious or ethical leadership",
+            "Whistleblower support and oversight"
+          ],
+          "role_patterns": [
+            "Discern principle → Defend visibly → Rally others → Sustain",
+            "Public advocacy grounded in genuine conviction",
+            "Leadership during moral crisis",
+            "Protecting vulnerable populations"
+          ],
+          "anti_patterns": [
+            "Roles requiring compromise of principle",
+            "Work without moral dimension",
+            "Behind-the-scenes contribution",
+            "Environments that punish visible conviction"
+          ],
+          "collaboration": [
+            "Pairs well with Organizers who build institutions for your cause",
+            "Works with Connectors who build coalitions",
+            "May frustrate Explorers who see more nuance"
+          ]
+        },
+        "money": {
+          "style": [
+            "Resources directed toward causes",
+            "Willing to sacrifice financially for principle",
+            "May conflate personal and mission finances",
+            "Values impact over accumulation"
+          ],
+          "risks": [
+            "Financial sacrifice beyond sustainability",
+            "Giving to causes without strategic thinking",
+            "Neglecting personal foundation for mission"
+          ],
+          "guardrails": [
+            "Sustainable giving budget",
+            "Protect foundation that enables advocacy",
+            "Strategic philanthropy, not just passionate"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Passionate, principled partnership",
+            "Visible commitment and protection",
+            "Shared sense of purpose",
+            "Courage that inspires"
+          ],
+          "needs": [
+            "Partner who shares or respects principles",
+            "Space to be uncertain without performing conviction",
+            "Someone who sees past the public stance"
+          ],
+          "triggers": [
+            "Partner compromising on core principles",
+            "Being asked to moderate for appearance",
+            "Feeling like lone defender"
+          ],
+          "repair": [
+            "Distinguish principle from rigidity",
+            "Allow partner's different approach to same values",
+            "Be uncertain together"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Models standing for principle",
+            "Creates environment with clear values",
+            "Protects children while teaching courage",
+            "Connects family to larger purpose"
+          ],
+          "traps": [
+            "Children as cause soldiers",
+            "Ideological rigidity at home",
+            "Performing conviction when presence needed"
+          ],
+          "practices": [
+            "Let children question your principles",
+            "Model uncertainty alongside conviction",
+            "Protect family time from mission"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Activism as recreation",
+            "Reading in areas of conviction",
+            "Speaking and advocacy",
+            "Community organizing"
+          ],
+          "anti_patterns": [
+            "Pure entertainment without meaning",
+            "Activities that seem to betray principles",
+            "Solitary leisure"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Hold conviction with open hand",
+            "Find common ground with opposition",
+            "Rest without guilt about the cause",
+            "Be uncertain publicly"
+          ],
+          "practices": [
+            "Genuine dialogue with those who disagree",
+            "Private time without mission",
+            "Notice when defense becomes offense"
+          ],
+          "blockers": [
+            "Conflating conviction with identity",
+            "Seeing disagreement as attack",
+            "Exhaustion from constant vigilance"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Organizer",
+              "why": "Builds institutions for your cause"
+            },
+            {
+              "match": "Connector",
+              "why": "Builds coalitions beyond your intensity"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Pure Explorer",
+              "why": "Their relativism threatens your conviction"
+            },
+            {
+              "match": "Another Protector",
+              "why": "Competing territorial instincts"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Explorer-Connector",
+              "why": "Softens your edges and expands perspective"
+            }
+          ]
+        }
+      }
+    },
+    "ORGANIZER_CONNECTOR_PROTECTOR": {
+      "tagline": "The steady community steward who builds safety through structure",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Combines systematic thinking with relational warmth AND protective care",
+            "Creates organizations that feel safe and work well",
+            "Natural administrator with genuine care for people",
+            "Builds sustainable communities through structure and relationship",
+            "Protects both systems and people with equal attention",
+            "Reliable foundation that others can count on"
+          ],
+          "stress_strengths": [
+            "Under pressure, provides structure while maintaining relationships",
+            "Crisis triggers both organized response AND emotional support"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.C >= 5.5 AND scores.hexaco.A >= 5.5",
+              "because": "Conscientiousness + Agreeableness enables structured care"
+            },
+            {
+              "when": "scores.affects.care >= 5.5 AND scores.affects.fear >= 4.0",
+              "because": "Care combined with protective instinct"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "May become indispensable bottleneck for all organizational functions",
+            "Risk of over-systematizing relationships",
+            "Protection can become control through process",
+            "Burnout from maintaining structure, relationships, AND safety",
+            "May resist change that would improve things because it feels risky"
+          ],
+          "telltales": [
+            "Everyone depends on you for everything",
+            "Your systems protect but also constrain",
+            "You're exhausted but can't stop because nothing will work",
+            "Change feels dangerous even when obviously needed"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Operations management in caring organizations",
+            "School or hospital administration",
+            "Community organization with operational focus",
+            "HR that actually cares about people",
+            "Non-profit operations and program management"
+          ],
+          "role_patterns": [
+            "Build systems → Connect people → Protect both → Maintain",
+            "Operations roles with relational emphasis",
+            "Office management with genuine care",
+            "Program coordination for vulnerable populations"
+          ],
+          "anti_patterns": [
+            "Fast-moving environments that sacrifice people",
+            "Purely technical work without human element",
+            "Roles requiring rapid change without consideration",
+            "Organizations that don't value operational care"
+          ],
+          "collaboration": [
+            "Pairs well with Explorers who identify improvements",
+            "Works with Performers who energize the community",
+            "May frustrate Philosophers who want more depth"
+          ]
+        },
+        "money": {
+          "style": [
+            "Conservative, systematic approach to finances",
+            "Protects financial foundation for dependents",
+            "Generous within clear budgetary systems",
+            "Values security and reliability"
+          ],
+          "risks": [
+            "Over-conservative allocation",
+            "Systems for their own sake",
+            "Neglecting growth for stability"
+          ],
+          "guardrails": [
+            "Define 'enough' security, then allow some risk",
+            "Regular review of whether systems still serve",
+            "Include growth in the plan"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Deeply reliable partnership with warmth",
+            "Creates stable, caring household",
+            "Protects relationship through thoughtful systems",
+            "Consistent presence and care"
+          ],
+          "needs": [
+            "Partner who appreciates operational care",
+            "Help with maintaining the systems",
+            "Space to receive care, not just give it"
+          ],
+          "triggers": [
+            "Partner who benefits from systems but doesn't maintain them",
+            "Chaos that could be prevented",
+            "Change without consideration for impact"
+          ],
+          "repair": [
+            "Acknowledge exhaustion before breakdown",
+            "Redistribute operational load",
+            "Create systems for receiving care"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Creates safe, organized environment",
+            "Genuinely attentive to children's needs",
+            "Builds household systems children can rely on",
+            "Models reliability and care"
+          ],
+          "traps": [
+            "Over-structuring childhood",
+            "Taking over children's responsibilities",
+            "Systems that serve parents more than children"
+          ],
+          "practices": [
+            "Let children create their own systems",
+            "Model rest and receiving help",
+            "Accept age-appropriate chaos"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Organizing community events",
+            "Volunteer work with operational component",
+            "Creating systems for groups",
+            "Caregiving activities"
+          ],
+          "anti_patterns": [
+            "High-risk individual activities",
+            "Unstructured social time",
+            "Activities that add to operational burden"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Let things be less organized",
+            "Receive care without reciprocating",
+            "Allow change that feels risky",
+            "Delegate without perfecting"
+          ],
+          "practices": [
+            "Intentionally leave something unorganized",
+            "Ask for help before exhaustion",
+            "Try something without planning"
+          ],
+          "blockers": [
+            "Belief that you're the only one who can do it right",
+            "Conflating care with control",
+            "Fear of unstructured situations"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Explorer",
+              "why": "Brings fresh approaches to your systems"
+            },
+            {
+              "match": "Philosopher",
+              "why": "Adds depth to your structured care"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Performer",
+              "why": "They want energy; you want stability"
+            },
+            {
+              "match": "Pure Explorer",
+              "why": "Their novelty-seeking disrupts your systems"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Explorer-Philosopher",
+              "why": "Adds meaning and innovation to your stability"
+            }
+          ]
+        }
+      }
+    },
+    "ORGANIZER_CONNECTOR_PERFORMER": {
+      "tagline": "The energetic community builder who makes things happen with style",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Combines systematic execution with relational warmth AND energetic presence",
+            "Natural event planner, community manager, or team leader",
+            "Gets things done while keeping people connected and excited",
+            "Creates experiences that are well-organized, inclusive, AND fun",
+            "Builds momentum through both structure and energy",
+            "Makes operational excellence feel effortless"
+          ],
+          "stress_strengths": [
+            "Under pressure, maintains energy while executing systematically",
+            "Crisis triggers both organized response AND rallying presence"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.C >= 5.0 AND scores.hexaco.X >= 5.5",
+              "because": "Conscientiousness + Extraversion enables organized performance"
+            },
+            {
+              "when": "scores.affects.play >= 5.0 AND scores.motives.affiliation >= 5.0",
+              "because": "Playfulness combined with connection drive"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "May over-commit to maintain momentum and relationships",
+            "Risk of burning out from maintaining energy AND structure AND connection",
+            "Can become the person everyone depends on for everything fun",
+            "Performance mode can mask exhaustion",
+            "May sacrifice depth for breadth of activity"
+          ],
+          "telltales": [
+            "You're organizing everything and also supposed to be the energy",
+            "Your calendar is packed with well-organized fun that exhausts you",
+            "You can't drop the performance even when depleted",
+            "People assume you're always on because you always have been"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Event management and production",
+            "Community management with programming role",
+            "Marketing and brand work with team leadership",
+            "Entertainment venue management",
+            "Sales and client relations with operational ownership"
+          ],
+          "role_patterns": [
+            "Plan → Connect → Energize → Execute → Celebrate",
+            "Making things happen that bring people together",
+            "Team leadership with both operational and cultural role",
+            "Creating experiences that run smoothly AND feel great"
+          ],
+          "anti_patterns": [
+            "Solitary work without people or performance",
+            "Pure operations without creative or relational component",
+            "Roles requiring sustained quiet focus",
+            "Environments that suppress energy"
+          ],
+          "collaboration": [
+            "Pairs well with Philosophers who add depth",
+            "Works with Protectors who ensure sustainability",
+            "May frustrate pure Organizers who want more precision"
+          ]
+        },
+        "money": {
+          "style": [
+            "Invests in experiences that connect people",
+            "Systematic about budgets but generous with hospitality",
+            "Values both efficiency and experience",
+            "May over-spend on hosting and events"
+          ],
+          "risks": [
+            "Lifestyle spending outpacing income",
+            "Hosting costs exceeding sustainable levels",
+            "Insufficient savings due to experience spending"
+          ],
+          "guardrails": [
+            "Budget for experiences with clear limits",
+            "Track hosting ROI (including personal fulfillment)",
+            "Protect foundation while funding fun"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Exciting, organized, connected partnership",
+            "Rich social life with structure",
+            "Makes things happen for the relationship",
+            "Brings energy AND reliability"
+          ],
+          "needs": [
+            "Partner who can match energy or restore it",
+            "Help with execution and presence",
+            "Space to be low-energy sometimes"
+          ],
+          "triggers": [
+            "Partner who consumes but doesn't contribute to social life",
+            "Expectation of constant energy",
+            "Disorganization that affects events"
+          ],
+          "repair": [
+            "Acknowledge exhaustion before burnout",
+            "Ask for help with both planning AND performing",
+            "Create genuine rest time"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Creates exciting, organized family life",
+            "Connects family to community",
+            "Makes childhood memorable",
+            "Models energy AND organization"
+          ],
+          "traps": [
+            "Over-programming childhood",
+            "Performance mode at home",
+            "Exhaustion from making everything special"
+          ],
+          "practices": [
+            "Schedule boring family time",
+            "Let children see you rest",
+            "Not everything needs to be an event"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Hosting and event organizing",
+            "Group activities you organize",
+            "Social hobbies with structure",
+            "Performance in community settings"
+          ],
+          "anti_patterns": [
+            "Solitary activities",
+            "Unstructured social time",
+            "Activities requiring sustained quiet"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Rest without performing",
+            "Attend events without organizing them",
+            "Be low-energy without apology",
+            "Depth over breadth sometimes"
+          ],
+          "practices": [
+            "Scheduled genuine downtime",
+            "Attend as guest, not host",
+            "Private time without social component"
+          ],
+          "blockers": [
+            "Identity fused with making things happen",
+            "Fear of being boring or unreliable",
+            "Difficulty receiving without giving"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Philosopher",
+              "why": "Adds depth to your events"
+            },
+            {
+              "match": "Protector",
+              "why": "Ensures sustainability"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Pure Philosopher",
+              "why": "They want depth; you want action"
+            },
+            {
+              "match": "Another Performer",
+              "why": "Competing for energy spotlight"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Philosopher-Protector",
+              "why": "Adds depth and sustainability to your energy"
+            }
+          ]
+        }
+      }
+    },
+    "ORGANIZER_PROTECTOR_PERFORMER": {
+      "tagline": "The commanding presence who leads with structure and loyalty",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Combines systematic execution with protective instincts AND visible leadership",
+            "Natural commander, coach, or protective leader",
+            "Leads with both organization AND presence, protecting the team",
+            "Creates structured environments where people feel safe and motivated",
+            "Visible commitment backed by operational excellence",
+            "Gets things done while keeping people safe and inspired"
+          ],
+          "stress_strengths": [
+            "Under pressure, takes visible charge while executing systematically",
+            "Crisis triggers protective leadership with clear direction"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.C >= 5.5 AND scores.hexaco.X >= 5.0",
+              "because": "Conscientiousness + Extraversion enables organized leadership"
+            },
+            {
+              "when": "scores.affects.care >= 5.0 AND scores.affects.fear >= 4.5",
+              "because": "Care combined with protective caution"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "Command can become control",
+            "Protection through structure may limit growth",
+            "Performance of strength can mask uncertainty",
+            "May not allow others to lead or take risks",
+            "Risk of exhaustion from being the strong organized leader"
+          ],
+          "telltales": [
+            "You're always in charge and it's exhausting",
+            "Your organized protection keeps people dependent",
+            "You can't show uncertainty even when you feel it",
+            "Others wait for your direction instead of acting"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Military or emergency services leadership",
+            "Coaching and athletic direction",
+            "Operations management with team leadership",
+            "Security management",
+            "Project leadership for high-stakes initiatives"
+          ],
+          "role_patterns": [
+            "Assess → Organize → Lead → Protect → Execute",
+            "Visible leadership with operational excellence",
+            "Building and leading high-performance teams",
+            "Crisis management and emergency response"
+          ],
+          "anti_patterns": [
+            "Support roles without leadership",
+            "Environments without protective purpose",
+            "Individual contributor work",
+            "Roles requiring vulnerability or following"
+          ],
+          "collaboration": [
+            "Pairs well with Philosophers who provide strategic depth",
+            "Works with Connectors who handle emotional needs",
+            "May frustrate Explorers who resist structure"
+          ]
+        },
+        "money": {
+          "style": [
+            "Systematic financial planning with protective priority",
+            "Provides for dependents first",
+            "Values security expressed through organization",
+            "May over-invest in protection and control"
+          ],
+          "risks": [
+            "Over-conservative allocation",
+            "Control over family finances beyond necessary",
+            "Status spending to maintain leadership image"
+          ],
+          "guardrails": [
+            "Shared financial decision-making",
+            "Allow others' financial autonomy",
+            "Balance protection with opportunity"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Strong, organized, protective partnership",
+            "Takes charge when needed",
+            "Creates stable, structured household",
+            "Visible commitment and loyalty"
+          ],
+          "needs": [
+            "Partner who accepts leadership without being dominated",
+            "Space to be uncertain without performing strength",
+            "Someone who challenges without threatening"
+          ],
+          "triggers": [
+            "Chaos that threatens stability",
+            "Challenge to leadership that feels like betrayal",
+            "Having to follow without input"
+          ],
+          "repair": [
+            "Acknowledge when command became control",
+            "Share uncertainty beneath the strength",
+            "Allow partner's independent decision-making"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Provides clear structure and safety",
+            "Models discipline and commitment",
+            "Takes visible protective role",
+            "Organizes family life effectively"
+          ],
+          "traps": [
+            "Authoritarian rather than authoritative",
+            "Protecting children from necessary struggles",
+            "Not allowing children to see vulnerability"
+          ],
+          "practices": [
+            "Involve children in decision-making",
+            "Show uncertainty sometimes",
+            "Let children take age-appropriate risks"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Coaching and team leadership",
+            "Organizing group activities",
+            "Physical disciplines with structure",
+            "Leadership roles in community organizations"
+          ],
+          "anti_patterns": [
+            "Following others' direction",
+            "Unstructured social activities",
+            "Solo activities without protective purpose"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Let others lead",
+            "Show vulnerability without performing it",
+            "Allow unstructured time",
+            "Trust others to protect themselves"
+          ],
+          "practices": [
+            "Follow in group activities",
+            "Share genuine uncertainty with trusted others",
+            "Let some things be unorganized"
+          ],
+          "blockers": [
+            "Conflating strength with value",
+            "Fear of appearing weak or disorganized",
+            "Difficulty trusting others' competence"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Philosopher",
+              "why": "Provides strategic depth to your execution"
+            },
+            {
+              "match": "Connector",
+              "why": "Handles emotional needs you protect but don't meet directly"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Pure Explorer",
+              "why": "They resist your structure"
+            },
+            {
+              "match": "Another Protector",
+              "why": "Competing territorial instincts"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Explorer-Philosopher",
+              "why": "Challenges and enriches your perspective"
+            }
+          ]
+        }
+      }
+    },
+    "CONNECTOR_PROTECTOR_PERFORMER": {
+      "tagline": "The charismatic guardian of community who shines while keeping everyone safe",
+      "domains": {
+        "strengths": {
+          "bullets": [
+            "Combines relational warmth with protective instincts AND magnetic presence",
+            "Natural host, den mother, or community leader",
+            "Creates spaces that feel safe, connected, AND exciting",
+            "Uses visibility to protect and gather community",
+            "Presence that makes people feel both special and safe",
+            "Builds loyal communities through charismatic care"
+          ],
+          "stress_strengths": [
+            "Under pressure, maintains presence while protecting relationships",
+            "Crisis triggers visible leadership focused on keeping everyone together"
+          ],
+          "evidence_hints": [
+            {
+              "when": "scores.hexaco.A >= 5.5 AND scores.hexaco.X >= 5.0",
+              "because": "Agreeableness + Extraversion enables warm charisma"
+            },
+            {
+              "when": "scores.affects.care >= 5.5 AND scores.affects.play >= 4.5",
+              "because": "Care combined with playful expression"
+            }
+          ]
+        },
+        "watchouts": {
+          "bullets": [
+            "May create communities dependent on your presence",
+            "Protection can limit others' growth",
+            "Performance of care can mask personal needs",
+            "Risk of exhaustion from being the visible protective center",
+            "May confuse being needed with being loved"
+          ],
+          "telltales": [
+            "Everyone in the community looks to you for both safety and energy",
+            "You're always on, always protecting, always connecting",
+            "You can't imagine the community functioning without you",
+            "Your needs are always last because someone needs protection or connection"
+          ]
+        },
+        "career": {
+          "best_environments": [
+            "Community leadership with hosting role",
+            "Entertainment with audience care focus",
+            "Childcare and education with performance aspect",
+            "Customer experience leadership",
+            "Social services with public-facing component"
+          ],
+          "role_patterns": [
+            "Welcome → Connect → Protect → Celebrate → Sustain",
+            "Creating communities that feel like family",
+            "Visible leadership with genuine care",
+            "Making people feel special and safe"
+          ],
+          "anti_patterns": [
+            "Isolated work without people",
+            "Transactional roles without relationship",
+            "Environments that don't value care",
+            "Anonymous contribution"
+          ],
+          "collaboration": [
+            "Pairs well with Organizers who structure your communities",
+            "Works with Philosophers who add depth",
+            "May frustrate Explorers who want more novelty"
+          ]
+        },
+        "money": {
+          "style": [
+            "Generous hosting and hospitality spending",
+            "Protects financial resources for dependents",
+            "Values experiences that connect and protect",
+            "May over-spend on community and care"
+          ],
+          "risks": [
+            "Giving beyond sustainability",
+            "Hosting costs exceeding means",
+            "Neglecting own needs for others"
+          ],
+          "guardrails": [
+            "Budget for hospitality with clear limits",
+            "Protect own financial foundation",
+            "Value your contribution appropriately"
+          ]
+        },
+        "relationships": {
+          "offers": [
+            "Warm, exciting, protective partnership",
+            "Rich social life centered on care",
+            "Makes partner feel special and safe",
+            "Loyal, visible commitment"
+          ],
+          "needs": [
+            "Partner who sees behind the hosting persona",
+            "Space to receive protection and care",
+            "Someone who doesn't just consume your energy"
+          ],
+          "triggers": [
+            "Partner competing for social spotlight",
+            "Being wanted for access, not self",
+            "Having to be 'on' without recovery"
+          ],
+          "repair": [
+            "Share genuine needs, not just perform care",
+            "Allow partner to host and protect sometimes",
+            "Create private space without performance"
+          ]
+        },
+        "parenting": {
+          "strengths": [
+            "Creates warm, safe, exciting home",
+            "Makes children feel special and protected",
+            "Connects family to loving community",
+            "Models both care and expression"
+          ],
+          "traps": [
+            "Children dependent on your energy and protection",
+            "Performance mode at home",
+            "Not allowing children appropriate independence"
+          ],
+          "practices": [
+            "Let children solve own problems sometimes",
+            "Model receiving care",
+            "Quiet presence without performance"
+          ]
+        },
+        "hobbies": {
+          "patterns": [
+            "Hosting and gathering people",
+            "Community volunteering",
+            "Group activities you lead",
+            "Social activities with care component"
+          ],
+          "anti_patterns": [
+            "Solitary activities",
+            "Competition without care",
+            "Activities requiring anonymity"
+          ]
+        },
+        "self_improvement": {
+          "growth_edges": [
+            "Receive care without reciprocating",
+            "Be invisible sometimes",
+            "Let others protect the community",
+            "Rest without performing"
+          ],
+          "practices": [
+            "Attend as guest, not host",
+            "Accept help before exhaustion",
+            "Private time without social component"
+          ],
+          "blockers": [
+            "Conflating being needed with being valued",
+            "Fear of community collapse without you",
+            "Difficulty being off-stage"
+          ]
+        },
+        "compatibility": {
+          "resonance": [
+            {
+              "match": "Organizer",
+              "why": "Structures your communities sustainably"
+            },
+            {
+              "match": "Philosopher",
+              "why": "Adds depth to your gatherings"
+            }
+          ],
+          "friction": [
+            {
+              "match": "Pure Explorer",
+              "why": "They want novelty; you want stability and connection"
+            },
+            {
+              "match": "Another Performer",
+              "why": "Competing for spotlight and love"
+            }
+          ],
+          "growth_pairs": [
+            {
+              "match": "Philosopher-Organizer",
+              "why": "Builds sustainable, meaningful structures for your care"
+            }
+          ]
+        }
+      }
+    }
   }
 } as ContentBundle;
